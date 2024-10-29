@@ -1,10 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Menu</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/appointments">Appointments</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+    <a href="/home" class="logo">
+        <img src="{% static 'images/white-logo.png' %}" alt="Logo">
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
