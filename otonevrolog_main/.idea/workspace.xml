@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/otonevrolog_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/otonevrolog_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "plamensve"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/plamensve/otonevrolog.git",
+    "accountId": "4689471e-1568-448e-800b-7d2bd16b2b89"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2o6mFN6szjMpkuygDN42nWWJeao" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "X:/otonevrolog/otonevrolog_main/doctor_profile",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\otonevrolog\otonevrolog_main\doctor_profile" />
+      <recent name="X:\otonevrolog\otonevrolog_main\patient_profile" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\otonevrolog\otonevrolog_main\otonevrolog_main" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="otonevrolog_main" type="Python.DjangoServer" factoryName="Django server">
+      <module name="otonevrolog_main" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="" />
+      <created>1730198294781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730198294781</updated>
+      <workItem from="1730198307059" duration="3487000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
