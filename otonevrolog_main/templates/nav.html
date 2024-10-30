@@ -25,12 +25,6 @@
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 </nav>
 
-<script>
-    function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    }
-</script>
-
+<script src="{% static 'js/toggleMenuMobile.js' %}"></script>
 </body>
 </html>

@@ -7,17 +7,17 @@
     background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
     background-size: cover;
     border-radius: 15px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:  8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Контейнер за полетата за първо и фамилно име */
+
 .name-container {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
 
-/* Полета за първо и фамилно име */
+
 .half-width {
     width: 100%;
     padding: 12px;
@@ -119,10 +119,23 @@
 }
 
 /* =============================== Table container ================================= */
+.table-container th, .table-container td {
+    width: 80px; /*  фиксирана ширина за всички клетки */
+}
+
 .table-container {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
+    margin-left: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    table-layout: fixed; /* Прави ширината на клетките фиксирана */
+}
+
+.table-container th,
+.table-container td {
+    width: 80px; /* Задайте фиксирана ширина за всички клетки */
 }
 
 .days-in-table {
@@ -138,7 +151,7 @@
     font-size: 18px;
 }
 
-.hours-in-table {
+.hours-in-table, .hours-in-table-unavailable {
     padding: 12px;
     border: 1px solid #000000;
     text-align: center;
@@ -151,17 +164,12 @@
     background-color: #3a7a7b;
 }
 
-td.hours-in-table {
-    color: #000000;
+.hours-in-table-unavailable {
+    background-color: #d08282;
 }
 
-.hours-in-table-unavailable {
-    padding: 20px;
-    border: 1px solid #000000;
-    text-align: center;
-    background-color: #d08282;
-    user-select: none;
-    cursor: pointer;
+td.hours-in-table {
+    color: #000000;
 }
 
 
@@ -194,6 +202,31 @@ td.hours-in-table {
     font-size: 20px;
 }
 
+/* =============================== Scrollbar Styling ================================ */
+/* Scrollbar style for WebKit browsers (Chrome, Safari, Edge) */
+.table-container table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-container table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-container table::-webkit-scrollbar-thumb {
+    background: #3a7a7b;
+    border-radius: 4px;
+}
+
+.table-container table::-webkit-scrollbar-thumb:hover {
+    background: #8fdad3;
+}
+
+/* Scrollbar style for Firefox */
+.table-container table {
+    scrollbar-color: #3a7a7b #f1f1f1;
+    scrollbar-width: thin;
+}
+
 /* =============================== Responsive Design ================================ */
 @media (max-width: 768px) {
     .appointment-form {
@@ -212,6 +245,19 @@ td.hours-in-table {
 
     .modal-content {
         width: 90%;
+    }
+
+    .table-container table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 10px;
+        font-size: 14px;
     }
 }
 
@@ -237,5 +283,149 @@ td.hours-in-table {
     .modal-content {
         width: 95%;
     }
+
+    .table-container table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 8px;
+        font-size: 12px;
+    }
 }
 
+.form-container {
+    position: relative;
+}
+
+.close-button {
+    position: marker;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: transparent;
+    border: solid 1px;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .close-button {
+        font-size: 24px;
+        color: #ffffff;
+    }
+}
+
+.front-picture {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.front-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.welcome-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #3a7a7b;
+    color: #ffffff;
+}
+
+.table-calendar-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.table-container {
+    flex: 2;
+}
+
+.calendar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+
+}
+
+.table-calendar-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width: 768px) {
+    .table-calendar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendar-container {
+        display: none;
+    }
+}
+
+
+.modal-content {
+    position: relative;
+    z-index: 10;
+}
+
+.calendar-container {
+    position: relative;
+    z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+    .calendar-container {
+        display: flex;
+        max-height: 300px;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 1001;
+}
+
+
+.calendar-container {
+    position: relative;
+    z-index: 1;
+}

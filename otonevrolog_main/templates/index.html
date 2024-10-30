@@ -1,14 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    {# ----------------------------- Front picture ------------------------------------------------- #}
+    <div class="front-picture">
+        <img src="{% static 'images/front-photo.png' %}" alt="Front picture">
+    </div>
+    <div class="welcome-text">
+        <h1 class="welcome-text">Welcome to Our Virtual Consultation Center!</h1>
+    </div>
+    
+    {# -------------- Appointment table and calendar --------------------------------#}
+    <div class="table-calendar-container">
+        <div class="table-container">
+            <table>
+                {% for day in days_of_week %}
+                    <tr class="days-in-table">
+                        <th>{{ day }}</th>
+                        {% for hour in hours %}
+                            {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in available_slot %}
+                                <td class="hours-in-table-unavailable">Unavailable</td>
+                            {% else %}
+                                <td class="hours-in-table" onclick="openForm('{{ day }}', '{{ hour }}')">{{ hour }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="calendar-container">
+            <div id="calendar"></div>
+        </div>
+    </div>
 
     {# -------------- Appointment form --------------------------------#}
     <div id="appointmentModal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closeForm()">&times;</span>
             <!-- Формата за записване на час -->
             <div class="form-container">
                 <form method="POST" action="{% url 'index' %}" class="appointment-form">
+                    <span class="close-button" onclick="closeForm()">X</span>
                     <h1 class="appointment-form-topic">Book Your Appointment</h1>
                     {% csrf_token %}
                     <!-- Скрито поле за деня -->
@@ -18,31 +49,12 @@
                     {{ form.as_p }}
                     <button type="submit" class="submit-btn">Submit</button>
                     <p class="appointment-form-under-button">
-                        You don't have an account? <a href="{% url 'register' %}" class="register-link">Register
-                        here</a>
+                        You don't have an account? <a href="{% url 'register' %}" class="register-link">Register here</a>
                     </p>
                 </form>
             </div>
         </div>
     </div>
-    
-    {# -------------- Appointment table --------------------------------#}
-    <div class="table-container">
-        <h1 class="table-title">Available Hours</h1>
-        <table>
-            {% for day in days_of_week %}
-                <tr class="days-in-table">
-                    <th>{{ day }}</th>
-                    {% for hour in hours %}
-                        {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in available_slot %}
-                            <td class="hours-in-table-unavailable">Unavailable</td>
-                        {% else %}
-                            <td class="hours-in-table" onclick="openForm('{{ day }}', '{{ hour }}')">{{ hour }}</td>
-                        {% endif %}
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
     <script src="{% static 'js/appointmentModal.js' %}"></script>
+    <script src="{% static 'js/calendar.js' %}"></script> 
 {% endblock %}
