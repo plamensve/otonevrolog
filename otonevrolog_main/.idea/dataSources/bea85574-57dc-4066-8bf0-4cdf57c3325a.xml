@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>3104</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3110</IntrospectionStateNumber>
       <ServerVersion>16.3</ServerVersion>
       <StartupTime>1730197963</StartupTime>
       <TimeZones>true ACDT
@@ -1438,7 +1438,7 @@ true posixrules
 13212||10|C|G
 13212||-9223372036854775808|U|G
 13212||10|U|G</Grants>
-      <IntrospectionStateNumber>3104</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3111</IntrospectionStateNumber>
       <ObjectId>100923</ObjectId>
       <OwnerName>admin</OwnerName>
     </database>
@@ -4913,8 +4913,8 @@ true posixrules
     <schema id="284" parent="12" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>3104</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-10-29.10:42:34</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>3111</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-10-29.22:00:54</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4991,67 +4991,81 @@ true posixrules
       <StateNumber>3069</StateNumber>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <table id="294" parent="284" name="auth_group">
+    <sequence id="294" parent="284" name="web_appointmentbooking_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>101070</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>3105</StateNumber>
+      <OwnerName>admin</OwnerName>
+    </sequence>
+    <table id="295" parent="284" name="auth_group">
       <ObjectId>100947</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="295" parent="284" name="auth_group_permissions">
+    <table id="296" parent="284" name="auth_group_permissions">
       <ObjectId>100955</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="296" parent="284" name="auth_permission">
+    <table id="297" parent="284" name="auth_permission">
       <ObjectId>100941</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="297" parent="284" name="auth_user">
+    <table id="298" parent="284" name="auth_user">
       <ObjectId>100961</ObjectId>
       <StateNumber>3084</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="298" parent="284" name="auth_user_groups">
+    <table id="299" parent="284" name="auth_user_groups">
       <ObjectId>100969</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="299" parent="284" name="auth_user_user_permissions">
+    <table id="300" parent="284" name="auth_user_user_permissions">
       <ObjectId>100975</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="300" parent="284" name="django_admin_log">
+    <table id="301" parent="284" name="django_admin_log">
       <ObjectId>101033</ObjectId>
       <StateNumber>3073</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="301" parent="284" name="django_content_type">
+    <table id="302" parent="284" name="django_content_type">
       <ObjectId>100933</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="302" parent="284" name="django_migrations">
+    <table id="303" parent="284" name="django_migrations">
       <ObjectId>100925</ObjectId>
       <StateNumber>3069</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <table id="303" parent="284" name="django_session">
+    <table id="304" parent="284" name="django_session">
       <ObjectId>101061</ObjectId>
       <StateNumber>3089</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <column id="304" parent="294" name="id">
+    <table id="305" parent="284" name="web_appointmentbooking">
+      <ObjectId>101071</ObjectId>
+      <StateNumber>3106</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>admin</OwnerName>
+    </table>
+    <column id="306" parent="295" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5060,14 +5074,14 @@ true posixrules
       <SequenceId>100946</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="305" parent="294" name="name">
+    <column id="307" parent="295" name="name">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3086</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="306" parent="294" name="auth_group_pkey">
+    <index id="308" parent="295" name="auth_group_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100950</ObjectId>
@@ -5076,7 +5090,7 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="307" parent="294" name="auth_group_name_key">
+    <index id="309" parent="295" name="auth_group_name_key">
       <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101058</ObjectId>
@@ -5087,7 +5101,7 @@ true posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="308" parent="294" name="auth_group_name_a6ea08ec_like">
+    <index id="310" parent="295" name="auth_group_name_a6ea08ec_like">
       <ColNames>name</ColNames>
       <ObjectId>101060</ObjectId>
       <StateNumber>3086</StateNumber>
@@ -5099,20 +5113,20 @@ true posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="309" parent="294" name="auth_group_pkey">
+    <key id="311" parent="295" name="auth_group_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100951</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100950</UnderlyingIndexId>
     </key>
-    <key id="310" parent="294" name="auth_group_name_key">
+    <key id="312" parent="295" name="auth_group_name_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101059</ObjectId>
       <StateNumber>3086</StateNumber>
       <UnderlyingIndexId>101058</UnderlyingIndexId>
     </key>
-    <column id="311" parent="295" name="id">
+    <column id="313" parent="296" name="id">
       <DasType>bigint|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5121,21 +5135,21 @@ true posixrules
       <SequenceId>100954</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="312" parent="295" name="group_id">
+    <column id="314" parent="296" name="group_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="313" parent="295" name="permission_id">
+    <column id="315" parent="296" name="permission_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="314" parent="295" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
+    <foreign-key id="316" parent="296" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5144,7 +5158,7 @@ true posixrules
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100947</RefTableId>
     </foreign-key>
-    <foreign-key id="315" parent="295" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+    <foreign-key id="317" parent="296" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5153,7 +5167,7 @@ true posixrules
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100941</RefTableId>
     </foreign-key>
-    <index id="316" parent="295" name="auth_group_permissions_pkey">
+    <index id="318" parent="296" name="auth_group_permissions_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100958</ObjectId>
@@ -5162,7 +5176,7 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="317" parent="295" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <index id="319" parent="296" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
       <ObjectId>100989</ObjectId>
@@ -5170,31 +5184,31 @@ permission_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="318" parent="295" name="auth_group_permissions_group_id_b120cbf9">
+    <index id="320" parent="296" name="auth_group_permissions_group_id_b120cbf9">
       <ColNames>group_id</ColNames>
       <ObjectId>101001</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="319" parent="295" name="auth_group_permissions_permission_id_84c5c92e">
+    <index id="321" parent="296" name="auth_group_permissions_permission_id_84c5c92e">
       <ColNames>permission_id</ColNames>
       <ObjectId>101002</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="320" parent="295" name="auth_group_permissions_pkey">
+    <key id="322" parent="296" name="auth_group_permissions_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100959</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100958</UnderlyingIndexId>
     </key>
-    <key id="321" parent="295" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <key id="323" parent="296" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ObjectId>100990</ObjectId>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100989</UnderlyingIndexId>
     </key>
-    <column id="322" parent="296" name="id">
+    <column id="324" parent="297" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5203,28 +5217,28 @@ permission_id</ColNames>
       <SequenceId>100940</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="323" parent="296" name="name">
+    <column id="325" parent="297" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3078</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="324" parent="296" name="content_type_id">
+    <column id="326" parent="297" name="content_type_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="325" parent="296" name="codename">
+    <column id="327" parent="297" name="codename">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="326" parent="296" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
+    <foreign-key id="328" parent="297" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5233,7 +5247,7 @@ permission_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100933</RefTableId>
     </foreign-key>
-    <index id="327" parent="296" name="auth_permission_pkey">
+    <index id="329" parent="297" name="auth_permission_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100944</ObjectId>
@@ -5242,7 +5256,7 @@ permission_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="328" parent="296" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <index id="330" parent="297" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
       <ObjectId>100980</ObjectId>
@@ -5256,25 +5270,25 @@ pg_catalog</CollationParentNames>
       <CollationNames>
 default</CollationNames>
     </index>
-    <index id="329" parent="296" name="auth_permission_content_type_id_2f476e4b">
+    <index id="331" parent="297" name="auth_permission_content_type_id_2f476e4b">
       <ColNames>content_type_id</ColNames>
       <ObjectId>100987</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="330" parent="296" name="auth_permission_pkey">
+    <key id="332" parent="297" name="auth_permission_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100945</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100944</UnderlyingIndexId>
     </key>
-    <key id="331" parent="296" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <key id="333" parent="297" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ObjectId>100981</ObjectId>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100980</UnderlyingIndexId>
     </key>
-    <column id="332" parent="297" name="id">
+    <column id="334" parent="298" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5283,76 +5297,76 @@ default</CollationNames>
       <SequenceId>100960</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="333" parent="297" name="password">
+    <column id="335" parent="298" name="password">
       <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="334" parent="297" name="last_login">
+    <column id="336" parent="298" name="last_login">
       <DasType>timestamp with time zone|0s</DasType>
       <Position>3</Position>
       <StateNumber>3081</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="335" parent="297" name="is_superuser">
+    <column id="337" parent="298" name="is_superuser">
       <DasType>boolean|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="336" parent="297" name="username">
+    <column id="338" parent="298" name="username">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>3084</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="337" parent="297" name="first_name">
+    <column id="339" parent="298" name="first_name">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>3088</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="338" parent="297" name="last_name">
+    <column id="340" parent="298" name="last_name">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>3085</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="339" parent="297" name="email">
+    <column id="341" parent="298" name="email">
       <DasType>varchar(254)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>3079</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="340" parent="297" name="is_staff">
+    <column id="342" parent="298" name="is_staff">
       <DasType>boolean|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="341" parent="297" name="is_active">
+    <column id="343" parent="298" name="is_active">
       <DasType>boolean|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="342" parent="297" name="date_joined">
+    <column id="344" parent="298" name="date_joined">
       <DasType>timestamp with time zone|0s</DasType>
       <NotNull>1</NotNull>
       <Position>11</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="343" parent="297" name="auth_user_pkey">
+    <index id="345" parent="298" name="auth_user_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100964</ObjectId>
@@ -5361,7 +5375,7 @@ default</CollationNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="344" parent="297" name="auth_user_username_key">
+    <index id="346" parent="298" name="auth_user_username_key">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101053</ObjectId>
@@ -5372,7 +5386,7 @@ default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="345" parent="297" name="auth_user_username_6821ab7c_like">
+    <index id="347" parent="298" name="auth_user_username_6821ab7c_like">
       <ColNames>username</ColNames>
       <ObjectId>101055</ObjectId>
       <StateNumber>3084</StateNumber>
@@ -5384,20 +5398,20 @@ default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="346" parent="297" name="auth_user_pkey">
+    <key id="348" parent="298" name="auth_user_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100965</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100964</UnderlyingIndexId>
     </key>
-    <key id="347" parent="297" name="auth_user_username_key">
+    <key id="349" parent="298" name="auth_user_username_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101054</ObjectId>
       <StateNumber>3084</StateNumber>
       <UnderlyingIndexId>101053</UnderlyingIndexId>
     </key>
-    <column id="348" parent="298" name="id">
+    <column id="350" parent="299" name="id">
       <DasType>bigint|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5406,21 +5420,21 @@ default</CollationNames>
       <SequenceId>100968</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="349" parent="298" name="user_id">
+    <column id="351" parent="299" name="user_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="350" parent="298" name="group_id">
+    <column id="352" parent="299" name="group_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="351" parent="298" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
+    <foreign-key id="353" parent="299" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5429,7 +5443,7 @@ default</CollationNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100961</RefTableId>
     </foreign-key>
-    <foreign-key id="352" parent="298" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+    <foreign-key id="354" parent="299" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5438,7 +5452,7 @@ default</CollationNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100947</RefTableId>
     </foreign-key>
-    <index id="353" parent="298" name="auth_user_groups_pkey">
+    <index id="355" parent="299" name="auth_user_groups_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100972</ObjectId>
@@ -5447,7 +5461,7 @@ default</CollationNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="354" parent="298" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+    <index id="356" parent="299" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <ColNames>user_id
 group_id</ColNames>
       <ObjectId>101004</ObjectId>
@@ -5455,31 +5469,31 @@ group_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="355" parent="298" name="auth_user_groups_user_id_6a12ed8b">
+    <index id="357" parent="299" name="auth_user_groups_user_id_6a12ed8b">
       <ColNames>user_id</ColNames>
       <ObjectId>101016</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="356" parent="298" name="auth_user_groups_group_id_97559544">
+    <index id="358" parent="299" name="auth_user_groups_group_id_97559544">
       <ColNames>group_id</ColNames>
       <ObjectId>101017</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="357" parent="298" name="auth_user_groups_pkey">
+    <key id="359" parent="299" name="auth_user_groups_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100973</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100972</UnderlyingIndexId>
     </key>
-    <key id="358" parent="298" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+    <key id="360" parent="299" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <ObjectId>101005</ObjectId>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>101004</UnderlyingIndexId>
     </key>
-    <column id="359" parent="299" name="id">
+    <column id="361" parent="300" name="id">
       <DasType>bigint|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5488,21 +5502,21 @@ group_id</ColNames>
       <SequenceId>100974</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="360" parent="299" name="user_id">
+    <column id="362" parent="300" name="user_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="361" parent="299" name="permission_id">
+    <column id="363" parent="300" name="permission_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3071</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="362" parent="299" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
+    <foreign-key id="364" parent="300" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5511,7 +5525,7 @@ group_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100961</RefTableId>
     </foreign-key>
-    <foreign-key id="363" parent="299" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
+    <foreign-key id="365" parent="300" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5520,7 +5534,7 @@ group_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100941</RefTableId>
     </foreign-key>
-    <index id="364" parent="299" name="auth_user_user_permissions_pkey">
+    <index id="366" parent="300" name="auth_user_user_permissions_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100978</ObjectId>
@@ -5529,7 +5543,7 @@ group_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="365" parent="299" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+    <index id="367" parent="300" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <ColNames>user_id
 permission_id</ColNames>
       <ObjectId>101018</ObjectId>
@@ -5537,37 +5551,37 @@ permission_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="366" parent="299" name="auth_user_user_permissions_user_id_a95ead1b">
+    <index id="368" parent="300" name="auth_user_user_permissions_user_id_a95ead1b">
       <ColNames>user_id</ColNames>
       <ObjectId>101030</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="367" parent="299" name="auth_user_user_permissions_permission_id_1fbb5f2c">
+    <index id="369" parent="300" name="auth_user_user_permissions_permission_id_1fbb5f2c">
       <ColNames>permission_id</ColNames>
       <ObjectId>101031</ObjectId>
       <StateNumber>3071</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="368" parent="299" name="auth_user_user_permissions_pkey">
+    <key id="370" parent="300" name="auth_user_user_permissions_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100979</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>100978</UnderlyingIndexId>
     </key>
-    <key id="369" parent="299" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+    <key id="371" parent="300" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <ObjectId>101019</ObjectId>
       <StateNumber>3071</StateNumber>
       <UnderlyingIndexId>101018</UnderlyingIndexId>
     </key>
-    <check id="370" parent="300" name="django_admin_log_action_flag_check">
+    <check id="372" parent="301" name="django_admin_log_action_flag_check">
       <ColNames>action_flag</ColNames>
       <ObjectId>101036</ObjectId>
       <Predicate>action_flag &gt;= 0</Predicate>
       <StateNumber>3073</StateNumber>
     </check>
-    <column id="371" parent="300" name="id">
+    <column id="373" parent="301" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5576,54 +5590,54 @@ permission_id</ColNames>
       <SequenceId>101032</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="372" parent="300" name="action_time">
+    <column id="374" parent="301" name="action_time">
       <DasType>timestamp with time zone|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="373" parent="300" name="object_id">
+    <column id="375" parent="301" name="object_id">
       <DasType>text|0s</DasType>
       <Position>3</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="374" parent="300" name="object_repr">
+    <column id="376" parent="301" name="object_repr">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="375" parent="300" name="action_flag">
+    <column id="377" parent="301" name="action_flag">
       <DasType>smallint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="376" parent="300" name="change_message">
+    <column id="378" parent="301" name="change_message">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="377" parent="300" name="content_type_id">
+    <column id="379" parent="301" name="content_type_id">
       <DasType>integer|0s</DasType>
       <Position>7</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="378" parent="300" name="user_id">
+    <column id="380" parent="301" name="user_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>3073</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="379" parent="300" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+    <foreign-key id="381" parent="301" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5632,7 +5646,7 @@ permission_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100933</RefTableId>
     </foreign-key>
-    <foreign-key id="380" parent="300" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+    <foreign-key id="382" parent="301" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -5641,7 +5655,7 @@ permission_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>100961</RefTableId>
     </foreign-key>
-    <index id="381" parent="300" name="django_admin_log_pkey">
+    <index id="383" parent="301" name="django_admin_log_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101039</ObjectId>
@@ -5650,26 +5664,26 @@ permission_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="382" parent="300" name="django_admin_log_content_type_id_c4bce8eb">
+    <index id="384" parent="301" name="django_admin_log_content_type_id_c4bce8eb">
       <ColNames>content_type_id</ColNames>
       <ObjectId>101051</ObjectId>
       <StateNumber>3073</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="383" parent="300" name="django_admin_log_user_id_c564eba6">
+    <index id="385" parent="301" name="django_admin_log_user_id_c564eba6">
       <ColNames>user_id</ColNames>
       <ObjectId>101052</ObjectId>
       <StateNumber>3073</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="384" parent="300" name="django_admin_log_pkey">
+    <key id="386" parent="301" name="django_admin_log_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101040</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3073</StateNumber>
       <UnderlyingIndexId>101039</UnderlyingIndexId>
     </key>
-    <column id="385" parent="301" name="id">
+    <column id="387" parent="302" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5678,21 +5692,21 @@ permission_id</ColNames>
       <SequenceId>100932</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="386" parent="301" name="app_label">
+    <column id="388" parent="302" name="app_label">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3070</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="387" parent="301" name="model">
+    <column id="389" parent="302" name="model">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>3070</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="388" parent="301" name="django_content_type_pkey">
+    <index id="390" parent="302" name="django_content_type_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100936</ObjectId>
@@ -5701,7 +5715,7 @@ permission_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="389" parent="301" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <index id="391" parent="302" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
       <ObjectId>100938</ObjectId>
@@ -5715,19 +5729,19 @@ default</CollationNames>
       <CollationParentNames>pg_catalog
 pg_catalog</CollationParentNames>
     </index>
-    <key id="390" parent="301" name="django_content_type_pkey">
+    <key id="392" parent="302" name="django_content_type_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100937</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3070</StateNumber>
       <UnderlyingIndexId>100936</UnderlyingIndexId>
     </key>
-    <key id="391" parent="301" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <key id="393" parent="302" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ObjectId>100939</ObjectId>
       <StateNumber>3070</StateNumber>
       <UnderlyingIndexId>100938</UnderlyingIndexId>
     </key>
-    <column id="392" parent="302" name="id">
+    <column id="394" parent="303" name="id">
       <DasType>bigint|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -5736,28 +5750,28 @@ pg_catalog</CollationParentNames>
       <SequenceId>100924</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="393" parent="302" name="app">
+    <column id="395" parent="303" name="app">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3069</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="394" parent="302" name="name">
+    <column id="396" parent="303" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3069</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="395" parent="302" name="applied">
+    <column id="397" parent="303" name="applied">
       <DasType>timestamp with time zone|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>3069</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="396" parent="302" name="django_migrations_pkey">
+    <index id="398" parent="303" name="django_migrations_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100930</ObjectId>
@@ -5766,35 +5780,35 @@ pg_catalog</CollationParentNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="397" parent="302" name="django_migrations_pkey">
+    <key id="399" parent="303" name="django_migrations_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>100931</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3069</StateNumber>
       <UnderlyingIndexId>100930</UnderlyingIndexId>
     </key>
-    <column id="398" parent="303" name="session_key">
+    <column id="400" parent="304" name="session_key">
       <DasType>varchar(40)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>3089</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="399" parent="303" name="session_data">
+    <column id="401" parent="304" name="session_data">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3089</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="400" parent="303" name="expire_date">
+    <column id="402" parent="304" name="expire_date">
       <DasType>timestamp with time zone|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>3089</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="401" parent="303" name="django_session_pkey">
+    <index id="403" parent="304" name="django_session_pkey">
       <ColNames>session_key</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101066</ObjectId>
@@ -5806,7 +5820,7 @@ pg_catalog</CollationParentNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="402" parent="303" name="django_session_session_key_c0390e0f_like">
+    <index id="404" parent="304" name="django_session_session_key_c0390e0f_like">
       <ColNames>session_key</ColNames>
       <ObjectId>101068</ObjectId>
       <StateNumber>3089</StateNumber>
@@ -5818,18 +5832,78 @@ pg_catalog</CollationParentNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="403" parent="303" name="django_session_expire_date_a5c62663">
+    <index id="405" parent="304" name="django_session_expire_date_a5c62663">
       <ColNames>expire_date</ColNames>
       <ObjectId>101069</ObjectId>
       <StateNumber>3089</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="404" parent="303" name="django_session_pkey">
+    <key id="406" parent="304" name="django_session_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>101067</ObjectId>
       <Primary>1</Primary>
       <StateNumber>3089</StateNumber>
       <UnderlyingIndexId>101066</UnderlyingIndexId>
+    </key>
+    <column id="407" parent="305" name="id">
+      <DasType>bigint|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>3105</StateNumber>
+      <SequenceId>101070</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="408" parent="305" name="first_name">
+      <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>3105</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="409" parent="305" name="second_name">
+      <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>3105</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="410" parent="305" name="last_name">
+      <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>3105</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="411" parent="305" name="email">
+      <DasType>varchar(254)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>3105</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="412" parent="305" name="phone_number">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>3106</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="413" parent="305" name="web_appointmentbooking_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>101076</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>3106</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="414" parent="305" name="web_appointmentbooking_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>101077</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>3105</StateNumber>
+      <UnderlyingIndexId>101076</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

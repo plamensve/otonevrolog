@@ -1,0 +1,163 @@
+/* Основен стил за контейнера на формата */
+.appointment-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Контейнер за полетата за първо и фамилно име */
+.name-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Полета за първо и фамилно име */
+.half-width {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    flex: 1;
+}
+
+/* Стилизация на полето при фокус */
+.half-width:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стил за лейбълите */
+.appointment-form label {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Основен стил за полетата на формата */
+.appointment-form input[type="text"],
+.appointment-form input[type="email"],
+.appointment-form select,
+.appointment-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+/* Placeholder стил */
+.appointment-form input::placeholder,
+.appointment-form textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Фокусирано текстово поле */
+.appointment-form input:focus,
+.appointment-form textarea:focus,
+.appointment-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стил за бутона за изпращане */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #8fdad3;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #4ed2cb;
+}
+
+/* Медийни заявки за респонсив дизайн */
+@media (max-width: 768px) {
+    .appointment-form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Подреждане на полетата едно под друго при малки екрани */
+    .name-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment-form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .appointment-form input[type="text"],
+    .appointment-form input[type="email"],
+    .appointment-form select,
+    .appointment-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Стилове за заглавие и под-бутона */
+.appointment-form-topic {
+    color: #8fdad3;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.appointment-form-under-button {
+    color: #8fdad3;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link {
+    color: #8fdad3;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+.register-link:hover{
+    color: #ffffff;
+}
+
+
+

@@ -1,18 +1,26 @@
-/* Basic styling for the navigation menu */
+/* Премахване на отстоянията от тялото на страницата */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Предотвратява хоризонтално превъртане */
+}
+
+/* Основни стилове за навигационното меню */
 nav {
     background-color: #447e7f;
-    padding: 10px;
+    padding: 15px 0; /* Регулира вертикалното отстояние */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distributes space between logo and nav-links */
+    justify-content: space-between;
     position: relative;
-    z-index: 1000; /* Ensure dropdown appears above other content */
+    width: 100vw; /* Запълва цялата ширина на екрана */
+    z-index: 1000;
 }
 
 .logo {
-    position: absolute; /* Фиксира логото в най-лявата част */
+    position: absolute;
     left: 30px;
-    top: 0.0rem
+    top: 0;
 }
 
 .nav-links {
@@ -20,13 +28,12 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end; /* Aligns links to the right */
-    flex: 1; /* Ensures nav-links take remaining space */
+    justify-content: flex-end;
+    flex: 1;
 }
 
 .nav-links li {
     margin-right: 20px;
-    position: relative;
 }
 
 .nav-links li a {
@@ -34,31 +41,14 @@ nav {
     text-decoration: none;
     padding: 8px 12px;
     display: block;
-    position: relative;
     transition: color 0.3s ease;
-}
-
-/* Adding hover effect with dynamic line */
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px; /* Positioning the line just below the text */
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease; /* Smooth animation */
-}
-
-.nav-links li a:hover::after {
-    width: 100%; /* Expands the line from left to right */
 }
 
 .nav-links li a:hover {
     color: #ffffff;
 }
 
-/* Menu toggle button for mobile */
+/* Бутон за отваряне на менюто на мобилни устройства */
 .menu-toggle {
     display: none;
     background: none;
@@ -68,32 +58,32 @@ nav {
     cursor: pointer;
 }
 
-/* Responsive styling for dropdown */
+/* Стайлинг за адаптивност */
 @media (max-width: 768px) {
     nav {
         justify-content: space-between;
     }
 
     .nav-links {
-        display: none; /* Hide navigation links by default */
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: #447e7f;
         position: absolute;
-        top: 50px; /* Adjust this to match your nav height */
+        top: 50px;
         left: 0;
         padding: 10px 0;
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adds shadow for depth */
-        transform: scaleY(0); /* Initial state for animation */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: scaleY(0);
         transform-origin: top;
-        transition: transform 0.3s ease; /* Smooth dropdown animation */
+        transition: transform 0.3s ease;
         z-index: 1000;
     }
 
     .nav-links.active {
-        display: flex; /* Show navigation links when active */
-        transform: scaleY(1); /* Animate dropdown opening */
+        display: flex;
+        transform: scaleY(1);
     }
 
     .nav-links li {
@@ -102,27 +92,54 @@ nav {
     }
 
     .menu-toggle {
-        display: block; /* Show toggle button on mobile */
+        display: block;
     }
 
     .nav-links li a {
         padding: 12px 20px;
         margin: 0 15px;
-        background-color: #56a1a2; /* Slightly lighter color for buttons */
+        background-color: #56a1a2;
         border-radius: 6px;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .nav-links li a:hover {
-        background-color: #3a7a7b; /* Darken on hover */
+        background-color: #3a7a7b;
         color: #ffffff;
     }
 }
 
 @media (max-width: 768px) {
     .logo {
-        left: auto; /* Отменя фиксираната лява позиция */
-        right: 30px; /* Позиционира логото вдясно */
-        top: -0.05rem
+        left: auto;
+        right: 30px;
+        top: 0;
     }
+}
+
+/* Стил за връзките в навигацията */
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    position: relative; /* За да се позиционира псевдоелементът спрямо него */
+    transition: color 0.3s ease;
+}
+
+/* Лента отляво надясно при hover ефект */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white; /* Цветът на лентата */
+    transition: width 0.3s ease;
+}
+
+/* Анимация при hover */
+.nav-links li a:hover::after {
+    width: 100%; /* Лентата се разширява до пълната ширина */
 }

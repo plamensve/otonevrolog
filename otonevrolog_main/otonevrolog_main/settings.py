@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # My Apps
+
+    'otonevrolog_main.web',
+    'otonevrolog_main.doctor_profile',
+    'otonevrolog_main.patient_profile'
 ]
 
 MIDDLEWARE = [

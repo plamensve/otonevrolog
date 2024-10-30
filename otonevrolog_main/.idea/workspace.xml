@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="Django Advance: Final project">
-      <change afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/white-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0002_alter_appointmentbooking_phone_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0003_alter_appointmentbooking_phone_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/index-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a/storage_v2/_src_/database/otonevrolog.0vaJ2w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a/storage_v2/_src_/database/otonevrolog.0vaJ2w/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
@@ -23,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -59,6 +73,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.otonevrolog_main.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "django.template.preview.state": "SHOW_EDITOR",
@@ -95,6 +110,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="otonevrolog_main.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -130,7 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730198294781</updated>
       <workItem from="1730198307059" duration="3487000" />
-      <workItem from="1730219583647" duration="5473000" />
+      <workItem from="1730219583647" duration="17238000" />
     </task>
     <task id="LOCAL-00001" summary="Django Advance: Final project">
       <option name="closed" value="true" />
@@ -140,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730219718637</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Django Advance: Final project">
+      <option name="closed" value="true" />
+      <created>1730225779258</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730225779258</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
