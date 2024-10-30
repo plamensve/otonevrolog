@@ -1,16 +1,61 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="form-container">
-    <form method="POST" action="{% url 'index' %}" class="appointment-form">
-        <h1 class="appointment-form-topic">Book Your Appointment</h1>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="submit-btn">Submit</button>
-        <p class="appointment-form-under-button">
-            You don't have an account? <a href="{% url 'register' %}" class="register-link">Register here</a>
-        </p>
-    </form>
-</div>
+    {# -------------- Appointment form --------------------------------#}
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeForm()">&times;</span>
+            <!-- Формата за записване на час -->
+            <div class="form-container">
+                <form method="POST" action="{% url 'index' %}" class="appointment-form">
+                    <h1 class="appointment-form-topic">Book Your Appointment</h1>
+                    {% csrf_token %}
+                    <!-- Скрито поле за деня -->
+                    <input type="hidden" id="day" name="day">
+                    <!-- Скрито поле за часа -->
+                    <input type="hidden" id="hour" name="hour">
+                    {{ form.as_p }}
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <p class="appointment-form-under-button">
+                        You don't have an account? <a href="{% url 'register' %}" class="register-link">Register
+                        here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {# -------------- Appointment table --------------------------------#}
+    <div class="table-container">
+        <h1 class="table-title">Available Hours</h1>
+        <table>
+            {% for day in days_of_week %}
+                <tr class="days-in-table">
+                    <th>{{ day }}</th>
+                    {% for hour in hours %}
+
+                        {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in available_slot %}
+                            <td class="hours-in-table-unavailable">Unavailable</td>
+                        {% else %}
+                            <td class="hours-in-table" onclick="openForm('{{ day }}', '{{ hour }}')">{{ hour }}</td>
+                        {% endif %}
+
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <script>
+        function openForm(day, hour) {
+            document.getElementById("appointmentModal").style.display = "flex";
+            document.getElementById("day").value = day;
+            document.getElementById("hour").value = hour;
+        }
+
+        function closeForm() {
+            document.getElementById("appointmentModal").style.display = "none";
+        }
+    </script>
 
 {% endblock %}

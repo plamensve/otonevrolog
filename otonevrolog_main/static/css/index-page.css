@@ -30,7 +30,6 @@
     flex: 1;
 }
 
-/* Стилизация на полето при фокус */
 .half-width:focus {
     border-color: #007bff;
     outline: none;
@@ -62,14 +61,12 @@
     transition: border-color 0.3s;
 }
 
-/* Placeholder стил */
 .appointment-form input::placeholder,
 .appointment-form textarea::placeholder {
     color: #aaa;
     font-style: italic;
 }
 
-/* Фокусирано текстово поле */
 .appointment-form input:focus,
 .appointment-form textarea:focus,
 .appointment-form select:focus {
@@ -95,45 +92,7 @@
     background-color: #4ed2cb;
 }
 
-/* Медийни заявки за респонсив дизайн */
-@media (max-width: 768px) {
-    .appointment-form {
-        padding: 15px;
-        max-width: 90%;
-    }
-
-    .submit-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Подреждане на полетата едно под друго при малки екрани */
-    .name-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .appointment-form {
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    .appointment-form input[type="text"],
-    .appointment-form input[type="email"],
-    .appointment-form select,
-    .appointment-form textarea {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .submit-btn {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
-
-/* Стилове за заглавие и под-бутона */
+/* Заглавие и под-бутон */
 .appointment-form-topic {
     color: #8fdad3;
     font-weight: 600;
@@ -155,9 +114,128 @@
     margin-top: 15px;
 }
 
-.register-link:hover{
+.register-link:hover {
     color: #ffffff;
 }
 
+/* =============================== Table container ================================= */
+.table-container {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
 
+.days-in-table {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.days-in-table th {
+    padding: 15px;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+.hours-in-table {
+    padding: 12px;
+    border: 1px solid #000000;
+    text-align: center;
+    background-color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+}
+
+.hours-in-table:hover {
+    background-color: #3a7a7b;
+}
+
+td.hours-in-table {
+    color: #000000;
+}
+
+.hours-in-table-unavailable {
+    padding: 20px;
+    border: 1px solid #000000;
+    text-align: center;
+    background-color: #d08282;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+/* =============================== Modal ================================= */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    position: relative;
+    text-align: left;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* =============================== Responsive Design ================================ */
+@media (max-width: 768px) {
+    .appointment-form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .name-container {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment-form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .appointment-form input[type="text"],
+    .appointment-form input[type="email"],
+    .appointment-form select,
+    .appointment-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
 

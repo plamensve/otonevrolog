@@ -29,3 +29,18 @@ class AppointmentBooking(models.Model):
         null=False,
         blank=False
     )
+
+
+class AppointmentSlot(models.Model):
+    day = models.CharField()
+    time = models.CharField()
+    is_available = models.BooleanField(
+        default=True
+    )
+
+    booking = models.ForeignKey(
+        AppointmentBooking,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
