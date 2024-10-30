@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
     {# -------------- Appointment form --------------------------------#}
@@ -24,7 +25,7 @@
             </div>
         </div>
     </div>
-
+    
     {# -------------- Appointment table --------------------------------#}
     <div class="table-container">
         <h1 class="table-title">Available Hours</h1>
@@ -33,29 +34,15 @@
                 <tr class="days-in-table">
                     <th>{{ day }}</th>
                     {% for hour in hours %}
-
                         {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in available_slot %}
                             <td class="hours-in-table-unavailable">Unavailable</td>
                         {% else %}
                             <td class="hours-in-table" onclick="openForm('{{ day }}', '{{ hour }}')">{{ hour }}</td>
                         {% endif %}
-
                     {% endfor %}
                 </tr>
             {% endfor %}
         </table>
     </div>
-
-    <script>
-        function openForm(day, hour) {
-            document.getElementById("appointmentModal").style.display = "flex";
-            document.getElementById("day").value = day;
-            document.getElementById("hour").value = hour;
-        }
-
-        function closeForm() {
-            document.getElementById("appointmentModal").style.display = "none";
-        }
-    </script>
-
+    <script src="{% static 'js/appointmentModal.js' %}"></script>
 {% endblock %}

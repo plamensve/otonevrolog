@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Book you appointment form">
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0004_appointmentslot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0005_remove_appointmentslot_date_appointmentslot_booking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0006_alter_appointmentslot_day_alter_appointmentslot_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a/storage_v2/_src_/database/otonevrolog.0vaJ2w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a/storage_v2/_src_/database/otonevrolog.0vaJ2w/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Book you appointment functionality">
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/appointmentModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +22,7 @@
         <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -138,7 +134,7 @@
       <workItem from="1730274633692" duration="3134000" />
       <workItem from="1730277796257" duration="1668000" />
       <workItem from="1730279483939" duration="168000" />
-      <workItem from="1730279659590" duration="12505000" />
+      <workItem from="1730279659590" duration="13180000" />
     </task>
     <task id="LOCAL-00001" summary="Django Advance: Final project">
       <option name="closed" value="true" />
@@ -164,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730246846792</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ADD: Book you appointment functionality">
+      <option name="closed" value="true" />
+      <created>1730292237508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730292237508</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +178,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Django Advance: Final project" />
     <MESSAGE value="ADD: Book you appointment form" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD: Book you appointment form" />
+    <MESSAGE value="ADD: Book you appointment functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD: Book you appointment functionality" />
   </component>
 </project>
