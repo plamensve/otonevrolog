@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
-from otonevrolog_main.web.forms import AppointmentBookingCreateForm
+from otonevrolog_main.web.forms import AppointmentBookingCreateForm, CustomCreateUserForm
 from otonevrolog_main.web.models import AppointmentSlot
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 
 def index(request):
@@ -30,8 +34,10 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def register(request):
-    return render(request, 'register.html')
+class RegisterView(CreateView):
+    form_class = CustomCreateUserForm
+    template_name = 'register.html'
+    success_url = reverse_lazy('index')
 
 
 def login(request):

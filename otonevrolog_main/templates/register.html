@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <body>
-    <h1>Register page</h1>
+    <form method="POST" class="register-form">
+        <h1 class="register-form-topic">Register Account</h1>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Register</button>
+    </form>
 </body>
 {% endblock %}
