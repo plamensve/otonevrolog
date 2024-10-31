@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Book you appointment functionality">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/front-photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/toggleMenuMobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/otonevrolog_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/otonevrolog_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/appointmentModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/appointmentModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +132,8 @@
       <workItem from="1730277796257" duration="1668000" />
       <workItem from="1730279483939" duration="168000" />
       <workItem from="1730279659590" duration="21980000" />
-      <workItem from="1730308517426" duration="2375000" />
+      <workItem from="1730308517426" duration="3564000" />
+      <workItem from="1730352017172" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="Django Advance: Final project">
       <option name="closed" value="true" />
@@ -185,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730293121755</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ADD: Book you appointment functionality">
+      <option name="closed" value="true" />
+      <created>1730311434112</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730311434112</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -30,9 +30,13 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def register(request):
+    return render(request, 'register.html')
+
+
 def login(request):
     return render(request, 'login.html')
 
 
-def register(request):
-    return render(request, 'register.html')
+def logout(request):
+    pass

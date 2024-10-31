@@ -119,9 +119,6 @@
 }
 
 /* =============================== Table container ================================= */
-.table-container th, .table-container td {
-    width: 80px; /*  фиксирана ширина за всички клетки */
-}
 
 .table-container {
     width: 100%;
