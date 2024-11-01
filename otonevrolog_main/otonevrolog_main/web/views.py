@@ -1,5 +1,5 @@
-from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect
+from django.contrib.auth.views import LoginView, LogoutView
+from django.shortcuts import redirect
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm, CustomCreateUserForm, CreateUserLoginForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot
 from django.shortcuts import render
@@ -45,5 +45,5 @@ class CustomLoginView(LoginView):
     success_url = reverse_lazy('index')
 
 
-def logout(request):
-    pass
+class CustomLogoutView(LogoutView):
+    next_page = reverse_lazy('index')

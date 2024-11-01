@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Register form">
-      <change afterPath="$PROJECT_DIR$/static/css/login-form.css" afterDir="false" />
+    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Login logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/appointmentModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/appointmentModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +141,7 @@
       <workItem from="1730404602338" duration="4369000" />
       <workItem from="1730439721080" duration="2625000" />
       <workItem from="1730476572601" duration="417000" />
-      <workItem from="1730477006975" duration="1613000" />
+      <workItem from="1730477006975" duration="3512000" />
     </task>
     <task id="LOCAL-00001" summary="Django Advance: Final project">
       <option name="closed" value="true" />
@@ -220,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730413820968</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ADD: Login logic">
+      <option name="closed" value="true" />
+      <created>1730478811778</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730478811778</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +236,7 @@
     <MESSAGE value="ADD: Book you appointment functionality" />
     <MESSAGE value="ADD: Register user" />
     <MESSAGE value="ADD: Register form" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD: Register form" />
+    <MESSAGE value="ADD: Login logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD: Login logic" />
   </component>
 </project>
