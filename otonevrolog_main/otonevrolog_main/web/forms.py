@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 from otonevrolog_main.web.models import AppointmentBooking
@@ -47,3 +47,7 @@ class CustomCreateUserForm(UserCreationForm):
             self.fields[field_name].label = ''
         self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Password...'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'})
+
+
+class CreateUserLoginForm(AuthenticationForm):
+    pass

@@ -5,6 +5,6 @@ function openForm(day, hour) {
 }
 
 
-        function closeForm() {
-            document.getElementById("appointmentModal").style.display = "none";
-        }
+function closeForm() {
+    document.getElementById("appointmentModal").style.display = "none";
+}

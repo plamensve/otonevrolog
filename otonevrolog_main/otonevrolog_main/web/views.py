@@ -1,8 +1,7 @@
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
-from otonevrolog_main.web.forms import AppointmentBookingCreateForm, CustomCreateUserForm
-from otonevrolog_main.web.models import AppointmentSlot
+from otonevrolog_main.web.forms import AppointmentBookingCreateForm, CustomCreateUserForm, CreateUserLoginForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -40,8 +39,10 @@ class RegisterView(CreateView):
     success_url = reverse_lazy('index')
 
 
-def login(request):
-    return render(request, 'login.html')
+class CustomLoginView(LoginView):
+    form_class = CreateUserLoginForm
+    template_name = 'login.html'
+    success_url = reverse_lazy('index')
 
 
 def logout(request):
