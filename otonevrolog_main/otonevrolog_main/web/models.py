@@ -1,5 +1,7 @@
 from django.db import models
 
+from otonevrolog_main.accounts.models import CustomUser
+
 
 class AppointmentBooking(models.Model):
     PHONE_NUMBER_MAX_LENGTH = 15
@@ -28,6 +30,12 @@ class AppointmentBooking(models.Model):
         max_length=PHONE_NUMBER_MAX_LENGTH,
         null=False,
         blank=False
+    )
+
+    patient = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        null=True
     )
 
 

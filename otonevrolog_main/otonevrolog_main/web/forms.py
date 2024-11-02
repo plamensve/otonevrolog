@@ -8,7 +8,7 @@ from otonevrolog_main.web.models import AppointmentBooking
 class AppointmentBookingCreateForm(forms.ModelForm):
     class Meta:
         model = AppointmentBooking
-        fields = '__all__'
+        exclude = ('patient',)
 
         labels = {
             'first_name': 'First Name',

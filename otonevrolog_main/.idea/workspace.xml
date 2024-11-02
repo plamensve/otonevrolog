@@ -4,33 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Register, Login, Logout logic">
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/migrations/0002_alter_customuser_options_alter_customuser_managers_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/patient_profile/dashboard.html" afterDir="false" />
+    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout">
+      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0007_appointmentbooking_patient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a/storage_v2/_src_/database/otonevrolog.0vaJ2w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bea85574-57dc-4066-8bf0-4cdf57c3325a/storage_v2/_src_/database/otonevrolog.0vaJ2w/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/doctor_profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/patient_profile/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/patient_profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login-form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_profile/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient_profile/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +69,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.otonevrolog_main.executor&quot;: &quot;Run&quot;,
+    &quot;Django Server.otonevrolog_main.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -166,7 +157,10 @@
       <workItem from="1730477006975" duration="7880000" />
       <workItem from="1730496220425" duration="2000" />
       <workItem from="1730557901454" duration="1013000" />
-      <workItem from="1730558923184" duration="3375000" />
+      <workItem from="1730558923184" duration="4775000" />
+      <workItem from="1730569449551" duration="148000" />
+      <workItem from="1730569602527" duration="1094000" />
+      <workItem from="1730570712607" duration="11318000" />
     </task>
     <task id="LOCAL-00001" summary="Django Advance: Final project">
       <option name="closed" value="true" />
@@ -256,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730480788972</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout">
+      <option name="closed" value="true" />
+      <created>1730562379408</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730562379408</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +273,7 @@
     <MESSAGE value="ADD: Register form" />
     <MESSAGE value="ADD: Login logic" />
     <MESSAGE value="ADD: Register, Login, Logout logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD: Register, Login, Logout logic" />
+    <MESSAGE value="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout" />
   </component>
 </project>

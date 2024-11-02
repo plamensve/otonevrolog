@@ -8,7 +8,7 @@
     <div class="welcome-text">
         <h1 class="welcome-text">Welcome to Our Virtual Consultation Center!</h1>
     </div>
-    
+
     {# -------------- Appointment table and calendar --------------------------------#}
     <div class="table-calendar-container">
         <div class="table-container">
@@ -17,7 +17,7 @@
                     <tr class="days-in-table">
                         <th>{{ day }}</th>
                         {% for hour in hours %}
-                            {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in available_slot %}
+                            {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in unavailable_slot %}
                                 <td class="hours-in-table-unavailable">Unavailable</td>
                             {% else %}
                                 <td class="hours-in-table" onclick="openForm('{{ day }}', '{{ hour }}')">{{ hour }}</td>
@@ -47,14 +47,19 @@
                     <!-- Скрито поле за часа -->
                     <input type="hidden" id="hour" name="hour">
                     {{ form.as_p }}
-                    <button type="submit" class="submit-btn">Submit</button>
-                    <p class="appointment-form-under-button">
-                        You don't have an account? <a href="{% url 'register' %}" class="register-link">Register here</a>
-                    </p>
+                    {% if request.user.is_authenticated %}
+                        <button type="submit" class="submit-btn">Submit</button>
+                    {% else %}
+                        <p class="appointment-form-under-button">
+                            You don't have an account? <a href="{% url 'register' %}" class="register-link">Register
+                            here</a>
+                        </p>
+                        <button type="submit" class="submit-btn">Register Account</button>
+                    {% endif %}
                 </form>
             </div>
         </div>
     </div>
     <script src="{% static 'js/appointmentModal.js' %}"></script>
-    <script src="{% static 'js/calendar.js' %}"></script> 
+    <script src="{% static 'js/calendar.js' %}"></script>
 {% endblock %}

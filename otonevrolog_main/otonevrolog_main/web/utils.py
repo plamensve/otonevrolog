@@ -1,15 +1,15 @@
-from otonevrolog_main.web.models import AppointmentSlot
+from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking
 
 
-def get_taken_slots():
-    # Извличане и преобразуване на заетите слотове в подходящ формат
-    taken_slots = AppointmentSlot.objects.filter(is_available=False)
-    return [f"{slot.day},{slot.time}" for slot in taken_slots]
+def save_form_with_patient_id(form, patient_id):
+    booking = form.save(commit=False)
+    booking.patient_id = patient_id
+    booking.save()
+
+    return booking
 
 
-def create_appointment_slot(form, day, hour):
-    # Създаване на нов AppointmentSlot обект
-    booking = form.save()
+def create_appointment_slot(day, hour, booking):
     appointment_slot = AppointmentSlot(
         day=day,
         time=hour,
@@ -17,3 +17,14 @@ def create_appointment_slot(form, day, hour):
         booking=booking,
     )
     appointment_slot.save()
+
+    return appointment_slot
+
+
+def get_taken_slots():
+    taken_slots = AppointmentSlot.objects.filter(is_available=False)
+    return [f"{slot.day},{slot.time}" for slot in taken_slots]
+
+
+def get_all_appointments():
+    return AppointmentBooking.objects.all()

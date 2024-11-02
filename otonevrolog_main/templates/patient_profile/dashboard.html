@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>DASHBOARD PAGE</h1>
+    <div>
+        {% for appointment in all_appointments %}
+            <p>Appointment ID: {{ appointment.id }} {{ appointment.first_name }}</p>
+        {% endfor %}
+    </div>
 {% endblock %}
