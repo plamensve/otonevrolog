@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # My Apps
 
     'otonevrolog_main.web',
-    'otonevrolog_main.doctor_profile',
+    'otonevrolog_main.accounts',
     'otonevrolog_main.patient_profile'
 ]
 
@@ -134,3 +134,4 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
+AUTH_USER_MODEL = 'accounts.CustomUser'
