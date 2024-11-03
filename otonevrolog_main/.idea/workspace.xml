@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout">
-      <change afterPath="$PROJECT_DIR$/otonevrolog_main/web/migrations/0008_alter_appointmentslot_booking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/schedule.png" afterDir="false" />
+    <list default="true" id="a3e84e7e-e9df-4f10-95a2-318cf9c2e6c3" name="Changes" comment="ADD:Dashboard page">
+      <change afterPath="$PROJECT_DIR$/static/css/buttons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/deleteAppointment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/patient_profile/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/otonevrolog_main/patient_profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/patient_profile/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otonevrolog_main/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/otonevrolog_main/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/patient_profile/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient_profile/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -154,7 +153,7 @@
       <workItem from="1730569449551" duration="148000" />
       <workItem from="1730569602527" duration="1094000" />
       <workItem from="1730570712607" duration="12602000" />
-      <workItem from="1730618534034" duration="7237000" />
+      <workItem from="1730618534034" duration="16811000" />
     </task>
     <task id="LOCAL-00001" summary="Django Advance: Final project">
       <option name="closed" value="true" />
@@ -260,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730586299388</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ADD:Dashboard page">
+      <option name="closed" value="true" />
+      <created>1730628116005</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730628116005</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +283,7 @@
     <MESSAGE value="ADD: Login logic" />
     <MESSAGE value="ADD: Register, Login, Logout logic" />
     <MESSAGE value="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD: Accounts model&#10;Change: urls from web to accounts for register, login and logout" />
+    <MESSAGE value="ADD:Dashboard page" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD:Dashboard page" />
   </component>
 </project>

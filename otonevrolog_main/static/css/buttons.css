@@ -1,0 +1,45 @@
+/* Стил за бутона за изпращане  на формата за записване на част */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #8fdad3;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #4ed2cb;
+}
+
+
+
+/* Стил за бутона за изтриване на записаните часове */
+.submit-btn-delete {
+    width: 100%;
+    padding: 12px;
+    background-color: #8fdad3;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.submit-btn-delete:hover {
+    background-color: #4ed2cb;
+}
+
+/* Ефект при натискане */
+.submit-btn-delete:active {
+    background-color: #3a7a7b; /* По-тъмен нюанс */
+    transform: scale(0.98); /* Леко намаляване на размера */
+}
+
+

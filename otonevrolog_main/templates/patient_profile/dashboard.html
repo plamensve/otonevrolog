@@ -30,8 +30,21 @@
                             {% endfor %}
                             <td>{{ appointment.email }}</td>
                             <td>{{ appointment.phone_number }}</td>
+                            <td>
+                                <td><button type="button" class="submit-btn-delete" onclick="openModal({{ appointment.id }})">Delete</button>
+                            </td>
                         </tr>
                     {% endfor %}
+                    
+                    <!-- Модален прозорец за потвърждение -->
+                    <div id="confirmModal" class="delete-modal">
+                        <div class="delete-modal-content">
+                            <p>Are you sure you want to delete this appointment?</p>
+                            <button id="confirmDelete" class="delete-btn">Yes</button>
+                            <button onclick="closeModal()" class="delete-btn">No</button>
+                        </div>
+                    </div>
+                    
                     </tbody>
                 </table>
             {% else %}
@@ -39,4 +52,8 @@
             {% endif %}
         </div>
     </div>
+    <script>
+        const csrfToken = "{{ csrf_token }}";  // Динамично зареждане на CSRF токена
+    </script>
+    <script src="{% static 'js/deleteAppointment.js' %}"></script>
 {% endblock %}

@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
-
 from otonevrolog_main.web.models import AppointmentBooking
 
 
@@ -26,3 +26,14 @@ class DashboardView(ListView):
 
     def get_queryset(self):
         return AppointmentBooking.objects.filter(patient_id=self.request.user.id).prefetch_related('appointment_slot')
+
+
+def delete_appointment(request, appointment_id):
+
+    if request.method == "POST":
+        appointment = get_object_or_404(AppointmentBooking, id=appointment_id)
+        appointment.delete()
+
+        return JsonResponse({"success": True})
+
+    return JsonResponse({"success": False}, status=400)
