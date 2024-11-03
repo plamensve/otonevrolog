@@ -1,0 +1,135 @@
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #8fdad3;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Добавяме контейнер с overflow за таблицата */
+.appointment-list {
+    overflow-x: auto;
+}
+
+.appointment-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointment-list th,
+.appointment-list td {
+    padding: 12px;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.appointment-list th {
+    background-color: #3a7a7b;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #8fdad3;
+}
+
+.appointment-list td {
+    background-color: #ffffff;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.appointment-list tr:hover td {
+    background-color: #8fdad3;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #8fdad3;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Scrollbar Styling */
+.appointment-list table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.appointment-list table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.appointment-list table::-webkit-scrollbar-thumb {
+    background: #3a7a7b;
+    border-radius: 4px;
+}
+
+.appointment-list table::-webkit-scrollbar-thumb:hover {
+    background: #8fdad3;
+}
+
+/* Responsive Design */
+
+/* Средни екрани (таблети) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .appointment-list th,
+    .appointment-list td {
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+}
+
+/* Малки екрани (телефони) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .appointment-list th,
+    .appointment-list td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Много малки екрани (под 360px ширина) */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .appointment-list th,
+    .appointment-list td {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    /* Оптимизация за четимост на текст */
+    p {
+        font-size: 14px;
+    }
+}

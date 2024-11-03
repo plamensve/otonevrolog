@@ -1,9 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h1>DASHBOARD PAGE</h1>
-    <div>
-        {% for appointment in all_appointments %}
-            <p>Appointment ID: {{ appointment.id }} {{ appointment.first_name }}</p>
-        {% endfor %}
+    <div class="front-picture">
+        <img src="{% static 'images/schedule.png' %}" alt="Front picture">
+    </div>
+    <div class="container">
+        <h1>My Appointments</h1>
+        <div class="appointment-list">
+            {% if patient_appointment %}
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Date of Appointment</th>
+                        <th>Day</th>
+                        <th>Hour</th>
+                        <th>E-mail</th>
+                        <th>Phone Number</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for appointment in patient_appointment %}
+                        <tr>
+                            <td>{{ appointment.first_name }} {{ appointment.last_name }}</td>
+                            {% for slot in appointment.appointment_slot.all %}
+                                <td>{{ slot.day }}</td>
+                                <td>{{ slot.day }}</td>
+                                <td>{{ slot.time }}</td>
+                            {% endfor %}
+                            <td>{{ appointment.email }}</td>
+                            <td>{{ appointment.phone_number }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>You have no appointments</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
