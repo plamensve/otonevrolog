@@ -1,14 +1,20 @@
-/* Основен стил за формата за регистрация */
+.front-picture {
+    position: relative;
+    padding-bottom: 20px; /* Променете стойността според височината на формата */
+}
+
 .login-form {
+    position: relative;
+    margin: -160px auto 0 705px; /* Центрира формата хоризонтално и я измества нагоре */
     width: 100%;
     max-width: 500px;
-    margin: 20px auto;
     padding: 25px;
     background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
     background-size: cover;
     border-radius: 15px;
     box-sizing: border-box;
 }
+
 
 /* Стил за заглавието на формата */
 .login-form h2 {
@@ -61,6 +67,13 @@
 
 .login-form-topic {
     color: #8fdad3;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-form-topic-2 {
+    color: #ffffff;
     font-weight: 600;
     text-align: center;
     margin-bottom: 15px;

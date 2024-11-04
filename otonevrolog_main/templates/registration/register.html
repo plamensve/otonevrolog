@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <form method="POST" class="register-form">
-        <h1 class="register-form-topic">Register Account</h1>
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Register</button>
-    </form>
+    <div class="front-picture">
+        <img src="{% static 'images/schedule.png' %}" alt="Front picture">
+        <form method="POST" class="register-form">
+            <h1 class="register-form-topic">Create Account</h1>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Register</button>
+        </form>
+    </div>
 {% endblock %}
+

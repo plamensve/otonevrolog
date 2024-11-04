@@ -19,7 +19,7 @@ function deleteAppointment(appointmentId) {
     })
     .then(response => {
         if (response.ok) {
-             window.location.href = "/";  // Презарежда страницата, ако изтриването е успешно
+             window.location.href = "/";  // Препраща към началната страница
         } else {
             alert("Failed to delete appointment.");
         }
