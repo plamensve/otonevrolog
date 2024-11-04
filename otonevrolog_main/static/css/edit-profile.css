@@ -1,0 +1,76 @@
+/* Основен стил за формата за редактиране на профила */
+.edit-profile-form {
+    position: relative;
+    margin: -365px auto 50px 697px; /* Добавяне на отстояние от 50px отдолу */
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
+    background-size: cover;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* Стил за заглавието на формата */
+.edit-profile-form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Стил за етикетите на полетата */
+.edit-profile-form label {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Основен стил за полетата за въвеждане */
+.edit-profile-form input[type="text"],
+.edit-profile-form input[type="password"],
+.edit-profile-form input[type="email"],
+.edit-profile-form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Стил за бутона */
+.edit-profile-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #8fdad3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Ефект при задържане на мишката върху бутона */
+.edit-profile-form button:hover {
+    background-color: #4ed2cb;
+}
+
+/* Допълнителен стил за помощни съобщения и тема */
+.edit-profile-form-topic {
+    color: #8fdad3;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.helptext {
+    color: #ffffff;
+}

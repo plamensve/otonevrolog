@@ -36,3 +36,30 @@ class CustomAuthenticationForm(AuthenticationForm):
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'placeholder': 'Password'})
     )
+
+
+class CustomEditUserForm(forms.ModelForm):
+    new_password = forms.CharField(required=False, widget=forms.PasswordInput, label="New Password")
+    confirm_password = forms.CharField(required=False, widget=forms.PasswordInput, label="Confirm New Password")
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number']
+
+    def clean(self):
+        cleaned_data = super().clean()
+        new_password = cleaned_data.get("new_password")
+        confirm_password = cleaned_data.get("confirm_password")
+
+        if new_password and new_password != confirm_password:
+            self.add_error('confirm_password', "Passwords do not match.")
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+
+        new_password = self.cleaned_data.get('new_password')
+        if new_password:
+            user.set_password(new_password)
+        if commit:
+            user.save()
+        return user

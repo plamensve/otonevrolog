@@ -71,6 +71,22 @@
     width: 100%;
 }
 
+/* Добавете CSS за стилизиране на бутона, ако е необходимо */
+.edit-profile-button {
+    margin-top: 10px;
+}
+
+.btn-edit-profile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-edit-profile i {
+    margin-right: 5px;
+}
+
 /* Респонсив стилове за таблети (ширина до 768px) */
 
 @media (max-width: 768px) {

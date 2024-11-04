@@ -14,19 +14,22 @@
         <!-- Информация за потребителя вдясно от снимката -->
         <div class="user-profile-info">
             <h1 class="user-profile-name">{{ current_user.first_name }} {{ current_user.last_name }}</h1>
-            <p class="user-profile-bio">Кратко описание или биография на потребителя.</p>
-
+            
+            <!-- Бутон за редакция с иконка на молив -->
+            <div class="edit-profile-button">
+                <a href="{% url 'edit_profile' current_user.pk %}" class="btn btn-edit-profile">
+                    <i class="fas fa-pencil-alt"></i> Edit Profile
+                </a>
+            </div>
+            
             <div class="user-profile-details">
                 <p><strong>Email:</strong> {{ current_user.email }}</p>
-                <p><strong>Телефон:</strong> {{ current_user.phone_number }}</p>
-                <p><strong>Адрес:</strong> София, България</p>
-                <p><strong>Длъжност:</strong> Програмист</p>
+                <p><strong>Phone Number:</strong> {{ current_user.phone_number }}</p>
             </div>
 
             <div class="user-profile-links">
-                <a href="#">Портфолио</a>
-                <a href="#">Проекти</a>
-                <a href="#">Контакт</a>
+                <a href="{% url 'dashboard' %}">My Appointments</a>
+                <a href="#">Medical Examination Results</a>
             </div>
         </div>
     </div>
