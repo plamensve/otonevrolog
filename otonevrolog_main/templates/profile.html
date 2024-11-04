@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <body class="body-profile-page">
+    <div class="front-picture">
+        <img src="{% static 'images/schedule.png' %}" alt="Front picture">
+    </div>
+    <div class="user-profile-container">
+        <!-- Профилна снимка в лявата страна -->
+        <div class="user-profile-image">
+            <img src="{% static 'images/profile-photo.jpg' %}" alt="Profile Picture">
+        </div>
+
+        <!-- Информация за потребителя вдясно от снимката -->
+        <div class="user-profile-info">
+            <h1 class="user-profile-name">{{ current_user.first_name }} {{ current_user.last_name }}</h1>
+            <p class="user-profile-bio">Кратко описание или биография на потребителя.</p>
+
+            <div class="user-profile-details">
+                <p><strong>Email:</strong> {{ current_user.email }}</p>
+                <p><strong>Телефон:</strong> {{ current_user.phone_number }}</p>
+                <p><strong>Адрес:</strong> София, България</p>
+                <p><strong>Длъжност:</strong> Програмист</p>
+            </div>
+
+            <div class="user-profile-links">
+                <a href="#">Портфолио</a>
+                <a href="#">Проекти</a>
+                <a href="#">Контакт</a>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

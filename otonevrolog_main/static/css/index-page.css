@@ -13,7 +13,7 @@
 .appointment-table-topic{
     background-color: #3a7a7b;
     color: #ffffff;
-    max-width: 1102px;
+    max-width: 1093px;
     padding: 5px 5px;
     margin-left: 3px;
     text-align: center; /* центрира текста по хоризонтала */
@@ -324,14 +324,22 @@ td.hours-in-table {
     display: block;
 }
 
-.welcome-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.welcome-section {
     background-color: #3a7a7b;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 25px 25px; /* Настройте отстоянията според нуждите */
+    color: #ffffff;
+    margin-top: -20px;
+}
+
+.welcome-text h1 {
+    margin: 0;
+    padding: 0;
     color: #ffffff;
 }
+
 
 .table-calendar-container {
     display: flex;
@@ -419,8 +427,6 @@ td.hours-in-table {
     position: relative;
     z-index: 1;
 }
-
-
 
 /* Стил за основния контейнер на календара */
 .flatpickr-calendar {

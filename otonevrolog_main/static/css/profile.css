@@ -1,0 +1,130 @@
+
+.body-profile-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.user-profile-container {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 20px; /* Добавя разстояние между профила и футъра */
+}
+
+.user-profile-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.user-profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.user-profile-info {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.user-profile-name {
+    font-size: 24px;
+    margin: 0;
+}
+
+.user-profile-bio {
+    color: #666;
+    margin: 10px 0;
+}
+
+.user-profile-details p {
+    margin: 5px 0;
+}
+
+.user-profile-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #3a7a7b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-profile-links a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 15px;
+    background-color: #3a7a7b;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+/* Респонсив стилове за таблети (ширина до 768px) */
+
+@media (max-width: 768px) {
+    .user-profile-container {
+        flex-direction: column;
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .user-profile-image {
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .user-profile-info {
+        padding-left: 0;
+    }
+
+    .user-profile-name {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .user-profile-bio {
+        text-align: center;
+    }
+
+    .user-profile-links {
+        text-align: center;
+    }
+}
+
+/* Респонсив стилове за мобилни устройства (ширина до 480px) */
+
+@media (max-width: 480px) {
+    .user-profile-container {
+        padding: 10px;
+    }
+
+    .user-profile-name {
+        font-size: 20px;
+    }
+
+    .user-profile-details p {
+        font-size: 14px;
+    }
+
+    .user-profile-links a {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+    .site-footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

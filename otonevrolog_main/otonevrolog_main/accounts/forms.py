@@ -5,16 +5,18 @@ from otonevrolog_main.accounts.models import CustomUser
 
 UserModel = get_user_model()
 
+
 class CustomCreateUserForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'password1', 'password2']
 
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Username...'}),
             'first_name': forms.TextInput(attrs={'placeholder': 'First name...'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Last name...'}),
             'email': forms.TextInput(attrs={'placeholder': 'E-mail address...'}),
+            'phone_number': forms.TextInput(attrs={'placeholder': '+359883112233'}),
             'password1': forms.PasswordInput(attrs={'placeholder': 'Password...'}),
             'password2': forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'}),
         }
