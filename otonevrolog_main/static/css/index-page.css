@@ -10,6 +10,17 @@
     box-shadow:  8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.appointment-table-topic{
+    background-color: #3a7a7b;
+    color: #ffffff;
+    max-width: 1102px;
+    padding: 5px 5px;
+    margin-left: 3px;
+    text-align: center; /* центрира текста по хоризонтала */
+    display: flex;
+    align-items: center; /* центрира текста по вертикала */
+    justify-content: center; /* центрира текста по хоризонтала */
+}
 
 .name-container {
     display: flex;
@@ -408,3 +419,100 @@ td.hours-in-table {
     position: relative;
     z-index: 1;
 }
+
+
+
+/* Стил за основния контейнер на календара */
+.flatpickr-calendar {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px; /* Padding само за горната и долната част */
+    width: 370px; /* Увеличена ширина */
+    overflow: hidden; /* Скрива излишното съдържание */
+}
+/* Стил за заглавната част на календара (месец и година) */
+.flatpickr-month {
+    color: #8fdad3; /* Цвят на текста за заглавието */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 20px; /* Увеличен размер */
+}
+
+/* Стил за текущия месец и година */
+.flatpickr-current-month {
+    color: #ffffff; /* Бял цвят за месеца и годината */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flatpickr-current-month .cur-month {
+    color: #ffffff; /* Бял цвят за името на месеца */
+    font-size: 24px; /* Увеличен размер на месеца */
+}
+
+.flatpickr-current-month .numInputWrapper {
+    color: #ffffff; /* Бял цвят за годината */
+}
+
+.flatpickr-current-month .numInputWrapper input {
+    color: #ffffff; /* Бял цвят за годината */
+    border: none;
+    background: transparent;
+    font-size: 24px; /* Увеличен размер на годината */
+}
+
+/* Бутони за навигация в календара */
+.flatpickr-prev-month, .flatpickr-next-month {
+    color: #ffffff; /* Цвят на стрелките */
+    font-size: 24px; /* Увеличен размер на стрелките */
+    cursor: pointer;
+}
+
+/* Стил за дните от седмицата */
+.flatpickr-weekday {
+    color: #8fdad3;
+    font-weight: bold;
+    font-size: 16px; /* Увеличен размер */
+    padding: 10px 0;
+}
+
+/* Стил за отделните дати */
+.flatpickr-day {
+    width: 42px; /* Увеличено от 36px */
+    height: 42px; /* Увеличено от 36px */
+    margin: 5px; /* Увеличено от 4px */
+    line-height: 42px;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.flatpickr-day:hover {
+    background-color: #8fdad3; /* Фон при задържане */
+    color: #3a7a7b;
+}
+
+.flatpickr-day.selected {
+    background-color: #ffffff; /* Фон за избрана дата */
+    color: #3a7a7b;
+}
+
+/* Дни, които са неактивни или извън текущия месец */
+.flatpickr-day.disabled, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay {
+    color: #888888;
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+/* Увеличаване на календара */
+.flatpickr-calendar .flatpickr-innerContainer {
+    font-size: 18px; /* Увеличен шрифт за съдържанието */
+    padding: 5px;
+}
+
+
+

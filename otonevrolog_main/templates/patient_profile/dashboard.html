@@ -39,7 +39,7 @@
                     <!-- Модален прозорец за потвърждение -->
                     <div id="confirmModal" class="delete-modal">
                         <div class="delete-modal-content">
-                            <p>Are you sure you want to delete this appointment?</p>
+                            <p class="appointment-text">Are you sure you want to delete this appointment?</p>
                             <button id="confirmDelete" class="delete-btn">Yes</button>
                             <button onclick="closeModal()" class="delete-btn">No</button>
                         </div>
@@ -48,7 +48,7 @@
                     </tbody>
                 </table>
             {% else %}
-                <p>You have no appointments</p>
+                <p class="appointment-text">You have no appointments</p>
             {% endif %}
         </div>
     </div>

@@ -1,13 +1,9 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
-
-from otonevrolog_main.accounts import models
 from otonevrolog_main.accounts.models import CustomUser
 
 UserModel = get_user_model()
-
 
 class CustomCreateUserForm(UserCreationForm):
     class Meta:
@@ -31,5 +27,10 @@ class CustomCreateUserForm(UserCreationForm):
         self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'})
 
 
-class CreateUserLoginForm(AuthenticationForm):
-    pass
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Username or E-mail'})
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'})
+    )

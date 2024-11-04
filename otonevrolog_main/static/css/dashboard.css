@@ -16,10 +16,10 @@ h1 {
     margin-bottom: 20px;
 }
 
-p {
+.appointment-text {
     text-align: center;
-    font-size: 16px;
-    color: #8fdad3;
+    font-size: 26px;
+    color: #ffffff;
     font-weight: bold;
     margin: 20px 0;
 }
