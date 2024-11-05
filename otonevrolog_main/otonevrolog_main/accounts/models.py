@@ -1,9 +1,9 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 
-class CustomUser(AbstractUser):
+class CustomUser(AbstractUser): #TODO: може би трябва да се добави PermissionsMixin
     MIN_LENGTH_PHONE_NUMBER = 10
     MAX_LENGTH_PHONE_NUMBER = 13
 

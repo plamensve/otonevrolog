@@ -1,8 +1,8 @@
 /* Основен стил за формата за редактиране на профила */
 .edit-profile-form {
     position: relative;
-    margin: -365px auto 50px 697px; /* Добавяне на отстояние от 50px отдолу */
-    width: 100%;
+    margin: -355px auto 20px auto; /* Отрицателна стойност за повдигане нагоре */
+    width: 90%;
     max-width: 500px;
     padding: 25px;
     background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
@@ -73,4 +73,72 @@
 
 .helptext {
     color: #ffffff;
+}
+
+/* Стилове за по-малки екрани */
+@media (max-width: 768px) {
+    /* Оформление за таблети */
+    .edit-profile-form {
+        margin: 20px auto;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Оформление за мобилни устройства */
+    .edit-profile-form {
+        margin: 20px auto;
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Заглавие на формата */
+    .edit-profile-form h2 {
+        font-size: 20px;
+    }
+
+    /* Стил за етикетите на полетата */
+    .edit-profile-form label {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    /* Основен стил за полетата за въвеждане */
+    .edit-profile-form input[type="text"],
+    .edit-profile-form input[type="password"],
+    .edit-profile-form input[type="email"],
+    .edit-profile-form input[type="tel"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Стил за бутона */
+    .edit-profile-form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Допълнителни стилове за много малки екрани */
+@media (max-width: 320px) {
+    .edit-profile-form {
+        padding: 15px;
+    }
+
+    .edit-profile-form h2 {
+        font-size: 18px;
+    }
+
+    .edit-profile-form input[type="text"],
+    .edit-profile-form input[type="password"],
+    .edit-profile-form input[type="email"],
+    .edit-profile-form input[type="tel"] {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .edit-profile-form button {
+        padding: 6px;
+        font-size: 12px;
+    }
 }

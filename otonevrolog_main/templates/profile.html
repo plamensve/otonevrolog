@@ -6,16 +6,13 @@
         <img src="{% static 'images/schedule.png' %}" alt="Front picture">
     </div>
     <div class="user-profile-container">
-        <!-- Профилна снимка в лявата страна -->
         <div class="user-profile-image">
             <img src="{% static 'images/profile-photo.jpg' %}" alt="Profile Picture">
         </div>
-
-        <!-- Информация за потребителя вдясно от снимката -->
+        
         <div class="user-profile-info">
             <h1 class="user-profile-name">{{ current_user.first_name }} {{ current_user.last_name }}</h1>
             
-            <!-- Бутон за редакция с иконка на молив -->
             <div class="edit-profile-button">
                 <a href="{% url 'edit_profile' current_user.pk %}" class="btn btn-edit-profile">
                     <i class="fas fa-pencil-alt"></i> Edit Profile
