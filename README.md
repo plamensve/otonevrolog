@@ -1,4 +1,4 @@
-Otonevrolog
+<h1>Otonevrolog</h1>
 Otonevrolog Main is a Django-based medical application designed to manage patient profiles, appointment scheduling, and user accounts. The application aims to streamline the process of booking and managing medical appointments for both patients and healthcare providers.
 
 Features
