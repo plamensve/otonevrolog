@@ -13,6 +13,7 @@
         <div class="user-profile-info">
             <h1 class="user-profile-name">{{ current_user.first_name }} {{ current_user.last_name }}</h1>
             
+            
             <div class="edit-profile-button">
                 <a href="{% url 'edit_profile' current_user.pk %}" class="btn btn-edit-profile">
                     <i class="fas fa-pencil-alt"></i> Edit Profile
@@ -20,6 +21,7 @@
             </div>
             
             <div class="user-profile-details">
+                <p><strong>Username:</strong> {{ current_user.username }}</p>
                 <p><strong>Email:</strong> {{ current_user.email }}</p>
                 <p><strong>Phone Number:</strong> {{ current_user.phone_number }}</p>
             </div>
