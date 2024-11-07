@@ -10,30 +10,25 @@ Responsive Design: The application includes a user-friendly interface with CSS a
 <h1>Installation</h1>
 Clone the repository:
 
-bash
-Copy code
+
 git clone https://github.com/yourusername/otonevrolog_main.git
 cd otonevrolog_main
 Create a virtual environment:
 
-bash
-Copy code
+
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
 Install dependencies:
 
-bash
-Copy code
+
 pip install -r requirements.txt
 Apply migrations:
 
-bash
-Copy code
+
 python manage.py migrate
 Run the server:
 
-bash
-Copy code
+
 python manage.py runserver
 Access the application: Open your browser and navigate to http://127.0.0.1:8000.
 
