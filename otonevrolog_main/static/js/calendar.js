@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         enableTime: false,
         dateFormat: "Y-m-d",
         locale: {
-            firstDayOfWeek: 0 // Започва седмицата от понеделник
+            firstDayOfWeek: 1 // Започва седмицата от понеделник
         }
     });
 });
