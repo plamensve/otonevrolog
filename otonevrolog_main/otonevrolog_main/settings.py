@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'otonevrolog_main.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "otonevrolog",
+        "NAME": "otonevrolog_main",
         "USER": "admin",
         "PASSWORD": "admin",
         "HOST": "127.0.0.1",

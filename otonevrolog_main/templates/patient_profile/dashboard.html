@@ -30,9 +30,11 @@
                             {% endfor %}
                             <td>{{ appointment.email }}</td>
                             <td>{{ appointment.phone_number }}</td>
+                        {% if can_delete_appointment %}
                             <td>
                                 <td><button type="button" class="submit-btn-delete" onclick="openModal({{ appointment.id }})">Delete</button>
                             </td>
+                        {% endif %}
                         </tr>
                     {% endfor %}
                     

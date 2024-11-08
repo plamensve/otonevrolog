@@ -17,8 +17,6 @@ class CustomCreateUserForm(UserCreationForm):
             'last_name': forms.TextInput(attrs={'placeholder': 'Last name...'}),
             'email': forms.TextInput(attrs={'placeholder': 'E-mail address...'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '+359883112233'}),
-            'password1': forms.PasswordInput(attrs={'placeholder': 'Password...'}),
-            'password2': forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -27,6 +25,13 @@ class CustomCreateUserForm(UserCreationForm):
             self.fields[field_name].label = ''
         self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Password...'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'})
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.phone_number = self.cleaned_data.get('phone_number')
+        if commit:
+            user.save()
+        return user
 
 
 class CustomAuthenticationForm(AuthenticationForm):
