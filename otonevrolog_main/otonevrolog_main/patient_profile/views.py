@@ -25,7 +25,11 @@ class DashboardView(ListView):
     context_object_name = 'patient_appointment'
 
     def get_queryset(self):
-        return AppointmentBooking.objects.filter(patient_id=self.request.user.id).prefetch_related('appointment_slot')
+        if self.request.user.is_superuser:
+            return AppointmentBooking.objects.all().prefetch_related('appointment_slot')
+        else:
+            return AppointmentBooking.objects.filter(patient_id=self.request.user.id).prefetch_related(
+                'appointment_slot')
 
 
 def delete_appointment(request, appointment_id):

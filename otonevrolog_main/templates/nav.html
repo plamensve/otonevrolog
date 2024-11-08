@@ -12,7 +12,7 @@
 <nav>
     <ul class="nav-links">
         {% if request.user.is_authenticated %}
-            <li class="user-name">Welcome, {{ request.user.first_name }} {{ request.user.last_name }} |</li>
+            <li class="user-name">Welcome, {{ request.user.first_name|default:'Administrator' }} {{ request.user.last_name }} |</li>
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
             <li><a href="{% url 'profile' request.user.pk %}">Profile</a></li>
