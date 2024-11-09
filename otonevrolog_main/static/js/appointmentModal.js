@@ -9,9 +9,11 @@ function validateAndSubmitForm(event) {
     const form = document.getElementById("appointmentForm");
 
     if (form.checkValidity()) {
-        form.submit(); // Изпраща формата само ако е валидна
+        // Изпраща формата само ако е валидна
+        form.submit();
     } else {
-        form.reportValidity(); // Показва съобщения за грешка, без да затваря модала
+        // Показва съобщения за грешки, без да затваря модала
+        form.reportValidity();
     }
 }
 

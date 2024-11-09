@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 
 from otonevrolog_main.accounts.models import CustomUser
@@ -38,6 +40,10 @@ class AppointmentBooking(models.Model):
         on_delete=models.CASCADE,
         null=True,
         related_name='customer_user'
+    )
+
+    unique_id = models.UUIDField(
+        default=uuid.uuid4,
     )
 
 

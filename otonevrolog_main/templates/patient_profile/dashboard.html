@@ -40,7 +40,7 @@
                             {% if can_send_result %}
                                     
                                 <td>
-                                    <a href="{% url 'patient-result' appointment.patient_id %}">
+                                    <a href="{% url 'patient-result' appointment.patient_id appointment.unique_id %}">
                                         <button type="button" class="submit-btn-result">Result</button>
                                     </a>
                                 </td>

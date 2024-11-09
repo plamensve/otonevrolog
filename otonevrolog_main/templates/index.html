@@ -40,7 +40,7 @@
     </div>
 
     <!-- Appointment form modal -->
-    <div id="appointmentModal" class="modal">
+    <div id="appointmentModal" class="modal" style="{% if show_modal %}display: flex;{% else %}display: none;{% endif %}">
         <div class="modal-content">
             <div class="form-container">
                 <form id="appointmentForm" method="POST" action="{% url 'index' %}" class="appointment-form" onsubmit="validateAndSubmitForm(event)">

@@ -55,10 +55,10 @@ def delete_appointment(request, appointment_id):
     return JsonResponse({"success": False}, status=400)
 
 
-def patient_result(request, pk):
+def patient_result(request, pk, unique_id):
     patient = CustomUser.objects.get(pk=pk)
     form = AppointmentResultForm()
-    appointment_booking = AppointmentBooking.objects.get(email=patient.email)
+    appointment_booking = AppointmentBooking.objects.get(unique_id=unique_id)
 
     try:
         # Намираме конкретния AppointmentSlot по booking_id
@@ -81,7 +81,7 @@ def patient_result(request, pk):
             return redirect('index')
 
     context = {
-        'patient': patient,
+        'appointment_booking': appointment_booking,
         'form': form,
     }
     return render(request, 'patient_profile/patient_result.html', context)
