@@ -4,7 +4,7 @@ from django.views.generic import ListView
 
 from otonevrolog_main.accounts.models import CustomUser
 from otonevrolog_main.web.forms import AppointmentResultForm
-from otonevrolog_main.web.models import AppointmentBooking
+from otonevrolog_main.web.models import AppointmentBooking, AppointmentSlot
 
 
 # --------------------------------FBV-------------------------------- #
@@ -34,7 +34,7 @@ class DashboardView(ListView):
         else:
             return AppointmentBooking.objects.filter(patient_id=user.id).prefetch_related('appointment_slot')
 
-    def get_context_data(self, **kwargs):  # If don't have permission will not see 'Delete button'
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['can_delete_appointment'] = not self.request.user.groups.filter(name="Doctor Staff").exists()
         return context
@@ -57,6 +57,13 @@ def delete_appointment(request, appointment_id):
 def patient_result(request, pk):
     patient = CustomUser.objects.get(pk=pk)
     form = AppointmentResultForm()
+    appointment_booking = AppointmentBooking.objects.get(patient_id=patient.pk)
+
+    try:
+        # Намираме конкретния AppointmentSlot по booking_id
+        appointment_slot = appointment_booking.appointment_slot.get(booking_id=appointment_booking.pk)
+    except AppointmentSlot.DoesNotExist:
+        appointment_slot = None
 
     if request.method == 'POST':
         form = AppointmentResultForm(request.POST)
@@ -64,6 +71,12 @@ def patient_result(request, pk):
             appointment_result = form.save(commit=False)
             appointment_result.custom_user = patient
             appointment_result.save()
+
+            # Изтриваме конкретния AppointmentSlot, ако съществува
+            if appointment_slot:
+                appointment_slot.delete()
+            appointment_booking.delete()
+
             return redirect('index')
 
     context = {
