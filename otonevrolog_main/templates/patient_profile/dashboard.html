@@ -30,11 +30,14 @@
                             {% endfor %}
                             <td>{{ appointment.email }}</td>
                             <td>{{ appointment.phone_number }}</td>
-                        {% if can_delete_appointment %}
-                            <td>
-                                <td><button type="button" class="submit-btn-delete" onclick="openModal({{ appointment.id }})">Delete</button>
-                            </td>
-                        {% endif %}
+                            {% if can_delete_appointment %}
+                                <td>
+                                    <button type="button" class="submit-btn-delete" onclick="openModal({{ appointment.id }})">Delete</button>
+                                </td>
+                                <td>
+                                    <a href="{% url 'patient-result' appointment.patient_id %}"><button type="button" class="submit-btn-result">Result</button></a>
+                                </td>
+                            {% endif %}
                         </tr>
                     {% endfor %}
                     

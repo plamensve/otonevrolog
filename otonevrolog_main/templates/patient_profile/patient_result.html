@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="front-picture">
+        <img src="{% static 'images/schedule.png' %}" alt="Front picture">
+    </div>
+    <body>
+    <div class="appointment-result-form">
+        <h1>Appointment Result</h1>
+        <div class="patient-info-grid">
+            <div class="patient-info-item">
+                <h3 class="appointment-result-form-patient-info">Patient ID:</h3>
+                <h3 class="appointment-result-form-patient-data">{{ patient.id }}</h3>
+            </div>
+            <div class="patient-info-item">
+                <h3 class="appointment-result-form-patient-info">Name:</h3>
+                <h3 class="appointment-result-form-patient-data">{{ patient.first_name }} {{ patient.last_name }}</h3>
+            </div>
+            <div class="patient-info-item">
+                <h3 class="appointment-result-form-patient-info">Phone number:</h3>
+                <h3 class="appointment-result-form-patient-data">{{ patient.phone_number }}</h3>
+            </div>
+            <div class="patient-info-item">
+                <h3 class="appointment-result-form-patient-info">E-mail:</h3>
+                <h3 class="appointment-result-form-patient-data">{{ patient.email }}</h3>
+            </div>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-pair">
+                <div>
+                    {{ form.nystagmus.label_tag }}
+                    {{ form.nystagmus }}
+                </div>
+                <div>
+                    {{ form.static_samples.label_tag }}
+                    {{ form.static_samples }}
+                </div>
+            </div>
+
+            <div class="input-pair">
+                <div>
+                    {{ form.kinetic_samples.label_tag }}
+                    {{ form.kinetic_samples }}
+                </div>
+                <div>
+                    {{ form.coordination_test.label_tag }}
+                    {{ form.coordination_test }}
+                </div>
+            </div>
+
+            <div class="input-pair">
+                <div>
+                    {{ form.fine_coordination.label_tag }}
+                    {{ form.fine_coordination }}
+                </div>
+                <div>
+                    {{ form.other.label_tag }}
+                    {{ form.other }}
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+    </body>
+{% endblock %}

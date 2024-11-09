@@ -1,0 +1,108 @@
+/* Основен стил за контейнера на формата за резултати */
+.appointment-result-form {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+/* Стил за формата вътре */
+.appointment-result-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Контейнер за подреждане на полетата в две колони */
+.input-pair {
+    display: flex;
+    gap: 10px;
+}
+
+.input-pair div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Основен стил за полетата на формата */
+.appointment-result-form input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.appointment-result-form input[type="text"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.appointment-result-form input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стил за лейбълите */
+.appointment-result-form label {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Стил за бутона за изпращане */
+.appointment-result-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #8fdad3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-result-form button[type="submit"]:hover {
+    background-color: #06ecff;
+    color: #ffffff;
+}
+
+/* Контейнер за подреждане в две колони */
+.patient-info-grid {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+/* Стил за всеки елемент */
+.patient-info-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Стил за наименованията на полетата */
+.appointment-result-form-patient-info {
+    color: #8fdad3; /* Цвят за етикетите */
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Стил за стойностите на данните */
+.appointment-result-form-patient-data {
+    color: #ffffff;
+    margin: 0;
+}
+
+

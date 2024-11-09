@@ -13,7 +13,7 @@
 .appointment-table-topic{
     background-color: #3a7a7b;
     color: #ffffff;
-    max-width: 1120px;
+    max-width: 1111px;
     padding: 5px 5px;
     margin-left: 3px;
     text-align: center; /* центрира текста по хоризонтала */
@@ -380,6 +380,10 @@ td.hours-in-table {
 .flatpickr-calendar .flatpickr-days .dayContainer {
     transform: scale(0.9); /* Свива таблицата до 90% от оригиналния размер */
     transform-origin: top left; /* Свива от горния ляв ъгъл */
+}
+
+.flatpickr-monthDropdown-month{
+    color: #3a7a7b;
 }
 
 

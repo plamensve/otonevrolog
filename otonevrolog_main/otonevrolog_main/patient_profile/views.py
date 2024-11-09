@@ -1,6 +1,9 @@
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import ListView
+
+from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.web.forms import AppointmentResultForm
 from otonevrolog_main.web.models import AppointmentBooking
 
 
@@ -49,3 +52,22 @@ def delete_appointment(request, appointment_id):
         return JsonResponse({"success": True})
 
     return JsonResponse({"success": False}, status=400)
+
+
+def patient_result(request, pk):
+    patient = CustomUser.objects.get(pk=pk)
+    form = AppointmentResultForm()
+
+    if request.method == 'POST':
+        form = AppointmentResultForm(request.POST)
+        if form.is_valid():
+            appointment_result = form.save(commit=False)
+            appointment_result.custom_user = patient
+            appointment_result.save()
+            return redirect('index')
+
+    context = {
+        'patient': patient,
+        'form': form,
+    }
+    return render(request, 'patient_profile/patient_result.html', context)

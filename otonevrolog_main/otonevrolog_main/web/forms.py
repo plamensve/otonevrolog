@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
-from otonevrolog_main.web.models import AppointmentBooking
+from otonevrolog_main.web.models import AppointmentBooking, AppointmentResult
 
 
 class AppointmentBookingCreateForm(forms.ModelForm):
@@ -27,4 +27,25 @@ class AppointmentBookingCreateForm(forms.ModelForm):
         }
 
 
+class AppointmentResultForm(forms.ModelForm):
+    class Meta:
+        model = AppointmentResult
+        exclude = ('custom_user',)
 
+        labels = {
+            'nystagmus': 'Nystagmus',
+            'static_samples': 'Static Samples',
+            'kinetic_samples': 'Kinetic Samples',
+            'coordination_test': 'Coordination Test',
+            'fine_coordination': 'Fine Coordination',
+            'other': 'Other',
+        }
+
+        widgets = {
+            'nystagmus': forms.TextInput(attrs={'placeholder': 'Please, type nystagmus result...'}),
+            'static_samples': forms.TextInput(attrs={'placeholder': 'Please, type static samples result...'}),
+            'kinetic_samples': forms.TextInput(attrs={'placeholder': 'Please, type kinetic samples result...'}),
+            'coordination_test': forms.TextInput(attrs={'placeholder': 'Please, type coordination test result...'}),
+            'fine_coordination': forms.TextInput(attrs={'placeholder': 'Please, type fine coordination result...'}),
+            'other': forms.TextInput(attrs={'placeholder': 'Other notes...'}),
+        }

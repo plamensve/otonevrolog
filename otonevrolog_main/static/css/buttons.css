@@ -32,6 +32,19 @@
     transition: background-color 0.3s, transform 0.1s;
 }
 
+.submit-btn-result {
+    width: 100%;
+    padding: 12px;
+    background-color: #8fdad3;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
 .submit-btn-delete:hover {
     background-color: #4ed2cb;
 }
@@ -41,5 +54,6 @@
     background-color: #3a7a7b; /* По-тъмен нюанс */
     transform: scale(0.98); /* Леко намаляване на размера */
 }
+
 
 
