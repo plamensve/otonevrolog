@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    {# ----------------------------- Front picture ------------------------------------------------- #}
+    <!-- Front picture section -->
     <div class="front-picture">
         <img src="{% static 'images/front-photo.png' %}" alt="Front picture">
     </div>
+    
     <div class="welcome-section">
-    <div class="welcome-text">
-        <h1>Welcome to Our Virtual Consultation Center!</h1>
+        <div class="welcome-text">
+            <h1>Welcome to Our Virtual Consultation Center!</h1>
+        </div>
     </div>
-</div>
 
-    {# -------------- Appointment table and calendar --------------------------------#}
+    <!-- Appointment table and calendar -->
     <div class="table-calendar-container">
         <div class="table-container">
-        <div class="appointment-table-topic">
-            <p>Click on your desired appointment time and fill out the registration form. This way, we’ll know when you wish to be seen for your consultation.</p>
-        </div>
+            <div class="appointment-table-topic">
+                <p>Click on your desired appointment time and fill out the registration form. This way, we’ll know when you wish to be seen for your consultation.</p>
+            </div>
             <table>
                 {% for day in days_of_week %}
                     <tr class="days-in-table">
@@ -38,32 +39,31 @@
         </div>
     </div>
 
-    {# -------------- Appointment form --------------------------------#}
+    <!-- Appointment form modal -->
     <div id="appointmentModal" class="modal">
         <div class="modal-content">
-            <!-- Формата за записване на час -->
             <div class="form-container">
-                <form method="POST" action="{% url 'index' %}" class="appointment-form">
+                <form id="appointmentForm" method="POST" action="{% url 'index' %}" class="appointment-form" onsubmit="validateAndSubmitForm(event)">
                     <span class="close-button" onclick="closeForm()">X</span>
                     <h1 class="appointment-form-topic">Book Your Appointment</h1>
                     {% csrf_token %}
-                    <!-- Скрито поле за деня -->
                     <input type="hidden" id="day" name="day">
-                    <!-- Скрито поле за часа -->
                     <input type="hidden" id="hour" name="hour">
                     {{ form.as_p }}
+                    
                     {% if request.user.is_authenticated %}
                         <button type="submit" class="submit-btn">Submit</button>
                     {% else %}
                         <p class="appointment-form-under-button">
-                            You don't have an account? <a href="{% url 'register' %}" class="register-link">Register
-                            here</a>
+                            You don't have an account? <a href="{% url 'register' %}" class="register-link">Register here</a>
                         </p>
                     {% endif %}
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript files -->
     <script src="{% static 'js/calendar.js' %}"></script>
     <script src="{% static 'js/appointmentModal.js' %}"></script>
 {% endblock %}

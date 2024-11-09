@@ -23,7 +23,8 @@ class AppointmentBooking(models.Model):
 
     email = models.EmailField(
         null=False,
-        blank=False
+        blank=False,
+        unique=True # Toва поле е уникално, защото правим проверка с него
     )
 
     phone_number = models.CharField(

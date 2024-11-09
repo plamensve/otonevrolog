@@ -37,6 +37,7 @@ class DashboardView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['can_delete_appointment'] = not self.request.user.groups.filter(name="Doctor Staff").exists()
+        context['can_send_result'] = self.request.user.groups.filter(name="Doctor Administrator").exists()
         return context
 
 
@@ -57,7 +58,7 @@ def delete_appointment(request, appointment_id):
 def patient_result(request, pk):
     patient = CustomUser.objects.get(pk=pk)
     form = AppointmentResultForm()
-    appointment_booking = AppointmentBooking.objects.get(patient_id=patient.pk)
+    appointment_booking = AppointmentBooking.objects.get(email=patient.email)
 
     try:
         # Намираме конкретния AppointmentSlot по booking_id
