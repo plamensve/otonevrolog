@@ -94,7 +94,7 @@
 
 /* Стил за наименованията на полетата */
 .appointment-result-form-patient-info {
-    color: #8fdad3; /* Цвят за етикетите */
+    color: #8fdad3;
     font-weight: bold;
     margin: 0;
 }
@@ -105,4 +105,48 @@
     margin: 0;
 }
 
+/* Респонсив стилове */
 
+/* Екрани с ширина до 768px (таблети) */
+@media (max-width: 768px) {
+    .appointment-result-form {
+        padding: 20px;
+    }
+
+    /* Преход към едноколонно подреждане за полета в две колони */
+    .input-pair {
+        flex-direction: column;
+    }
+
+    /* Преход към едноколонно подреждане за грида */
+    .patient-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-result-form button[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+/* Екрани с ширина до 480px (мобилни устройства) */
+@media (max-width: 480px) {
+    .appointment-result-form {
+        padding: 15px;
+    }
+
+    /* Полетата на формата стават по-компактни */
+    .appointment-result-form input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .appointment-result-form label {
+        font-size: 12px;
+    }
+
+    /* Бутон за изпращане става по-малък и подходящ за мобилни */
+    .appointment-result-form button[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
