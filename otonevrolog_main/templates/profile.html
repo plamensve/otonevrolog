@@ -28,7 +28,7 @@
 
             <div class="user-profile-links">
                 <a href="{% url 'dashboard' %}">My Appointments</a>
-                <a href="#">Medical Examination Results</a>
+                <a href="{% url 'medical_examination_results' current_user.pk %}">Medical Examination Results</a>
             </div>
         </div>
     </div>

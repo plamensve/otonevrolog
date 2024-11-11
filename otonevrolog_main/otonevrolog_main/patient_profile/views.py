@@ -79,6 +79,8 @@ def patient_result(request, pk, unique_id):
             appointment_booking.delete()
 
             return redirect('index')
+        else:
+            form = AppointmentResultForm()
 
     context = {
         'appointment_booking': appointment_booking,

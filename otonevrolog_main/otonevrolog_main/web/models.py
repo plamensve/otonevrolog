@@ -1,5 +1,6 @@
 import uuid
 
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 from otonevrolog_main.accounts.models import CustomUser
@@ -26,7 +27,7 @@ class AppointmentBooking(models.Model):
     email = models.EmailField(
         null=False,
         blank=False,
-        unique=True # Toва поле е уникално, защото правим проверка с него
+        unique=True  # Toва поле е уникално, защото правим проверка с него
     )
 
     phone_number = models.CharField(
@@ -62,6 +63,7 @@ class AppointmentSlot(models.Model):
         related_name='appointment_slot'
     )
 
+
 class AppointmentResult(models.Model):
     NYSTAGMUS_MAX_LENGTH = 300
     STATIC_SAMPLES_MAX_LENGTH = 300
@@ -69,6 +71,39 @@ class AppointmentResult(models.Model):
     COORDINATION_TEST_MAX_LENGTH = 300
     FINE_COORDINATION_MAX_LENGTH = 300
     OTHER_MAX_LENGTH = 300
+
+    FIRST_NAME_MAX_LENGTH = 30
+    LAST_NAME_MAX_LENGTH = 30
+    EMAIL_MAX_LENGTH = 30
+    MIN_LENGTH_PHONE_NUMBER = 10
+    MAX_LENGTH_PHONE_NUMBER = 13
+
+    first_name = models.CharField(
+        max_length=FIRST_NAME_MAX_LENGTH,
+        null=False,
+        blank=False,
+    )
+
+    last_name = models.CharField(
+        max_length=LAST_NAME_MAX_LENGTH,
+        null=False,
+        blank=False,
+    )
+
+    email = models.EmailField(
+        max_length=EMAIL_MAX_LENGTH,
+        null=False,
+        blank=False,
+    )
+
+    phone_number = models.CharField(
+        null=False,
+        blank=False,
+        validators=[
+            MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
+            MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
+        ],
+    )
 
     nystagmus = models.TextField(
         max_length=NYSTAGMUS_MAX_LENGTH
@@ -87,7 +122,7 @@ class AppointmentResult(models.Model):
     )
 
     fine_coordination = models.TextField(
-     max_length=FINE_COORDINATION_MAX_LENGTH
+        max_length=FINE_COORDINATION_MAX_LENGTH
     )
 
     other = models.TextField(
@@ -100,3 +135,7 @@ class AppointmentResult(models.Model):
         null=True,
         related_name='appointment_result'
     )
+
+
+
+

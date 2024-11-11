@@ -28,6 +28,10 @@
 
         <form method="POST">
             {% csrf_token %}
+            <input type="hidden" name="first_name" value="{{ appointment_booking.first_name }}">
+            <input type="hidden" name="last_name" value="{{ appointment_booking.last_name }}">
+            <input type="hidden" name="email" value="{{ appointment_booking.email }}">
+            <input type="hidden" name="phone_number" value="{{ appointment_booking.phone_number }}">
             <div class="input-pair">
                 <div>
                     {{ form.nystagmus.label_tag }}
