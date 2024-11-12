@@ -26,7 +26,7 @@
                 <td>{{ result.last_name }}</td>
                 <td>{{ result.email }}</td>
                 <td>{{ result.phone_number }}</td>
-                <td><button class="submit-btn">Results</button></td>
+                <td><a href="{% url 'current-patient-results' result.pk %}" class="submit-btn">Results</a></td>
             </tr>
         {% empty %}
             <tr>

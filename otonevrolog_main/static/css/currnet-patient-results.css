@@ -1,0 +1,66 @@
+.patient-result-details {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.patient-info, .examination-results {
+    margin-bottom: 20px;
+}
+
+.patient-info h2, .examination-results h2 {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.patient-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.patient-info-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.results-table th,
+.results-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.results-table th {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.results-table tr:hover {
+    background-color: #3a7a7b;
+    color: #ffffff;
+}

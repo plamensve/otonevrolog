@@ -25,7 +25,7 @@
                         <th>{{ day }}</th>
                         {% for hour in hours %}
                             {% if day|stringformat:"s"|add:","|add:hour|stringformat:"s" in unavailable_slot %}
-                                <td class="hours-in-table-unavailable">Unavailable</td>
+                                <td class="hours-in-table-unavailable">Unavailable {{ hour }}</td>
                             {% else %}
                                 <td class="hours-in-table" onclick="openForm('{{ day }}', '{{ hour }}')">{{ hour }}</td>
                             {% endif %}

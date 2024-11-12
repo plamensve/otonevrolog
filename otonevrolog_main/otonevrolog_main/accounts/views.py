@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 
 from otonevrolog_main.accounts.forms import CustomCreateUserForm, CustomAuthenticationForm, CustomEditUserForm
 from otonevrolog_main.accounts.models import CustomUser
@@ -63,3 +63,23 @@ class MedicalExaminationResultsView(ListView):
         context = super().get_context_data(**kwargs)
         context['patient'] = self.patient
         return context
+
+
+# ---------------------------CURRENT PATIENT RESULTS FBV------------------#
+
+# def current_patient_results(request, pk):
+#     current_patient = get_object_or_404(AppointmentResult, pk=pk)
+#
+#     context = {
+#         'current_patient': current_patient
+#     }
+#
+#     return render(request, 'patient_profile/current_patient_results.html', context)
+
+
+# --------------------------- CURRENT PATIENT RESULTS CBV ------------------#
+
+class CurrentPatientResultsView(DetailView):
+    model = AppointmentResult
+    template_name = 'patient_profile/current_patient_results.html'
+    context_object_name = 'current_patient'

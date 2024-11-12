@@ -5,7 +5,7 @@
         <img src="{% static 'images/schedule.png' %}" alt="Front picture">
     </div>
     <div class="container">
-        {% if can_send_result or can_delete_appointment %}
+        {% if can_send_result %}
             <h1>Patient Appointments</h1>
         {% else %}
             <h1>My Appointments</h1>
@@ -23,7 +23,9 @@
                         <th>E-mail</th>
                         <th>Phone Number</th>
                         <th>Delete</th>
-                        <th>Results</th>
+                        {% if can_send_result %}
+                            <th>Results</th>
+                        {% endif %}
                     </tr>
                     </thead>
                     <tbody>

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="front-picture">
+    <img src="{% static 'images/schedule.png' %}" alt="Front picture">
+</div>
+<body>
+    <div class="patient-result-details">
+        <h1>Patient Examination Results</h1>
+        
+        <!-- Patient Information -->
+        <div class="patient-info">
+            <h2>Patient Information</h2>
+            <div class="patient-info-grid">
+                <div class="patient-info-item">
+                    <strong>Patient ID:</strong> {{ current_patient.id }}
+                </div>
+                <div class="patient-info-item">
+                    <strong>Name:</strong> {{ current_patient.first_name|upper }} {{ current_patient.last_name|upper }}
+                </div>
+                <div class="patient-info-item">
+                    <strong>Phone Number:</strong> {{ current_patient.phone_number }}
+                </div>
+                <div class="patient-info-item">
+                    <strong>Email:</strong> {{ current_patient.email }}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Examination Results -->
+        <div class="examination-results">
+            <h2>Examination Results</h2>
+            <table class="results-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>Nystagmus</td>
+                    <td>{{ current_patient.nystagmus }}</td>
+                </tr>
+                <tr>
+                    <td>Static Samples</td>
+                    <td>{{ current_patient.static_samples }}</td>
+                </tr>
+                <tr>
+                    <td>Kinetic Samples</td>
+                    <td>{{ current_patient.kinetic_samples }}</td>
+                </tr>
+                <tr>
+                    <td>Coordination Test</td>
+                    <td>{{ current_patient.coordination_test }}</td>
+                </tr>
+                <tr>
+                    <td>Fine Coordination</td>
+                    <td>{{ current_patient.fine_coordination }}</td>
+                </tr>
+                <tr>
+                    <td>Other</td>
+                    <td>{{ current_patient.other }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock %}
