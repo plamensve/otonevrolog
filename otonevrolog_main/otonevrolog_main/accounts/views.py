@@ -5,7 +5,7 @@ from django.views.generic import CreateView, ListView
 
 from otonevrolog_main.accounts.forms import CustomCreateUserForm, CustomAuthenticationForm, CustomEditUserForm
 from otonevrolog_main.accounts.models import CustomUser
-from otonevrolog_main.web.models import AppointmentBooking, AppointmentResult
+from otonevrolog_main.web.models import AppointmentResult
 
 
 class RegisterView(CreateView):

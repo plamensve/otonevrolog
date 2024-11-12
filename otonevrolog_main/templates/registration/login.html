@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<body class="login-page-body">
+    <body class="login-page-body">
     <div class="front-picture">
         <img src="{% static 'images/schedule.png' %}" alt="Front picture">
         <form method="POST" class="login-form">
@@ -10,7 +10,10 @@
             {% csrf_token %}
             {{ form }}
             <button type="submit">Login</button>
+            <p class="appointment-form-under-button">
+                You don't have an account? <a href="{% url 'register' %}" class="register-link">Register here</a>
+            </p>
         </form>
     </div>
-</body>
+    </body>
 {% endblock %}

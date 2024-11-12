@@ -5,23 +5,31 @@
         <img src="{% static 'images/schedule.png' %}" alt="Front picture">
     </div>
     <div class="container">
-        <h1>My Appointments</h1>
+        {% if can_send_result or can_delete_appointment %}
+            <h1>Patient Appointments</h1>
+        {% else %}
+            <h1>My Appointments</h1>
+        {% endif %}
         <div class="appointment-list">
             {% if patient_appointment %}
                 <table>
                     <thead>
                     <tr>
+                        <th>Account User</th>
                         <th>Patient Name</th>
                         <th>Date of Appointment</th>
                         <th>Day</th>
                         <th>Hour</th>
                         <th>E-mail</th>
                         <th>Phone Number</th>
+                        <th>Delete</th>
+                        <th>Results</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for appointment in patient_appointment %}
                         <tr>
+                            <td>{{ appointment.patient.first_name|capfirst }} {{ appointment.patient.last_name|capfirst }}</td>
                             <td>{{ appointment.first_name }} {{ appointment.last_name }}</td>
                             {% for slot in appointment.appointment_slot.all %}
                                 <td>{{ slot.day }}</td>
@@ -38,10 +46,10 @@
                                 </td>
                             {% endif %}
                             {% if can_send_result %}
-                                    
+
                                 <td>
                                     <a href="{% url 'patient-result' appointment.patient_id appointment.unique_id %}">
-                                        <button type="button" class="submit-btn-result">Result</button>
+                                        <button type="button" class="submit-btn-result">Results</button>
                                     </a>
                                 </td>
                             {% endif %}

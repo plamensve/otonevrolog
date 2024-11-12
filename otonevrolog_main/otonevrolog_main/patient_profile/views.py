@@ -7,21 +7,6 @@ from otonevrolog_main.web.forms import AppointmentResultForm
 from otonevrolog_main.web.models import AppointmentBooking, AppointmentSlot
 
 
-# --------------------------------FBV-------------------------------- #
-
-# def dashboard(request):
-#     patient_appointment = (AppointmentBooking.objects.filter(patient_id=request.user.id)
-#                            .prefetch_related('appointment_slot'))
-#
-#     context = {
-#         'patient_appointment': patient_appointment,
-#     }
-#
-#     return render(request, 'patient_profile/dashboard.html', context)
-
-
-# --------------------------------CBV-------------------------------- #
-
 class DashboardView(ListView):
     model = AppointmentBooking
     template_name = 'patient_profile/dashboard.html'
@@ -30,9 +15,10 @@ class DashboardView(ListView):
     def get_queryset(self):
         user = self.request.user
         if user.is_superuser or user.groups.filter(name__in=['Doctor Administrator', 'Doctor Staff']).exists():
-            return AppointmentBooking.objects.all().prefetch_related('appointment_slot')
+            # Зареждане на свързаните CustomUser и AppointmentSlot с select_related и prefetch_related
+            return AppointmentBooking.objects.all().select_related('patient').prefetch_related('appointment_slot')
         else:
-            return AppointmentBooking.objects.filter(patient_id=user.id).prefetch_related('appointment_slot')
+            return AppointmentBooking.objects.filter(patient_id=user.id).select_related('patient').prefetch_related('appointment_slot')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -73,12 +59,11 @@ def patient_result(request, pk, unique_id):
             appointment_result.custom_user = patient
             appointment_result.save()
 
-            # Изтриваме конкретния AppointmentSlot, ако съществува
             if appointment_slot:
                 appointment_slot.delete()
             appointment_booking.delete()
 
-            return redirect('index')
+            return redirect('dashboard')
         else:
             form = AppointmentResultForm()
 

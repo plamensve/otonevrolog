@@ -1,6 +1,7 @@
 function openModal(appointmentId) {
     document.getElementById("confirmModal").style.display = "flex";
-    document.getElementById("confirmDelete").onclick = function() {
+    document.getElementById("confirmDelete").onclick = function(event) {
+        event.preventDefault(); // Предотвратява презареждането на формуляра
         deleteAppointment(appointmentId);
     };
 }
@@ -10,6 +11,7 @@ function closeModal() {
 }
 
 function deleteAppointment(appointmentId) {
+    console.log("Deleting appointment..."); // Проверка дали функцията се извиква
     fetch(`/patient/delete_appointment/${appointmentId}/`, {
         method: "POST",
         headers: {
@@ -17,11 +19,16 @@ function deleteAppointment(appointmentId) {
             "X-CSRFToken": csrfToken
         },
     })
-    .then(response => {
-        if (response.ok) {
-             window.location.href = "/";  // Препраща към началната страница
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Показва отговора от сървъра в конзолата
+        if (data.success) {
+            closeModal(); // Затваря модалния прозорец
+            window.location.reload();
+            document.getElementById(`appointment-${appointmentId}`).remove(); // Премахва елемента от DOM
+             // Презарежда страницата
         } else {
-            alert("Failed to delete appointment.");
+            alert(data.error || "Failed to delete appointment.");
         }
     })
     .catch(error => console.error('Error:', error));

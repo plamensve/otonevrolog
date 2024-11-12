@@ -7,13 +7,13 @@
     background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
     background-size: cover;
     border-radius: 15px;
-    box-shadow:  8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.appointment-table-topic{
+.appointment-table-topic {
     background-color: #3a7a7b;
     color: #ffffff;
-    max-width: 1111px;
+    max-width: 1085px;
     padding: 5px 5px;
     margin-left: 3px;
     text-align: center; /* центрира текста по хоризонтала */
@@ -114,13 +114,12 @@
 /* =============================== Table container ================================= */
 
 .table-container {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    margin-left: 60px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    table-layout: fixed; /* Прави ширината на клетките фиксирана */
+    width: 100% !important;
+    max-width: 1173px !important;
+    margin-left: 60px !important;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    table-layout: fixed !important;
 }
 
 .table-container th,
@@ -341,7 +340,6 @@ td.hours-in-table {
 }
 
 
-
 .table-calendar-container {
     display: flex;
     align-items: flex-start;
@@ -357,7 +355,6 @@ td.hours-in-table {
     grid-template-columns: repeat(7, 1fr);
     width: 200px; /* Задайте желаната ширина */
 }
-
 
 
 .calendar-container {
@@ -382,7 +379,7 @@ td.hours-in-table {
     transform-origin: top left; /* Свива от горния ляв ъгъл */
 }
 
-.flatpickr-monthDropdown-month{
+.flatpickr-monthDropdown-month {
     color: #3a7a7b;
 }
 
@@ -455,6 +452,7 @@ td.hours-in-table {
     width: 370px; /* Увеличена ширина */
     overflow: hidden; /* Скрива излишното съдържание */
 }
+
 /* Стил за заглавната част на календара (месец и година) */
 .flatpickr-month {
     color: #8fdad3; /* Цвят на текста за заглавието */
@@ -536,6 +534,57 @@ td.hours-in-table {
     font-size: 18px; /* Увеличен шрифт за съдържанието */
     padding: 5px;
 }
+
+.appointment-map-container {
+    width: 100% !important;
+    max-width: 600px !important;
+    height: 400px !important;
+    margin: 50px auto !important;
+    box-sizing: border-box;
+    padding-right: 50px;
+}
+
+.appointment-map-topic {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    max-width: 1093px;
+    padding: 5px 5px;
+    text-align: center; /* центрира текста по хоризонтала */
+    display: flex;
+    align-items: center; /* центрира текста по вертикала */
+    justify-content: center;
+}
+
+iframe {
+    width: 100%;
+    height: 383px;
+    border: 1px solid black;
+    margin-top: 3px;
+}
+
+/* За таблети и малки настолни екрани */
+@media (max-width: 1024px) {
+    .appointment-map-container {
+        max-width: 90%;
+        margin: 30px auto;
+    }
+    iframe {
+        height: 400px;
+    }
+}
+
+/* За мобилни устройства */
+@media (max-width: 768px) {
+    .appointment-map-container {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+    iframe {
+        height: 300px;
+    }
+}
+
+
 
 
 
