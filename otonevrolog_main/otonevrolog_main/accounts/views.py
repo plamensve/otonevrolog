@@ -1,10 +1,13 @@
 from django.contrib.auth.views import LoginView, LogoutView
+from django.core.paginator import Paginator
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView
 
 from otonevrolog_main.accounts.forms import CustomCreateUserForm, CustomAuthenticationForm, CustomEditUserForm
 from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.accounts.utils import get_current_user, get_doctor_administrators
 from otonevrolog_main.web.models import AppointmentResult
 
 
@@ -23,15 +26,16 @@ class CustomLoginView(LoginView):
 
 
 def profile(request, pk):
-    current_user = CustomUser.objects.get(pk=pk)  #TODO: Tова view ще се разширява
+
     context = {
-        'current_user': current_user
+        'current_user': get_current_user(pk),
+        'doctor_administrators': get_doctor_administrators(pk)
     }
     return render(request, 'profile.html', context)
 
 
 def edit_profile(request, pk):
-    current_user = CustomUser.objects.get(pk=pk)
+    current_user = get_current_user(pk)
 
     if request.method == 'POST':
         form = CustomEditUserForm(request.POST, instance=current_user)
@@ -83,3 +87,30 @@ class CurrentPatientResultsView(DetailView):
     model = AppointmentResult
     template_name = 'patient_profile/current_patient_results.html'
     context_object_name = 'current_patient'
+
+
+def patient_history(request, pk):
+
+    query = request.GET.get('q')
+    if query:
+
+        all_patients_history = AppointmentResult.objects.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(email__icontains=query) |
+            Q(phone_number__icontains=query)
+        )
+    else:
+
+        all_patients_history = AppointmentResult.objects.all()
+
+    paginator = Paginator(all_patients_history, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'all_patients_history': page_obj,
+        'query': query,
+    }
+
+    return render(request, 'doctor_profile/patient_history.html', context)

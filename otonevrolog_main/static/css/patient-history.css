@@ -1,0 +1,138 @@
+/* Таблица за историята на пациентите */
+.patient-history-table {
+    width: 80%; /* Ограничаване на ширината на таблицата до 80% от страницата */
+    max-width: 1000px; /* Максимална ширина за по-големи екрани */
+    margin: 20px auto; /* Центриране и разстояние отгоре и отдолу */
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.patient-history-table th,
+.patient-history-table td {
+    padding: 17px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.patient-history-table th {
+    background-color: #2c6d6d;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.patient-history-table tr:nth-child(even) {
+    background-color: #e6f4f4;
+}
+
+.patient-history-table tr:hover {
+    background-color: #2c6d6d;
+}
+
+.patient-history-table tr:hover td {
+    color: #ffffff;
+}
+
+.patient-history-table td {
+    color: #555;
+}
+
+/* Пагинация за историята на пациентите */
+.patient-history-pagination {
+    text-align: center;
+    margin: 20px auto 50px;
+    font-family: Arial, sans-serif;
+}
+
+.patient-history-pagination .pagination-link {
+    color: #2c6d6d;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid #2c6d6d;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.patient-history-pagination .pagination-link:hover {
+    background-color: #2c6d6d;
+    color: #ffffff;
+}
+
+.patient-history-pagination .pagination-info {
+    padding: 8px 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Респонсив дизайн */
+
+/* За екрани с ширина 768px или по-малка (таблети) */
+@media (max-width: 768px) {
+    .patient-history-table {
+        width: 90%; /* Увеличаваме ширината на таблицата за по-малки екрани */
+    }
+
+    .patient-history-table th,
+    .patient-history-table td {
+        padding: 10px; /* Намаляваме padding-а */
+        font-size: 14px; /* Намаляваме шрифта */
+    }
+
+    .patient-history-pagination .pagination-link {
+        padding: 8px 12px; /* Намаляване на padding-а на бутоните */
+        margin: 0 3px; /* Намаляване на разстоянието между бутоните */
+    }
+}
+
+/* За екрани с ширина 480px или по-малка (мобилни устройства) */
+@media (max-width: 480px) {
+    .patient-history-table {
+        width: 100%; /* Пълна ширина за мобилни екрани */
+    }
+
+    .patient-history-table th,
+    .patient-history-table td {
+        padding: 8px; /* Още по-малък padding */
+        font-size: 12px; /* Още по-малък шрифт */
+    }
+
+    .patient-history-pagination .pagination-link {
+        padding: 6px 10px; /* Още по-малък padding за бутоните */
+        margin: 0 2px; /* Още по-малко разстояние между бутоните */
+    }
+
+    .patient-history-pagination .pagination-info {
+        font-size: 12px; /* По-малък шрифт за информацията за страницата */
+    }
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    padding: 8px;
+    width: 780px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-btn {
+    padding: 8px 16px;
+    background-color: #2c6d6d; /* Основен цвят на сайта */
+    color: white;
+    border: 2px solid #2c6d6d;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+}
+
+.search-btn:hover {
+    background-color: #1e4d4d;
+}

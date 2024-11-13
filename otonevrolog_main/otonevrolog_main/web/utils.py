@@ -1,5 +1,4 @@
 import uuid
-
 from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking
 
 

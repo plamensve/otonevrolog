@@ -9,7 +9,7 @@
 
 .medical-examination-results th,
 .medical-examination-results td {
-    padding: 12px;
+    padding: 17px;
     text-align: left;
     border: 1px solid #ddd;
 }
@@ -36,3 +36,5 @@
 .medical-examination-results td {
     color: #555;
 }
+
+

@@ -16,9 +16,11 @@ class DashboardView(ListView):
         user = self.request.user
         if user.is_superuser or user.groups.filter(name__in=['Doctor Administrator', 'Doctor Staff']).exists():
             # Зареждане на свързаните CustomUser и AppointmentSlot с select_related и prefetch_related
-            return AppointmentBooking.objects.all().select_related('patient').prefetch_related('appointment_slot')
+            return (AppointmentBooking.objects.all().select_related('patient')
+                    .prefetch_related('appointment_slot'))
         else:
-            return AppointmentBooking.objects.filter(patient_id=user.id).select_related('patient').prefetch_related('appointment_slot')
+            return (AppointmentBooking.objects.filter(patient_id=user.id).select_related('patient')
+                    .prefetch_related('appointment_slot'))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
