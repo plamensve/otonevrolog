@@ -6,10 +6,15 @@
         <img src="{% static 'images/schedule.png' %}" alt="Front picture">
     </div>
     <div class="user-profile-container">
-        <div class="user-profile-image">
-            <img src="{% static 'images/profile-photo.jpg' %}" alt="Profile Picture">
-        </div>
-
+        {% if current_user.profile_picture %}
+            <div class="user-profile-image">
+                <img src="{{ current_user.profile_picture.url }}" alt="Profile Picture">
+            </div>
+        {% else %}
+            <div class="user-profile-image">
+                <img src="{% static 'images/default_profile_picture.jpg' %}" alt="Profile Picture">
+            </div>
+        {% endif %}
         <div class="user-profile-info">
             <h1 class="user-profile-name">{{ current_user.first_name }} {{ current_user.last_name }}</h1>
 

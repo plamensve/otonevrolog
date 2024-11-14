@@ -4,7 +4,7 @@
     <div class="front-picture">
         <img src="{% static 'images/schedule.png' %}" alt="Front picture">
     </div>
-    <form method="post" class="edit-profile-form">
+    <form method="post" class="edit-profile-form" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Submit</button>

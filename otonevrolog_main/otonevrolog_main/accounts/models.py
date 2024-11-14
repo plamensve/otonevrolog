@@ -3,7 +3,7 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 
-class CustomUser(AbstractUser, PermissionsMixin): #TODO: може би трябва да се добави PermissionsMixin
+class CustomUser(AbstractUser, PermissionsMixin):
     MIN_LENGTH_PHONE_NUMBER = 10
     MAX_LENGTH_PHONE_NUMBER = 13
 
@@ -15,6 +15,11 @@ class CustomUser(AbstractUser, PermissionsMixin): #TODO: може би тряб�
             MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
             MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
         ],
+    )
+
+    profile_picture = models.ImageField(
+        null=True,
+        blank=True,
     )
 
     def __str__(self):

@@ -35,10 +35,10 @@ def profile(request, pk):
 
 
 def edit_profile(request, pk):
-    current_user = get_current_user(pk)
+    current_user = CustomUser.objects.get(pk=pk)
 
     if request.method == 'POST':
-        form = CustomEditUserForm(request.POST, instance=current_user)
+        form = CustomEditUserForm(request.POST, request.FILES, instance=current_user)
 
         if form.is_valid():
             form.save()
@@ -68,20 +68,6 @@ class MedicalExaminationResultsView(ListView):
         context['patient'] = self.patient
         return context
 
-
-# ---------------------------CURRENT PATIENT RESULTS FBV------------------#
-
-# def current_patient_results(request, pk):
-#     current_patient = get_object_or_404(AppointmentResult, pk=pk)
-#
-#     context = {
-#         'current_patient': current_patient
-#     }
-#
-#     return render(request, 'patient_profile/current_patient_results.html', context)
-
-
-# --------------------------- CURRENT PATIENT RESULTS CBV ------------------#
 
 class CurrentPatientResultsView(DetailView):
     model = AppointmentResult

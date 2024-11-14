@@ -1,3 +1,4 @@
+from PIL.EpsImagePlugin import field
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -9,7 +10,8 @@ UserModel = get_user_model()
 class CustomCreateUserForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number',
+                  'profile_picture', 'password1', 'password2']
 
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Username...'}),
@@ -23,12 +25,17 @@ class CustomCreateUserForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         for field_name in self.fields:
             self.fields[field_name].label = ''
+
+            if isinstance(field.widget, forms.ClearableFileInput) and field.widget.is_hidden:
+                field.widget.attrs['class'] = 'hidden-upload'
+
         self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Password...'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'})
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.phone_number = self.cleaned_data.get('phone_number')
+        user.profile_picture = self.cleaned_data.get('profile_picture')
         if commit:
             user.save()
         return user
@@ -44,12 +51,27 @@ class CustomAuthenticationForm(AuthenticationForm):
 
 
 class CustomEditUserForm(forms.ModelForm):
-    new_password = forms.CharField(required=False, widget=forms.PasswordInput, label="New Password")
-    confirm_password = forms.CharField(required=False, widget=forms.PasswordInput, label="Confirm New Password")
+    new_password = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(attrs={'placeholder': 'New Password'}),
+        label="New Password"
+    )
+    confirm_password = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(attrs={'placeholder': 'Confirm New Password'}),
+        label="Confirm New Password"
+    )
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number']
+        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'profile_picture']
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Username'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'E-mail'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
+            'phone_number': forms.TextInput(attrs={'placeholder': 'Phone Number'}),
+        }
 
     def clean(self):
         cleaned_data = super().clean()

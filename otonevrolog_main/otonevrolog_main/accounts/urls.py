@@ -1,6 +1,8 @@
+from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
 from django.urls import path
 
+from otonevrolog_main import settings
 from otonevrolog_main.accounts import views
 from otonevrolog_main.accounts.views import RegisterView, CustomLogoutView, CustomLoginView, \
     MedicalExaminationResultsView, CurrentPatientResultsView
