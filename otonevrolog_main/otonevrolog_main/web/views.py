@@ -43,7 +43,7 @@ def index(request):
         'hours': hours,
         'form': form,
         'unavailable_slot': unavailable_slot,
-        'show_modal': False,  # Затворен модал по подразбиране при GET заявка
+        'show_modal': False,
     }
 
     return render(request, 'index.html', context)
