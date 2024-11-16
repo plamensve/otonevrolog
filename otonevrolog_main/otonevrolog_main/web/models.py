@@ -137,5 +137,36 @@ class AppointmentResult(models.Model):
     )
 
 
+class Review(models.Model):
+    COMMENT_MAX_LENGTH = 300
+    NAME_MAX_LENGTH = 100
 
+    RATING_CHOICES = [
+        (1, 'Poor'),
+        (2, 'Fair'),
+        (3, 'Good'),
+        (4, 'Very Good'),
+        (5, 'Excellent'),
+    ]
 
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name="reviews"
+    )
+
+    name = models.CharField(
+        max_length=NAME_MAX_LENGTH
+    )
+
+    comment = models.TextField(
+        max_length=COMMENT_MAX_LENGTH
+    )
+
+    rating = models.PositiveSmallIntegerField(
+        choices=RATING_CHOICES
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )

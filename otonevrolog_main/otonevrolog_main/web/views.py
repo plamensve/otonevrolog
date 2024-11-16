@@ -1,12 +1,12 @@
 from django.shortcuts import redirect
-from otonevrolog_main.web.forms import AppointmentBookingCreateForm
+from otonevrolog_main.web.forms import AppointmentBookingCreateForm, ReviewForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot, save_form_with_patient_id
 from django.shortcuts import render
-
 
 from django.shortcuts import redirect, render
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot, save_form_with_patient_id
+
 
 def index(request):
     days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -52,3 +52,15 @@ def index(request):
 def about(request):
     return render(request, 'doctor_profile/about.html')
 
+
+def submit_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.save()
+            return redirect('index')
+
+    return redirect('index')

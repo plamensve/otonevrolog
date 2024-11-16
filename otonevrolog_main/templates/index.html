@@ -12,18 +12,18 @@
         </div>
     </div>
 
-  <div class="independent-container">
-    <div>
-        <img src="{% static 'images/front_foto.png' %}" alt="Front picture">
+    <div class="independent-container">
+        <div>
+            <img src="{% static 'images/front_foto.png' %}" alt="Front picture">
+        </div>
+        <ul class="symptoms-list">
+            <li>Symptom 1</li>
+            <li>Symptom 2</li>
+            <li>Symptom 3</li>
+            <li>Symptom 4</li>
+            <li>Symptom 5</li>
+        </ul>
     </div>
-    <ul class="symptoms-list">
-        <li>Symptom 1</li>
-        <li>Symptom 2</li>
-        <li>Symptom 3</li>
-        <li>Symptom 4</li>
-        <li>Symptom 5</li>
-    </ul>
-</div>
 
     <!-- Appointment table and calendar -->
     <div class="table-calendar-container">
@@ -48,10 +48,6 @@
             </table>
         </div>
 
-        {#        <div class="calendar-container">#}
-        {#            <div id="calendar"></div>#}
-        {#        </div>#}
-
         <div class="appointment-map-container">
             <div class="appointment-map-topic">
                 <p>7000 Ruse, Bulgaria, "Voden" Str.</p>
@@ -67,6 +63,52 @@
         </div>
     </div>
 
+    {% if user.is_authenticated %}
+        <!-- Comments and ratings section -->
+        <section id="reviews">
+            <h2 class="topic-rating">Leave a Comment and Rate the Doctor</h2>
+            <form id="review-form" action="{% url 'submit_review' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="rating">Rate the Doctor:</label>
+                    <div id="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" title="Excellent">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="Very Good">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="Good">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="Fair">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="Poor">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Your Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" required placeholder="Write your comment"></textarea>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+
+            <div id="comments-section">
+                <h3>Comments</h3>
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p><strong>{{ comment.name }}</strong> - {{ comment.rating }} ★</p>
+                        <p>{{ comment.text }}</p>
+                    </div>
+                {% empty %}
+                    <p>No comments yet. Be the first to leave one!</p>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
     <!-- Appointment form modal -->
     <div id="appointmentModal" class="modal"
          style="{% if show_modal %}display: flex;{% else %}display: none;{% endif %}">

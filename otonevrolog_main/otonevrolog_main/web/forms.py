@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
-from otonevrolog_main.web.models import AppointmentBooking, AppointmentResult
+from otonevrolog_main.web.models import AppointmentBooking, AppointmentResult, Review
 
 
 class AppointmentBookingCreateForm(forms.ModelForm):
@@ -49,3 +49,9 @@ class AppointmentResultForm(forms.ModelForm):
             'fine_coordination': forms.TextInput(attrs={'placeholder': 'Please, type fine coordination result...'}),
             'other': forms.TextInput(attrs={'placeholder': 'Other notes...'}),
         }
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['name', 'comment', 'rating']
