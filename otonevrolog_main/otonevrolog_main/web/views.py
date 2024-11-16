@@ -1,7 +1,10 @@
+from django.http import JsonResponse
 from django.shortcuts import redirect
+from django.template.loader import render_to_string
+
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm, ReviewForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot, save_form_with_patient_id, \
-    get_all_reviews
+    get_all_reviews, add_pagination
 from django.shortcuts import render
 
 from django.shortcuts import redirect, render
@@ -15,7 +18,9 @@ def index(request):
     days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     hours = [f"{h}:00-{h + 1}:00" for h in range(8, 17)]
     unavailable_slot = get_taken_slots()
-    comments = get_all_reviews()
+
+    all_comments = get_all_reviews()
+    comments = add_pagination(request, all_comments, items_per_page=3)
 
     if request.method == 'POST':
         form = AppointmentBookingCreateForm(request.POST)
@@ -47,6 +52,7 @@ def index(request):
         'unavailable_slot': unavailable_slot,
         'show_modal': False,
         'comments': comments,
+        'all_comments': all_comments
     }
 
     return render(request, 'index.html', context)
@@ -64,6 +70,12 @@ def submit_review(request):
 
     return redirect('index')
 
+def paginate_comments(request):
+    all_comments = get_all_reviews()
+    comments = add_pagination(request, all_comments, items_per_page=3)
+
+    html = render_to_string('partials/comments_list.html', {'comments': comments}, request)
+    return JsonResponse({'html': html})
 
 def about(request):
     return render(request, 'doctor_profile/about.html')

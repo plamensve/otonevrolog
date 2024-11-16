@@ -1,4 +1,7 @@
 import uuid
+
+from django.core.paginator import Paginator
+
 from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking, Review
 
 
@@ -33,3 +36,10 @@ def get_all_appointments():
 
 def get_all_reviews():
     return Review.objects.all().order_by('-created_at')
+
+
+def add_pagination(request, all_comments, items_per_page=3):
+    paginator = Paginator(all_comments, items_per_page)
+    page_number = request.GET.get('page', 1)
+    comments = paginator.get_page(page_number)
+    return comments

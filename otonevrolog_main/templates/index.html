@@ -94,7 +94,7 @@
             </form>
 
             <div id="comments-section">
-                <h3>Comments</h3>
+                <h3>All Reviews: {{ all_comments.count }}</h3>
                 {% for comment in comments %}
                     <div class="comment">
                         <p><strong>{{ comment.name }}</strong> - {{ comment.rating }} ★</p>
@@ -103,6 +103,24 @@
                 {% empty %}
                     <p>No comments yet. Be the first to leave one!</p>
                 {% endfor %}
+                <!-- Пагинационна навигация -->
+                <div class="pagination">
+        <span class="step-links">
+            {% if comments.has_previous %}
+                <a href="?page=1">First</a>
+                <a href="?page={{ comments.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ comments.number }} of {{ comments.paginator.num_pages }}
+            </span>
+
+            {% if comments.has_next %}
+                <a href="?page={{ comments.next_page_number }}">Next</a>
+                <a href="?page={{ comments.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </span>
+                </div>
             </div>
         </section>
 
@@ -135,6 +153,7 @@
     </div>
 
     <!-- JavaScript files -->
+    <script src="{% static 'js/paginationComments.js' %}"></script>
     <script src="{% static 'js/calendar.js' %}"></script>
     <script src="{% static 'js/appointmentModal.js' %}"></script>
 {% endblock %}

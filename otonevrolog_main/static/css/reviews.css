@@ -155,3 +155,40 @@
         grid-column: span 1; /* Заглавието се адаптира към новия layout */
     }
 }
+
+.pagination {
+    display: flex;
+    justify-content: center; /* Центрира бутоните за пагинация */
+    align-items: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.pagination .step-links {
+    display: flex;
+    gap: 10px; /* Разстояние между бутоните */
+}
+
+.pagination a {
+    text-decoration: none; /* Премахва подчертаването на линковете */
+    color: #3a7a7b; /* Основен цвят */
+    padding: 8px 12px;
+    border: 1px solid #ddd; /* Лека рамка */
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Анимация за плавна промяна */
+}
+
+.pagination a:hover {
+    background-color: #3a7a7b; /* При ховър - основен цвят */
+    color: #fff; /* Текст в бяло при ховър */
+}
+
+.pagination .current {
+    padding: 8px 12px;
+    border: 1px solid #3a7a7b;
+    background-color: #3a7a7b;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+}

@@ -1,0 +1,28 @@
+<div>
+    {% for comment in comments %}
+        <div class="comment">
+            <p><strong>{{ comment.name }}</strong> - {{ comment.rating }} ★</p>
+            <p>{{ comment.comment }}</p>
+        </div>
+    {% empty %}
+        <p>No comments yet. Be the first to leave one!</p>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if comments.has_previous %}
+            <a href="#" data-page="1">First</a>
+            <a href="#" data-page="{{ comments.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ comments.number }} of {{ comments.paginator.num_pages }}
+        </span>
+
+        {% if comments.has_next %}
+            <a href="#" data-page="{{ comments.next_page_number }}">Next</a>
+            <a href="#" data-page="{{ comments.paginator.num_pages }}">Last</a>
+        {% endif %}
+    </span>
+</div>
