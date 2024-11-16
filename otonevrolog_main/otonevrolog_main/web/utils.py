@@ -1,5 +1,5 @@
 import uuid
-from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking
+from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking, Review
 
 
 def save_form_with_patient_id(form, patient_id):
@@ -29,3 +29,7 @@ def get_taken_slots():
 
 def get_all_appointments():
     return AppointmentBooking.objects.all()
+
+
+def get_all_reviews():
+    return Review.objects.all().order_by('-created_at')

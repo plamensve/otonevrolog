@@ -1,94 +1,75 @@
 /* Reviews Section - Full Width and Responsive */
 #reviews {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* За коректно респонсив поведение */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-#reviews h2 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    padding: 0 10px; /* Малко вътрешно разстояние за малки екрани */
-}
-
-/* Review Form */
+/* Формата за ревю */
 #review-form {
-    max-width: 600px; /* По-малка ширина за по-дизайнерски вид */
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px; /* Заоблени ръбове */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лек shadow ефект */
-    background-color: #fff; /* Бял фон за добър контраст */
-}
-/* Comment Section */
-.comment {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px; /* Същите заоблени ръбове */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лек shadow ефект */
-    background-color: #fff; /* Бял фон */
+    max-width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
-/* Стил за текста в коментарите */
-.comment p {
-    margin: 5px 0;
-    font-size: 16px; /* Удобен размер за четене */
-    color: #555; /* Лек контраст на текста */
-    line-height: 1.5; /* По-добро разстояние между редовете */
-}
-
-/* Силно подчертани имена */
-.comment p strong {
-    font-weight: bold;
-    color: #3a7a7b; /* Същият акцентен цвят */
-}
-
-
-#review-form .form-group {
-    margin-bottom: 15px;
-}
-
+/* Етикети във формата */
 #review-form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: #333;
 }
 
+/* Полета за въвеждане на текст */
 #review-form input[type="text"],
 #review-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    margin-bottom: 15px;
     font-size: 16px;
-    box-sizing: border-box;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
-#review-form textarea {
-    resize: vertical;
+/* Поле за въвеждане на текст при фокус */
+#review-form input[type="text"]:focus,
+#review-form textarea:focus {
+    border-color: #3a7a7b;
+    box-shadow: 0 0 5px rgba(58, 122, 123, 0.5);
+    outline: none;
 }
 
+/* Бутон за изпращане */
 #review-form button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
     background-color: #3a7a7b;
-    color: #fff;
-    padding: 10px 20px;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Запълване на бутон за малки екрани */
 }
 
+/* Бутон при ховър */
 #review-form button:hover {
     background-color: #2d5f60;
 }
 
-/* Star Rating Container */
+/* Звезден рейтинг - визуализация */
 #star-rating {
     display: flex;
     justify-content: center;
@@ -96,50 +77,55 @@
     flex-direction: row-reverse; /* Обръщане на реда на звездите */
 }
 
-/* Скриване на радио бутоните */
 #star-rating input[type="radio"] {
-    /*display: none;*/
+    display: none; /* Скрива радио бутоните */
 }
 
-/* Стил за звездите */
+/* Сиви звезди по подразбиране */
 #star-rating label {
     font-size: 34px;
-    color: #ccc; /* Сиви звезди по подразбиране */
+    color: #ccc; /* Сив цвят за неактивни звезди */
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
-/* Осветяване на избраната звезда и всички след нея (в посока дясно наляво) */
+/* Осветяване на избраната звезда и всички преди нея (от дясно наляво) */
 #star-rating input[type="radio"]:checked ~ label {
-    color: #f5c518; /* Жълти звезди за избраната и тези след нея (отдясно наляво) */
+    color: #f5c518; /* Жълти звезди за избраната и тези след нея */
 }
 
-/* Осветяване при задържане на мишката */
+/* Осветяване при ховър */
 #star-rating label:hover,
 #star-rating label:hover ~ label {
-    color: #f5c518; /* Жълти звезди при ховър (в посока дясно наляво) */
+    color: #f5c518; /* Жълти звезди при ховър */
 }
 
 
-/* Comments Section */
+/* Responsive Design */
+@media (max-width: 768px) {
+    #reviews {
+        grid-template-columns: 1fr;
+    }
+
+    #review-form {
+        margin-bottom: 20px;
+    }
+}
+
+
 #comments-section {
-    max-width: 800px;
-    margin: 30px auto 0;
-    padding: 0 10px; /* Вътрешно разстояние за респонсив дизайн */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#comments-section h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
+/* Коментари */
 .comment {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
     border: 1px solid #ddd;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -147,78 +133,25 @@
     margin: 5px 0;
 }
 
-.comment p strong {
-    font-weight: bold;
-    color: #3a7a7b;
-}
-
+/* Topic Rating Section */
 .topic-rating {
-    max-width: 600px; /* Същата ширина като формата */
-    margin: 0 auto; /* Центриране */
-    padding: 40px 50px; /* Увеличаване на вътрешното разстояние */
-    font-size: 28px; /* По-голям текст */
-    font-weight: bold; /* Удебелен шрифт */
-    color: #ffffff !important; /* Принудително задаване на бял текст */
-    background-color: #3a7a7b; /* Фон, съвпадащ със стила на формата */
-    text-align: center; /* Центриране на текста */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лек shadow ефект */
-    text-transform: uppercase; /* Главни букви за повече акцент */
-    letter-spacing: 1px; /* Леко разстояние между буквите */
-}
-
-#reviews > h2{
-    font-size: 25px;
+    grid-column: span 2; /* Заглавието заема и двете колони */
+    text-align: center;
+    margin-bottom: 20px;
     padding: 20px;
-    border-radius: 4px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3a7a7b;
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    #reviews h2 {
-        font-size: 20px;
+    #reviews {
+        grid-template-columns: 1fr; /* На малки екрани елементите стават вертикални */
     }
 
-    #review-form button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    #star-rating label {
-        font-size: 20px; /* По-малки звездички на малки екрани */
-    }
-
-    .comment {
-        padding: 10px;
-    }
-
-    #comments-section h3 {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    #reviews h2 {
-        font-size: 18px;
-    }
-
-    #review-form {
-        padding: 0 5px; /* Още по-малко вътрешно разстояние */
-    }
-
-    #review-form button {
-        font-size: 12px;
-    }
-
-    #star-rating label {
-        font-size: 18px;
-    }
-
-    .comment {
-        padding: 8px;
-    }
-
-    #comments-section h3 {
-        font-size: 16px;
+    #topic-rating {
+        grid-column: span 1; /* Заглавието се адаптира към новия layout */
     }
 }
