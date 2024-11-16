@@ -42,4 +42,5 @@ def add_pagination(request, all_comments, items_per_page=3):
     paginator = Paginator(all_comments, items_per_page)
     page_number = request.GET.get('page', 1)
     comments = paginator.get_page(page_number)
+
     return comments

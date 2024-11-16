@@ -170,3 +170,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True
     )
+
+    @property
+    def rating_stars(self):
+        return '★' * self.rating

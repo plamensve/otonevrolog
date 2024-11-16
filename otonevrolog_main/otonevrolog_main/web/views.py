@@ -39,6 +39,7 @@ def index(request):
                 'unavailable_slot': unavailable_slot,
                 'show_modal': True
             })
+
     else:
         form = AppointmentBookingCreateForm()
         if not request.user.is_authenticated:
@@ -52,7 +53,7 @@ def index(request):
         'unavailable_slot': unavailable_slot,
         'show_modal': False,
         'comments': comments,
-        'all_comments': all_comments
+        'total_comments': all_comments.count()
     }
 
     return render(request, 'index.html', context)
@@ -70,12 +71,17 @@ def submit_review(request):
 
     return redirect('index')
 
+
 def paginate_comments(request):
     all_comments = get_all_reviews()
     comments = add_pagination(request, all_comments, items_per_page=3)
 
+    for comment in comments:
+        comment.stars = '★' * comment.rating
+
     html = render_to_string('partials/comments_list.html', {'comments': comments}, request)
     return JsonResponse({'html': html})
+
 
 def about(request):
     return render(request, 'doctor_profile/about.html')

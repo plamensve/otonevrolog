@@ -11,19 +11,6 @@
             <h1>Welcome to Our Virtual Consultation Center!</h1>
         </div>
     </div>
-    {#    <div class="independent-container">#}
-    {#        <div>#}
-    {#            <img src="{% static 'images/front_foto.png' %}" alt="Front picture">#}
-    {#        </div>#}
-    {#        <ul class="symptoms-list">#}
-    {#            <li>Symptom 1</li>#}
-    {#            <li>Symptom 2</li>#}
-    {#            <li>Symptom 3</li>#}
-    {#            <li>Symptom 4</li>#}
-    {#            <li>Symptom 5</li>#}
-    {#        </ul>#}
-    {#    </div>#}
-    <!-- Appointment table and calendar -->
     <div class="table-calendar-container">
         <div class="table-container">
             <div class="appointment-table-topic">
@@ -94,10 +81,11 @@
             </form>
 
             <div id="comments-section">
-                <h3>All Reviews: {{ all_comments.count }}</h3>
+                <h3>All Reviews: {{ total_comments }}</h3>
                 {% for comment in comments %}
                     <div class="comment">
-                        <p><strong>{{ comment.name }}</strong> - {{ comment.rating }} ★</p>
+                        <p><strong>{{ comment.name }}</strong>
+                            <span class="stars">{{ comment.rating_stars }}</span></p>
                         <p>{{ comment.comment }}</p>
                     </div>
                 {% empty %}
