@@ -160,7 +160,9 @@ class Review(models.Model):
     )
 
     comment = models.TextField(
-        max_length=COMMENT_MAX_LENGTH
+        max_length=COMMENT_MAX_LENGTH,
+        null=True,
+        blank=True,
     )
 
     rating = models.PositiveSmallIntegerField(

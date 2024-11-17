@@ -1,7 +1,7 @@
 <div>
     {% for comment in comments %}
         <div class="comment">
-            <p><strong>{{ comment.name }}</strong> - {{ comment.rating_stars }} ★</p>
+            <p><strong>{{ comment.name }}</strong> <span class="stars">{{ comment.rating_stars }}</span></p>
             <p>{{ comment.comment }}</p>
         </div>
     {% empty %}

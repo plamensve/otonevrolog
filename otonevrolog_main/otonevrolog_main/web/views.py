@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
@@ -59,6 +60,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+@login_required
 def submit_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -68,6 +70,8 @@ def submit_review(request):
             review.user = request.user
             review.save()
             return redirect('index')
+        else:
+            return render(request, 'index.html', {'form': form})
 
     return redirect('index')
 
