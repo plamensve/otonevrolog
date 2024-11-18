@@ -19,6 +19,7 @@ class CustomCreateUserForm(UserCreationForm):
             'last_name': forms.TextInput(attrs={'placeholder': 'Last name...'}),
             'email': forms.TextInput(attrs={'placeholder': 'E-mail address...'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '+359883112233'}),
+            'profile_picture': forms.ClearableFileInput(),
         }
 
     def __init__(self, *args, **kwargs):
@@ -26,8 +27,8 @@ class CustomCreateUserForm(UserCreationForm):
         for field_name in self.fields:
             self.fields[field_name].label = ''
 
-            if isinstance(field.widget, forms.ClearableFileInput) and field.widget.is_hidden:
-                field.widget.attrs['class'] = 'hidden-upload'
+            # if isinstance(field.widget, forms.ClearableFileInput) and field.widget.is_hidden: # TODO: дава грешка
+            #     field.widget.attrs['class'] = 'hidden-upload'
 
         self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Password...'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Confirm Password...'})
