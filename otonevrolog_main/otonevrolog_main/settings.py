@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+from decouple import config
 from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -87,8 +88,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "otonevrolog_main",
-        "USER": "admin",
-        "PASSWORD": "admin",
+        "USER": config('DATABASE_USERNAME'),
+        "PASSWORD": config('DATABASE_PASSWORD'),
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
