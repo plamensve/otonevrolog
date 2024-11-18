@@ -48,7 +48,6 @@ def patient_result(request, pk, unique_id):
     appointment_booking = AppointmentBooking.objects.get(unique_id=unique_id)
 
     try:
-        # Намираме конкретния AppointmentSlot по booking_id
         appointment_slot = appointment_booking.appointment_slot.get(booking_id=appointment_booking.pk)
     except AppointmentSlot.DoesNotExist:
         appointment_slot = None
