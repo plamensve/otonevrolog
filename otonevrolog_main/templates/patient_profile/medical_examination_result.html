@@ -1,10 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-    <div class="front-picture">
-        <img src="{% static 'images/schedule.png' %}" alt="Front picture">
-    </div>
+{% include 'page-picture.html' %}
     <body class="mer-body">
     <h1>MEDICAL EXAMINATION RESULT</h1>
     <table border="1" class="medical-examination-results">

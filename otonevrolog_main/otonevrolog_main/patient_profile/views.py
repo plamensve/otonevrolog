@@ -72,3 +72,6 @@ def patient_result(request, pk, unique_id):
         'form': form,
     }
     return render(request, 'patient_profile/patient_result.html', context)
+
+
+

@@ -5,8 +5,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView
 
-from otonevrolog_main.accounts.forms import CustomCreateUserForm, CustomAuthenticationForm, CustomEditUserForm
-from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.accounts.forms import CustomCreateUserForm, CustomAuthenticationForm, CustomEditUserForm, \
+    ClinicSurveyForm
+from otonevrolog_main.accounts.models import CustomUser, ClinicSurvey
 from otonevrolog_main.accounts.utils import get_current_user, get_doctor_administrators
 from otonevrolog_main.web.models import AppointmentResult
 
@@ -100,3 +101,16 @@ def patient_history(request, pk):
     }
 
     return render(request, 'doctor_profile/patient_history.html', context)
+
+
+def ask_the_doctor(request, pk=None):
+
+    if request.method == 'POST':
+        form = ClinicSurveyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'index.html')  # Шаблон за благодарност
+    else:
+        form = ClinicSurveyForm()
+
+    return render(request, 'patient_profile/ask_the_doctor.html', {'form': form})

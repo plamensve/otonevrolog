@@ -1,8 +1,6 @@
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
 from django.urls import path
-
-from otonevrolog_main import settings
 from otonevrolog_main.accounts import views
 from otonevrolog_main.accounts.views import RegisterView, CustomLogoutView, CustomLoginView, \
     MedicalExaminationResultsView, CurrentPatientResultsView
@@ -17,4 +15,5 @@ urlpatterns = (
     path('profile/<int:pk>/results/current-patient-results/', CurrentPatientResultsView.as_view(),
          name='current-patient-results'),
     path('profile/<int:pk>/patient_history/', views.patient_history, name='patient-history'),
+    path('profile/<int:pk>/ask/', views.ask_the_doctor, name='ask-the-doctor'),
 )

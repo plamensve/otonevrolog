@@ -2,7 +2,7 @@ from PIL.EpsImagePlugin import field
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.accounts.models import CustomUser, ClinicSurvey
 
 UserModel = get_user_model()
 
@@ -91,3 +91,32 @@ class CustomEditUserForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class ClinicSurveyForm(forms.ModelForm):
+    class Meta:
+        model = ClinicSurvey
+        fields = '__all__'
+        widgets = {
+            'problem_description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Describe your problem'}),
+            'sensation_spinning_objects': forms.RadioSelect(),
+            'staggering_to_one_side': forms.RadioSelect(),
+            'dizziness_without_spinning': forms.RadioSelect(),
+            'sinking_sensation': forms.RadioSelect(),
+            'episodic_sensations': forms.RadioSelect(),
+            'dizziness_between_episodes': forms.RadioSelect(),
+            'hearing_changes_during_attacks': forms.RadioSelect(),
+            'tinnitus_during_attacks': forms.RadioSelect(),
+            'tension_in_ears': forms.RadioSelect(),
+            'dizziness_while_standing_quickly': forms.RadioSelect(),
+            'dizziness_during_position_changes': forms.RadioSelect(),
+            'nausea_during_attacks': forms.RadioSelect(),
+            'headache_during_attacks': forms.RadioSelect(),
+            'sensitivity_to_light_noise': forms.RadioSelect(),
+        }
+        labels = {
+            'problem_description': 'Describe your problem in a few words',
+            'sensation_spinning_objects': 'Sensation of spinning objects around you',
+            'staggering_to_one_side': 'Staggering to one side',
+            'dizziness_without_spinning': 'Dizziness without spinning objects',
+            'sinking_sensation': 'Sinking sensation',
+        }

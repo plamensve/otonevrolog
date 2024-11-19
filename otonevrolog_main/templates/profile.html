@@ -36,6 +36,8 @@
                 <a href="{% url 'medical_examination_results' current_user.pk %}">Medical Examination Results</a>
                 {% if doctor_administrators %}
                     <a href="{% url 'patient-history' current_user.pk %}">Patients History</a>
+                {% else %}
+                    <a href="{% url 'ask-the-doctor' current_user.pk %}">Ask The Doctor</a>
                 {% endif %}
             </div>
         </div>

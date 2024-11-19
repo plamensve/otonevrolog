@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'page-picture.html' %}
+    <body>
+    <div class="survey-description">
+    <p>
+        This is a survey form where you can describe your symptoms and we will provide you with a second opinion about your problem.
+    </p>
+</div>
+    <div class="survey-form-container">
+    <h1>Clinic Survey</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Section 0: Personal Information -->
+         <div class="form-section">
+            <h2>Section 0: Personal Information</h2>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="problem_description">Describe your problem</label>
+                <textarea id="problem_description" name="problem_description" rows="4" placeholder="Describe your problem in a few sentences"></textarea>
+            </div>
+        </div>
+
+        <!-- Section 1: Symptoms -->
+        <div class="form-section">
+            <h2>Section 1: Symptoms</h2>
+            <div class="form-group">
+                <label for="sensation_spinning_objects">Sensation of spinning objects around you</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="sensation_spinning_objects" name="sensation_spinning_objects" value="YES"> Yes</label>
+                    <label><input type="radio" name="sensation_spinning_objects" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="staggering_to_one_side">Staggering to one side</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="staggering_to_one_side" name="staggering_to_one_side" value="YES"> Yes</label>
+                    <label><input type="radio" name="staggering_to_one_side" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dizziness_without_spinning">Dizziness without spinning objects</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="dizziness_without_spinning" name="dizziness_without_spinning" value="YES"> Yes</label>
+                    <label><input type="radio" name="dizziness_without_spinning" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sinking_sensation">Sinking sensation</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="sinking_sensation" name="sinking_sensation" value="YES"> Yes</label>
+                    <label><input type="radio" name="sinking_sensation" value="NO"> No</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Episodes -->
+        <div class="form-section">
+            <h2>Section 2: Episodes</h2>
+            <div class="form-group">
+                <label for="episodic_sensations">Sensations occur in episodes</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="episodic_sensations" name="episodic_sensations" value="YES"> Yes</label>
+                    <label><input type="radio" name="episodic_sensations" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dizziness_between_episodes">Dizziness between episodes</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="dizziness_between_episodes" name="dizziness_between_episodes" value="YES"> Yes</label>
+                    <label><input type="radio" name="dizziness_between_episodes" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hearing_changes_during_attacks">Hearing changes during attacks</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="hearing_changes_during_attacks" name="hearing_changes_during_attacks" value="YES"> Yes</label>
+                    <label><input type="radio" name="hearing_changes_during_attacks" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tinnitus_during_attacks">Tinnitus during attacks</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="tinnitus_during_attacks" name="tinnitus_during_attacks" value="YES"> Yes</label>
+                    <label><input type="radio" name="tinnitus_during_attacks" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tension_in_ears">Tension in ears during attacks</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="tension_in_ears" name="tension_in_ears" value="YES"> Yes</label>
+                    <label><input type="radio" name="tension_in_ears" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dizziness_while_standing_quickly">Dizziness when standing quickly</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="dizziness_while_standing_quickly" name="dizziness_while_standing_quickly" value="YES"> Yes</label>
+                    <label><input type="radio" name="dizziness_while_standing_quickly" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dizziness_during_position_changes">Dizziness during position changes</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="dizziness_during_position_changes" name="dizziness_during_position_changes" value="YES"> Yes</label>
+                    <label><input type="radio" name="dizziness_during_position_changes" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nausea_during_attacks">Nausea during attacks</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="nausea_during_attacks" name="nausea_during_attacks" value="YES"> Yes</label>
+                    <label><input type="radio" name="nausea_during_attacks" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="headache_during_attacks">Headache during attacks</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="headache_during_attacks" name="headache_during_attacks" value="YES"> Yes</label>
+                    <label><input type="radio" name="headache_during_attacks" value="NO"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sensitivity_to_light_noise">Sensitivity to light and noise during attacks</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="sensitivity_to_light_noise" name="sensitivity_to_light_noise" value="YES"> Yes</label>
+                    <label><input type="radio" name="sensitivity_to_light_noise" value="NO"> No</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+    </body>
+{% endblock %}
