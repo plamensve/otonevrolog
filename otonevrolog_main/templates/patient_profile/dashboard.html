@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% include 'page-picture.html' %}
+    {% include 'page-picture.html' %}
     <div class="container">
         {% if can_send_result %}
             <h1>Patient Appointments</h1>
@@ -20,10 +20,15 @@
                         <th>Hour</th>
                         <th>E-mail</th>
                         <th>Phone Number</th>
-                        <th>Delete</th>
+                        {% if not can_send_result %}
+                            <th>Add Symptoms</th>
+                        {% else %}
+                            <th>Check Patient Symptoms</th>
+                        {% endif %}
                         {% if can_send_result %}
                             <th>Results</th>
                         {% endif %}
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,19 +43,39 @@
                             {% endfor %}
                             <td>{{ appointment.email }}</td>
                             <td>{{ appointment.phone_number }}</td>
+                            
+                        {% if not can_send_result %}
+                            <td>
+                                <button type="button"
+                                        class="submit-btn-delete"
+                                        onclick="redirectToAskTheDoctor({{ appointment.patient.id }}, {{ appointment.id }})">
+                                    Add Symptoms
+                                </button>
+                            </td>
+                        {% endif %} 
+                        
+                        {% if can_send_result %}
+                        	<td>
+                                <button type="button"
+                                        class="submit-btn-delete"
+                                        onclick="redirectToCheckSymptoms({{ appointment.patient.id }}, {{ appointment.id }})">
+                                    Check Patient Symptoms
+                                </button>
+                            </td>
+                        {% endif %} 
+                        
+                            {% if can_send_result %}
+                                <td>
+                                    <a href="{% url 'patient-result' appointment.patient_id appointment.unique_id %}">
+                                        <button type="button" class="submit-btn-result">Results</button>
+                                    </a>
+                                </td>
+                            {% endif %}
                             {% if can_delete_appointment %}
                                 <td>
                                     <button type="button" class="submit-btn-delete"
                                             onclick="openModal({{ appointment.id }})">Delete
                                     </button>
-                                </td>
-                            {% endif %}
-                            {% if can_send_result %}
-
-                                <td>
-                                    <a href="{% url 'patient-result' appointment.patient_id appointment.unique_id %}">
-                                        <button type="button" class="submit-btn-result">Results</button>
-                                    </a>
                                 </td>
                             {% endif %}
                         </tr>
@@ -75,5 +100,7 @@
     <script>
         const csrfToken = "{{ csrf_token }}";  // Динамично зареждане на CSRF токена
     </script>
+    <script src="{% static 'js/redirectToCheckSymptoms.js' %}"></script>
+    <script src="{% static 'js/redirectToAskTheDoctor.js' %}"></script>
     <script src="{% static 'js/deleteAppointment.js' %}"></script>
 {% endblock %}

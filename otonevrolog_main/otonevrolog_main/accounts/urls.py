@@ -16,4 +16,5 @@ urlpatterns = (
          name='current-patient-results'),
     path('profile/<int:pk>/patient_history/', views.patient_history, name='patient-history'),
     path('profile/<int:pk>/ask/', views.ask_the_doctor, name='ask-the-doctor'),
+    path('profile/<int:pk>/patient_symptoms/', views.patient_symptoms, name='patient-symptoms'),
 )

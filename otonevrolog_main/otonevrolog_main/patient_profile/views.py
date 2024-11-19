@@ -74,4 +74,35 @@ def patient_result(request, pk, unique_id):
     return render(request, 'patient_profile/patient_result.html', context)
 
 
+def patient_symptoms(request):
+    return render(request, 'patient_profile/patient-symptoms.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

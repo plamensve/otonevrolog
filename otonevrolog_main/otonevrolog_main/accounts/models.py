@@ -73,7 +73,11 @@ class ClinicSurvey(models.Model):
     sensitivity_to_light_noise = models.CharField(max_length=3, choices=YES_NO_CHOICES,
                                                   verbose_name="Sensitivity to light and noise during attacks")
 
-    # Additional fields from other sections can be added similarly.
+    user_profile = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        verbose_name="User Profile"
+    )
 
     def __str__(self):
         return f"Survey by {self.name}, Age: {self.age}"

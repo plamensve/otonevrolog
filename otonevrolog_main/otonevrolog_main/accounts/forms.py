@@ -92,10 +92,33 @@ class CustomEditUserForm(forms.ModelForm):
             user.save()
         return user
 
+
 class ClinicSurveyForm(forms.ModelForm):
     class Meta:
         model = ClinicSurvey
-        fields = '__all__'
+
+        fields = [
+            'name',
+            'age',
+            'email',
+            'phone_number',
+            'problem_description',
+            'sensation_spinning_objects',
+            'staggering_to_one_side',
+            'dizziness_without_spinning',
+            'sinking_sensation',
+            'episodic_sensations',
+            'dizziness_between_episodes',
+            'hearing_changes_during_attacks',
+            'tinnitus_during_attacks',
+            'tension_in_ears',
+            'dizziness_while_standing_quickly',
+            'dizziness_during_position_changes',
+            'nausea_during_attacks',
+            'headache_during_attacks',
+            'sensitivity_to_light_noise',
+        ]
+
         widgets = {
             'problem_description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Describe your problem'}),
             'sensation_spinning_objects': forms.RadioSelect(),

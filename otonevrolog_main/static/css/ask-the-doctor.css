@@ -12,7 +12,6 @@
     border-radius: 4px;
 }
 
-
 .survey-form-container {
     width: 80%;
     max-width: 1000px;
@@ -72,13 +71,53 @@
     margin-bottom: 15px;
 }
 
+.survey-form-container .radio-group input[type="radio"] {
+    display: none; /* Скриваме стандартния радио бутон */
+}
+
 .survey-form-container .radio-group label {
+    position: relative;
+    padding-left: 35px;
     margin-right: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
     font-weight: normal;
 }
 
-.survey-form-container .radio-group input[type="radio"] {
-    margin-right: 8px;
+.survey-form-container .radio-group label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3a7a7b; /* Основен зелен цвят */
+    border-radius: 50%;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.survey-form-container .radio-group input[type="radio"]:checked + label:before {
+    background-color: #3a7a7b; /* Зелен цвят при избор */
+    border-color: #285d5e;
+}
+
+.survey-form-container .radio-group input[type="radio"]:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Позиционираме в средата */
+    top: 50%; /* Позиционираме в средата */
+    transform: translate(-50%, -50%); /* Центрираме бялата точка спрямо кръгчето */
+    width: 8px;
+    height: 8px;
+    background-color: #fff; /* Бял център при избрано */
+    border-radius: 50%;
+}
+
+.survey-form-container .radio-group label:hover:before {
+    border-color: #285d5e; /* Цвят при hover */
 }
 
 .survey-form-container button {
@@ -112,4 +151,3 @@
     padding-bottom: 5px;
     flex: 1 1 100%; /* Заглавията заемат цялата ширина */
 }
-

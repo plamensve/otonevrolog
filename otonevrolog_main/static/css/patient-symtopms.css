@@ -1,0 +1,92 @@
+.clinic-survey-results .survey-header {
+    font-size: 28px; /* Размер на текста */
+    color: #3a7a7b; /* Основен цвят */
+    text-align: center; /* Центриране */
+    margin-bottom: 20px; /* Разстояние от следващия елемент */
+    text-transform: uppercase; /* Превръща текста в главни букви */
+    font-weight: bold; /* Удебелен шрифт */
+    border-bottom: 2px solid #ccc; /* Линия под заглавието */
+    padding-bottom: 10px; /* Разстояние между текста и линията */
+}
+
+
+.clinic-survey-results {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.survey-header {
+    text-align: center;
+    color: #3a7a7b;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.survey-section-header {
+    color: #3a7a7b;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.survey-patient-info {
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.survey-patient-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.survey-patient-info-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.survey-results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.survey-results-table td.result {
+    text-align: center; /* Центриране по хоризонтала */
+    vertical-align: middle; /* Центриране по вертикала */
+    font-weight: bold; /* Пример: подчертаване на резултатите */
+    color: #3a7a7b; /* Пример: специфичен цвят за резултатите */
+}
+
+
+.survey-results-table th,
+.survey-results-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+
+.survey-table-header th {
+    background-color: #3a7a7b;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.survey-results-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.survey-results-table tr:hover {
+    background-color: #e2f3f4;
+}

@@ -27,7 +27,6 @@ class CustomLoginView(LoginView):
 
 
 def profile(request, pk):
-
     context = {
         'current_user': get_current_user(pk),
         'doctor_administrators': get_doctor_administrators(pk)
@@ -77,7 +76,6 @@ class CurrentPatientResultsView(DetailView):
 
 
 def patient_history(request, pk):
-
     query = request.GET.get('q')
     if query:
 
@@ -104,13 +102,36 @@ def patient_history(request, pk):
 
 
 def ask_the_doctor(request, pk=None):
+    current_user = CustomUser.objects.get(pk=pk)
 
     if request.method == 'POST':
         form = ClinicSurveyForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'index.html')  # Шаблон за благодарност
+            survey = form.save(commit=False)
+            survey.user_profile = current_user
+            survey.save()
+            return redirect('profile', pk=current_user.pk)
     else:
         form = ClinicSurveyForm()
 
-    return render(request, 'patient_profile/ask_the_doctor.html', {'form': form})
+    context = {
+        'current_user': current_user,
+        'form': form,
+    }
+    return render(request, 'patient_profile/ask_the_doctor.html', context)
+
+
+def patient_symptoms(request, pk=None):
+    current_user = CustomUser.objects.get(pk=pk)
+
+    symptoms = []
+
+    if request.method == 'GET':
+        symptoms = ClinicSurvey.objects.filter(user_profile_id=current_user.pk)
+
+    context = {
+        'symptoms': symptoms[0]
+    }
+
+    return render(request, 'patient_profile/patient-symptoms.html', context)
+

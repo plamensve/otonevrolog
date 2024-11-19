@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'page-picture.html' %}
+<body>
+    <div class="clinic-survey-results">
+        <h1 class="survey-header">Clinic Symptoms</h1>
+
+        <!-- Patient Information -->
+        <div class="survey-patient-info">
+            <h2 class="survey-section-header">Patient Information</h2>
+            <div class="survey-patient-info-grid">
+                <div class="survey-patient-info-item">
+                    <strong>Name:</strong> {{ symptoms.name }}
+                </div>
+                <div class="survey-patient-info-item">
+                    <strong>Age:</strong> {{ symptoms.age }}
+                </div>
+                <div class="survey-patient-info-item">
+                    <strong>Phone Number:</strong> {{ symptoms.phone_number }}
+                </div>
+                <div class="survey-patient-info-item">
+                    <strong>Email:</strong> {{ symptoms.email }}
+                </div>
+                <div class="survey-patient-info-item">
+                    <strong>Description of Problem:</strong> {{ symptoms.problem_description }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1 Results -->
+        <div class="survey-examination-results">
+            <h2 class="survey-section-header">Section 1: Sensory Experiences</h2>
+            <table class="survey-results-table">
+                <tr class="survey-table-header">
+                    <th>Parameter</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>Sensation of spinning objects</td>
+                    <td class="result">{{ symptoms.sensation_spinning_objects }}</td>
+                </tr>
+                <tr>
+                    <td>Staggering to one side</td>
+                    <td class="result">{{ symptoms.staggering_to_one_side }}</td>
+                </tr>
+                <tr>
+                    <td>Dizziness without spinning objects</td>
+                    <td class="result">{{ symptoms.dizziness_without_spinning }}</td>
+                </tr>
+                <tr>
+                    <td>Sinking sensation</td>
+                    <td class="result">{{ symptoms.sinking_sensation }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 2 Results -->
+        <div class="survey-examination-results">
+            <h2 class="survey-section-header">Section 2: Episodic Sensations</h2>
+            <table class="survey-results-table">
+                <tr class="survey-table-header">
+                    <th>Parameter</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>Sensations occur in episodes</td>
+                    <td class="result">{{ symptoms.episodic_sensations }}</td>
+                </tr>
+                <tr>
+                    <td>Dizziness between episodes</td>
+                    <td class="result">{{ symptoms.dizziness_between_episodes }}</td>
+                </tr>
+                <tr>
+                    <td>Hearing changes during attacks</td>
+                    <td class="result">{{ symptoms.hearing_changes_during_attacks }}</td>
+                </tr>
+                <tr>
+                    <td>Tinnitus during attacks</td>
+                    <td class="result">{{ symptoms.tinnitus_during_attacks }}</td>
+                </tr>
+                <tr>
+                    <td>Tension in ears during attacks</td>
+                    <td class="result">{{ symptoms.tension_in_ears }}</td>
+                </tr>
+                <tr>
+                    <td>Dizziness when standing quickly</td>
+                    <td class="result">{{ symptoms.dizziness_while_standing_quickly }}</td>
+                </tr>
+                <tr>
+                    <td>Dizziness during position changes</td>
+                    <td class="result">{{ symptoms.dizziness_during_position_changes }}</td>
+                </tr>
+                <tr>
+                    <td>Nausea during attacks</td>
+                    <td class="result">{{ symptoms.nausea_during_attacks }}</td>
+                </tr>
+                <tr>
+                    <td>Headache during attacks</td>
+                    <td class="result">{{ symptoms.headache_during_attacks }}</td>
+                </tr>
+                <tr>
+                    <td>Sensitivity to light and noise during attacks</td>
+                    <td class="result">{{ symptoms.sensitivity_to_light_noise }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock %}
