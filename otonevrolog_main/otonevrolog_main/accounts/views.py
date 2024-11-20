@@ -130,7 +130,7 @@ def patient_symptoms(request, pk=None):
         symptoms = ClinicSurvey.objects.filter(user_profile_id=current_user.pk)
 
     context = {
-        'symptoms': symptoms[0] if symptoms else None,
+        'symptoms': symptoms[0] if symptoms else None,  # TODO: тази логика трябва да се коригира
     }
 
     return render(request, 'patient_profile/patient-symptoms.html', context)

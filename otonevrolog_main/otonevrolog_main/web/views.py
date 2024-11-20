@@ -1,18 +1,12 @@
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
-from django.shortcuts import redirect
-from django.template.loader import render_to_string
-
-from otonevrolog_main.web.forms import AppointmentBookingCreateForm, ReviewForm
-from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot, save_form_with_patient_id, \
-    get_all_reviews, add_pagination
-from django.shortcuts import render
-
+from django.http import JsonResponse, HttpResponse
+from xhtml2pdf import pisa
+from otonevrolog_main.web.forms import ReviewForm
+from otonevrolog_main.web.utils import get_all_reviews, add_pagination
 from django.shortcuts import redirect, render
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot, save_form_with_patient_id
-
-from .models import Review
+from django.template.loader import render_to_string
 
 
 def index(request):
@@ -89,3 +83,34 @@ def paginate_comments(request):
 
 def about(request):
     return render(request, 'doctor_profile/about.html')
+
+
+def download_as_pdf(request, pk):
+    from .models import AppointmentResult
+
+    try:
+        instance = AppointmentResult.objects.get(pk=pk)
+    except AppointmentResult.DoesNotExist:
+        return HttpResponse('Record not found', status=404)
+
+    profile_picture_url = None
+    if instance.custom_user and instance.custom_user.profile_picture:
+        profile_picture_url = request.build_absolute_uri(instance.custom_user.profile_picture.url)
+
+    context = {
+        'instance': instance,
+        'request': request,
+        'profile_picture_url': profile_picture_url
+    }
+
+    html_content = render_to_string('pdf_template/pdf_template.html', context)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="record_{instance.id}.pdf"'
+
+    pisa_status = pisa.CreatePDF(html_content, dest=response)
+
+    if pisa_status.err:
+        return HttpResponse('An error occurred while generating the PDF', status=500)
+
+    return response

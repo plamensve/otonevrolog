@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Patient Examination Results">
+    <meta name="keywords" content="Patient, Examination, Results, Medical, Report">
+    <title>Patient Examination Results</title>
+<style>
+/* Стилове за заглавната лента */
+/* Стилове за заглавната лента */
+/* Стилове за заглавната лента */
+.page-header {
+    background-color: #3a7a7b; /* Зелен фон */
+    color: #ffffff;
+    display: flex; /* Flexbox за подравняване */
+    justify-content: space-between; /* Логото вляво, текстът вдясно */
+    align-items: flex-start; /* Вертикално подравняване нагоре */
+    padding: 20px; /* Вътрешно разстояние */
+    box-sizing: border-box; /* Включва padding в ширината */
+    width: 100%; /* Заемане на цялата ширина */
+}
+
+/* Лого */
+.page-header .contact-info img {
+    height: 60px; /* Размер на логото */
+    border-radius: 50%; /* Закръглено лого */
+    max-width: 60px; /* Ограничаване на ширината */
+}
+
+/* Контейнер за текста */
+.name-speciality {
+    text-align: right; /* Подравняване на текста вдясно */
+    line-height: 1.5; /* Разстояние между редовете */
+    font-size: 16px;
+    margin: 0; /* Без излишни отстояния */
+    padding-right: 20px; /* Разстояние от дясната граница */
+    align-self: flex-start; /* Позиционира текста в горната част на контейнера */
+}
+
+
+
+/* Контейнер за резултатите */
+.patient-result-details {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Заглавия за секции */
+.patient-info, .examination-results {
+    margin-bottom: 20px;
+}
+
+.patient-info h2, .examination-results h2 {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Грид оформление за информацията за пациента */
+.patient-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.patient-info-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* Таблица за резултати */
+.results-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    table-layout: fixed;
+}
+
+.results-table th,
+.results-table td {
+    padding: 14px;
+    text-align: left;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.results-table th {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.results-table td strong {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.results-table tr:hover {
+    background-color: #3a7a7b;
+    color: #ffffff;
+}
+</style>
+
+
+</head>
+<body>
+    <!-- Заглавна лента -->
+<div class="page-header">
+    <div class="contact-info">
+        <img src="{{ profile_picture_url }}" alt="doctor-logo">
+    </div>
+    <div class="name-speciality">
+        <Strong>Kristina Atanasova MD</Strong><br>
+        <span>Specialist in Otoneurology</span><br>
+        <span>Phone: +1 123 456 7890</span><br>
+        <span>Email: doctor@example.com</span>
+    </div>
+</div>
+
+
+
+    <div class="patient-result-details">
+        <!-- Patient Information -->
+        <div class="patient-info">
+            <h2>Patient Information</h2>
+            <div class="patient-info-grid">
+                <div class="patient-info-item">
+                    <strong>Patient ID:</strong> {{ instance.id }}
+                </div>
+                <div class="patient-info-item">
+                    <strong>Name:</strong> {{ instance.first_name|upper }} {{ instance.last_name|upper }}
+                </div>
+                <div class="patient-info-item">
+                    <strong>Phone Number:</strong> {{ instance.phone_number }}
+                </div>
+                <div class="patient-info-item">
+                    <strong>Email:</strong> {{ instance.email }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Examination Results -->
+        <div class="examination-results">
+            <table class="results-table">
+                <h2>Examination Results</h2>
+                <tr>
+                    <td>Nystagmus: {{ instance.nystagmus }}</td>
+                </tr>
+                <tr>
+                    <td>Static Samples: {{ instance.static_samples }}</td>
+                </tr>
+                <tr>
+                    <td>Kinetic Samples: {{ instance.kinetic_samples }}</td>
+                </tr>
+                <tr>
+                    <td>Coordination Test: {{ instance.coordination_test }}</td>
+                </tr>
+                <tr>
+                    <td>Fine Coordination: {{ instance.fine_coordination }}</td>
+                </tr>
+                <tr>
+                    <td>Other: {{ instance.other }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

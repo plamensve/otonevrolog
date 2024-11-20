@@ -9,6 +9,7 @@
         <!-- Patient Information -->
         <div class="patient-info">
             <h2>Patient Information</h2>
+            <a href="{% url 'download_pdf' current_patient.id %}" class="btn btn-primary">Download as PDF</a>
             <div class="patient-info-grid">
                 <div class="patient-info-item">
                     <strong>Patient ID:</strong> {{ current_patient.id }}
