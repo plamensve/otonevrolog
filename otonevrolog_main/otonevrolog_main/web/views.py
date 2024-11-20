@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from xhtml2pdf import pisa
 from otonevrolog_main.web.forms import ReviewForm
+from otonevrolog_main.web.models import Logo
 from otonevrolog_main.web.utils import get_all_reviews, add_pagination
 from django.shortcuts import redirect, render
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm
@@ -93,14 +94,14 @@ def download_as_pdf(request, pk):
     except AppointmentResult.DoesNotExist:
         return HttpResponse('Record not found', status=404)
 
-    profile_picture_url = None
-    if instance.custom_user and instance.custom_user.profile_picture:
-        profile_picture_url = request.build_absolute_uri(instance.custom_user.profile_picture.url)
+    logo_instance = Logo.objects.first()
+    logo = request.build_absolute_uri(
+        logo_instance.logo.url) if logo_instance and logo_instance.logo else None
 
     context = {
         'instance': instance,
         'request': request,
-        'profile_picture_url': profile_picture_url
+        'logo': logo
     }
 
     html_content = render_to_string('pdf_template/pdf_template.html', context)

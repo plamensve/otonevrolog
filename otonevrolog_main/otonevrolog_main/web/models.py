@@ -176,3 +176,10 @@ class Review(models.Model):
     @property
     def rating_stars(self):
         return '★' * self.rating
+
+
+class Logo(models.Model):
+    logo = models.ImageField(
+        null=True,
+        blank=True,
+    )
