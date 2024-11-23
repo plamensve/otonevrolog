@@ -9,6 +9,8 @@ Patient Profiles: Each patient has a personalized dashboard with the ability to 
 Appointment Scheduling: Patients can book appointments, view available slots, and manage their bookings.
 Responsive Design: The application includes a user-friendly interface with CSS and JavaScript enhancements for mobile and desktop users.
 
+![register](https://github.com/user-attachments/assets/41db56f7-5829-4fe1-8bbe-d60bd395be41)
+
 <h1>Installation</h1>
 Clone the repository:
 
