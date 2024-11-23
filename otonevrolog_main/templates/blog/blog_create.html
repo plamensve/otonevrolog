@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'page-picture.html' %}
+    <div class="blog-create-container">
+        <h1 class="blog-create-title">Create Blog Article</h1>
+        <form method="post" class="blog-create-form">
+            {% csrf_token %}
+            <div class="blog-create-fields">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="blog-create-submit-btn">Save</button>
+        </form>
+    </div>
+{% endblock %}

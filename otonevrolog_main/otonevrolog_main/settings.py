@@ -47,7 +47,8 @@ INSTALLED_APPS = [
 
     'otonevrolog_main.web',
     'otonevrolog_main.accounts',
-    'otonevrolog_main.patient_profile'
+    'otonevrolog_main.patient_profile',
+    'otonevrolog_main.blog'
 ]
 
 MIDDLEWARE = [

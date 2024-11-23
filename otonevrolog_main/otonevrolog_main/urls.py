@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include('otonevrolog_main.web.urls')),
     path('accounts/', include('otonevrolog_main.accounts.urls')),
     path('patient/', include('otonevrolog_main.patient_profile.urls')),
+    path('blog/', include('otonevrolog_main.blog.urls'))
 ]
 
 if settings.DEBUG:

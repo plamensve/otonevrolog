@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'page-picture.html' %}
+    <div class="blog-detail-container">
+        <h1 class="blog-detail-title">{{ post.title }}</h1>
+        <p class="blog-detail-content">{{ post.content }}</p>
+        <p class="blog-detail-author">Author: {{ post.author }}</p>
+        
+        <div class="blog-comments-section">
+            <h2 class="blog-comments-title">Comments:</h2>
+            <ul class="blog-comments-list">
+                {% for comment in comments %}
+                    <li class="blog-comment-item">
+                        <p class="blog-comment-author">{{ comment.author }}:</p>
+                        <p class="blog-comment-text">{{ comment.text }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="blog-comment-form-section">
+            <h3 class="blog-comment-form-title">Add Comment:</h3>
+            <form method="post" class="blog-comment-form">
+                {% csrf_token %}
+                <div class="blog-comment-fields">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="blog-comment-submit-btn">Publish</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

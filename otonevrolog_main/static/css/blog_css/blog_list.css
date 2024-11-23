@@ -1,0 +1,305 @@
+/* Главен контейнер за страницата със списъка */
+.blog-list-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Заглавие на страницата */
+.blog-list-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Бутон за добавяне на нова статия */
+.blog-add-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #8fdad3;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.blog-add-btn:hover {
+    background-color: #ffffff;
+    color: #3a7a7b;
+}
+
+/* Списък с блог статии */
+.blog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blog-list-item {
+    background-color: #8fdad3;
+    color: #3a7a7b;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.blog-list-item:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+    color: #3a7a7b;
+}
+
+/* Заглавие на статията в списъка */
+.blog-list-item-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3a7a7b;
+    text-decoration: none;
+}
+
+.blog-list-item-title:hover {
+    color: #8fdad3;
+}
+
+/* Автор на статията */
+.blog-list-item-author {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Дата на публикуване */
+.blog-list-item-date {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 5px;
+}
+
+/* ----------------------------- PAGINATION -------------------------------- */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.pagination .step-links a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #8fdad3;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination .step-links a:hover {
+    background-color: #ffffff;
+    color: #3a7a7b;
+}
+
+.pagination .current {
+    font-weight: bold;
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+
+/* ----------------------------- SIDEBAR -------------------------------- */
+
+/* Контейнер за страницата */
+.page-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 20px; /* Добавено разстояние между колоните */
+}
+
+/* Контейнер за рекламни боксове */
+.ad-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Разстояние между рекламните боксове */
+    width: 200px; /* Фиксирана ширина на рекламния контейнер */
+}
+
+/* Контейнер за рекламни боксове */
+.ad-container {
+    display: flex;
+    flex-direction: column; /* Вертикално подреждане на боксовете */
+    gap: 20px; /* Разстояние между рекламните боксове */
+    width: 250px; /* Ширина на рекламния контейнер */
+    flex-shrink: 0; /* Предотвратява свиването на контейнера */
+    margin-right: 20px; /* Добавя разстояние вдясно от контейнера */
+    align-self: flex-start; /* Подравняване спрямо горната част */
+}
+
+/* Рекламни боксове */
+.ad-box {
+    background: #8fdad3;
+    color: #3a7a7b;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 177px;
+    margin-top: 50px;
+}
+
+.ad-box:hover {
+    background: #ffffff;
+    transform: translateY(-5px);
+    color: #3a7a7b;
+}
+
+/* Контейнер за страницата */
+.page-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 20px; /* Разстояние между колоните */
+    align-items: flex-start; /* Подравнява всички елементи по горната част */
+}
+
+
+
+/* Главният контейнер за блога */
+.blog-list-container {
+    flex: 1; /* Основното съдържание заема оставащото място */
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px; /* Ширината остава същата */
+    background: #3a7a7b;
+    color: #ffffff;
+    padding: 20px;
+    margin-left: 20px; /* Разстояние от основния блок */
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Sidebar е фиксиран при скрол */
+    top: 20px; /* Разстояние от горната част на прозореца */
+    height: 875px; /* Фиксирана височина на sidebar */
+    overflow-y: auto; /* Скролиране, ако съдържанието е повече */
+}
+
+/* Sidebar заглавие */
+.sidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Списък с категории */
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #8fdad3;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.sidebar-list li:hover {
+    background-color: #ffffff;
+    transform: translateX(5px);
+}
+
+/* Линкове към категориите */
+.sidebar-list a {
+    text-decoration: none;
+    color: #3a7a7b;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar-list a:hover {
+    color: #8fdad3;
+}
+
+/* ----------------------------- RESPONSIVE DESIGN -------------------------------- */
+
+/* За таблети и по-малки устройства */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column; /* Подреждане на блоковете вертикално */
+        align-items: center;
+    }
+
+    .ad-container {
+        width: 100%; /* Рекламите заемат цялата ширина */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar заема цялата ширина */
+        height: auto; /* Височината се адаптира автоматично */
+        margin-left: 0; /* Премахва разстоянието вляво */
+        margin-top: 20px; /* Разстояние между блоковете */
+        position: static; /* Премахва фиксирането */
+    }
+
+    .blog-list-container {
+        max-width: 100%; /* Основното съдържание заема цялата ширина */
+    }
+}
+
+/* За мобилни устройства */
+@media (max-width: 480px) {
+    .blog-list-title {
+        font-size: 24px; /* Намалява размера на заглавието */
+    }
+
+    .blog-add-btn {
+        padding: 8px 16px; /* Намалява вътрешните разстояния на бутона */
+        font-size: 14px; /* Намалява размера на текста */
+    }
+
+    .sidebar-title {
+        font-size: 18px; /* Намалява размера на заглавието на sidebar */
+    }
+
+    .sidebar-list li {
+        padding: 8px; /* Намалява вътрешното пространство на елементите */
+    }
+
+    .sidebar-list a {
+        font-size: 14px; /* Намалява размера на текста в линковете */
+    }
+
+    .ad-box {
+        padding: 15px; /* Намаляване на padding за мобилни устройства */
+        font-size: 14px; /* Намаляване на текста в рекламните боксове */
+    }
+}
