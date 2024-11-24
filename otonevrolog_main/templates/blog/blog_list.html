@@ -10,26 +10,36 @@
             <div class="ad-box">Ad 3</div>
         </div>
 
-       <!-- Основно съдържание -->
-<div class="blog-list-container">
-    <h1 class="blog-list-title">Blog Articles</h1>
+        <!-- Основно съдържание -->
+        <div class="blog-list-container">
+            <h1 class="blog-list-title">Blog Articles</h1>
 
-    {% if can_add_blog %}
-        <a href="{% url 'blog_create' %}" class="blog-add-btn">Create Article</a>
-    {% endif %}
+            {% if can_add_blog %}
+                <a href="{% url 'blog_create' %}" class="blog-add-btn">Create Article</a>
+            {% endif %}
 
-    <ul class="blog-list">
-        {% for post in posts %}
-            <li class="blog-list-item">
-                <a href="{% url 'blog_detail' post.pk %}" class="blog-list-item-title">{{ post.title }}</a>
-                <p class="blog-list-item-author">Author: {{ post.author }}</p>
-                <p class="blog-list-item-date">{{ post.created_at }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+            <ul class="blog-list">
+                {% for post in posts %}
+                    <li class="blog-list-item">
+                        <div class="blog-list-item-content">
+                            <a href="{% url 'blog_detail' post.pk %}" class="blog-list-item-title">{{ post.title }}</a>
+                            <p class="blog-list-item-author">Author: {{ post.author }}</p>
+                            <p class="blog-list-item-date">{{ post.created_at }}</p>
+                        </div>
+                        {% if post.blog_post_image %}
+                            <a href="{% url 'blog_detail' post.pk %}">
+                                <img src="{{ post.blog_post_image.url }}" alt="{{ post.title }}"
+                                     class="blog-list-item-image">
+                            </a>
+                        {% else %}
+                            <p>No image available for this post.</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
 
-    <!-- Пагинация -->
-    <div class="pagination">
+            <!-- Пагинация -->
+            <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
                 <a href="?page=1">&laquo; first</a>
@@ -37,7 +47,7 @@
             {% endif %}
 
             <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
             </span>
 
             {% if page_obj.has_next %}
@@ -45,8 +55,8 @@
                 <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
             {% endif %}
         </span>
-    </div>
-</div>
+            </div>
+        </div>
 
 
         <!-- Sidebar -->
@@ -59,5 +69,4 @@
             </ul>
         </aside>
     </div>
-    <script src="{% static 'js/blogArticlePaginations.js' %}"></script>
 {% endblock %}

@@ -3,7 +3,7 @@
     {% include 'page-picture.html' %}
     <div class="blog-create-container">
         <h1 class="blog-create-title">Create Blog Article</h1>
-        <form method="post" class="blog-create-form">
+        <form method="post" class="blog-create-form" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="blog-create-fields">
                 {{ form.as_p }}

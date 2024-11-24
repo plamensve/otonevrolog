@@ -22,6 +22,11 @@ class BlogPost(models.Model):
         auto_now=True
     )
 
+    blog_post_image = models.ImageField(
+        blank=True,
+        null=True
+    )
+
     author = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,

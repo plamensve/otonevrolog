@@ -303,3 +303,36 @@
         font-size: 14px; /* Намаляване на текста в рекламните боксове */
     }
 }
+
+.blog-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-list-item-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-list-item-title {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.blog-list-item-author,
+.blog-list-item-date {
+    margin: 5px 0;
+}
+
+.blog-list-item-image {
+    max-width: 150px; /* Регулирай ширината на изображението */
+    height: auto;
+    border-radius: 5px; /* Заоблени ъгли (по желание) */
+    margin-left: 15px; /* Разстояние между текста и снимката */
+}
+
