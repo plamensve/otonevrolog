@@ -35,7 +35,7 @@ def profile(request, pk):
 
 
 def edit_profile(request, pk):
-    current_user = CustomUser.objects.get(pk=pk)
+    current_user = get_current_user(pk)
 
     if request.method == 'POST':
         form = CustomEditUserForm(request.POST, request.FILES, instance=current_user)
@@ -57,6 +57,10 @@ class MedicalExaminationResultsView(ListView):
     model = AppointmentResult
     template_name = 'patient_profile/medical_examination_result.html'
     context_object_name = 'appointment_results'
+
+    def __init__(self, **kwargs):
+        super().__init__(kwargs)
+        self.patient = None
 
     def get_queryset(self):
         patient_id = self.kwargs.get('pk')
@@ -102,7 +106,7 @@ def patient_history(request, pk):
 
 
 def ask_the_doctor(request, pk=None):
-    current_user = CustomUser.objects.get(pk=pk)
+    current_user = get_current_user(pk)
 
     if request.method == 'POST':
         form = ClinicSurveyForm(request.POST)
@@ -122,7 +126,7 @@ def ask_the_doctor(request, pk=None):
 
 
 def patient_symptoms(request, pk=None):
-    current_user = CustomUser.objects.get(pk=pk)
+    current_user = get_current_user(pk)
 
     symptoms = []
 

@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import ListView
 
 from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.accounts.utils import get_current_user
 from otonevrolog_main.web.forms import AppointmentResultForm
 from otonevrolog_main.web.models import AppointmentBooking, AppointmentSlot
 
@@ -43,7 +44,7 @@ def delete_appointment(request, appointment_id):
 
 
 def patient_result(request, pk, unique_id):
-    patient = CustomUser.objects.get(pk=pk)
+    patient = get_current_user(pk)
     form = AppointmentResultForm()
     appointment_booking = AppointmentBooking.objects.get(unique_id=unique_id)
 
