@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'page-picture.html' %}
+    <div class="comment-edit-container">
+        <h2 class="comment-edit-title">Edit Comment</h2>
+        <form method="post" class="comment-edit-form">
+            {% csrf_token %}
+            <div class="comment-edit-fields">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="comment-edit-submit-btn">Save Changes</button>
+        </form>
+    </div>
+{% endblock %}

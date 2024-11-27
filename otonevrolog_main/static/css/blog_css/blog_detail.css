@@ -119,3 +119,46 @@
     background-color: #ffffff;
     color: #3a7a7b;
 }
+
+.blog-comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog-comment-item {
+    position: relative; /* За да позиционираме иконките спрямо всеки коментар */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.blog-comment-content {
+    padding-right: 50px; /* Освобождава място за иконките */
+}
+
+.comment-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.comment-edit-icon,
+.comment-delete-icon {
+    color: #3a7a7b;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.comment-edit-icon:hover {
+    color: #8fdad3;
+}
+
+.comment-delete-icon:hover {
+    color: #e63946;
+}
+

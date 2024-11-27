@@ -58,10 +58,6 @@ class MedicalExaminationResultsView(ListView):
     template_name = 'patient_profile/medical_examination_result.html'
     context_object_name = 'appointment_results'
 
-    def __init__(self, **kwargs):
-        super().__init__(kwargs)
-        self.patient = None
-
     def get_queryset(self):
         patient_id = self.kwargs.get('pk')
         self.patient = get_object_or_404(CustomUser, pk=patient_id)

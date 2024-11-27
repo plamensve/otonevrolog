@@ -2,7 +2,7 @@ import uuid
 
 from django.core.paginator import Paginator
 
-from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking, Review
+from otonevrolog_main.web.models import AppointmentSlot, AppointmentBooking, Review, AppointmentResult
 
 
 def save_form_with_patient_id(form, patient_id):
@@ -32,6 +32,11 @@ def get_taken_slots():
 
 def get_all_appointments():
     return AppointmentBooking.objects.all()
+
+
+def get_appointment_result(pk):
+    appointment = AppointmentResult.objects.get(pk=pk)
+    return appointment
 
 
 def get_all_reviews():

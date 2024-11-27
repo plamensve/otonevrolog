@@ -1,0 +1,63 @@
+/* Контейнер за изтриване на коментар */
+.comment-delete-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Заглавие за потвърждение */
+.comment-delete-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Стил за бутоните */
+.comment-delete-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.comment-delete-buttons button,
+.comment-delete-buttons a {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Бутон за потвърждение */
+.comment-delete-buttons button {
+    background-color: #8fdad3;
+    color: #3a7a7b;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-delete-buttons button:hover {
+    background-color: #ffffff;
+    color: #3a7a7b;
+}
+
+/* Бутон за отказ */
+.comment-delete-buttons a {
+    background-color: #ffffff;
+    color: #3a7a7b;
+    border: 2px solid #8fdad3;
+}
+
+.comment-delete-buttons a:hover {
+    background-color: #8fdad3;
+    color: #ffffff;
+}

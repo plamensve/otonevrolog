@@ -5,18 +5,31 @@
         <h1 class="blog-detail-title">{{ post.title }}</h1>
         <p class="blog-detail-content">{{ post.content }}</p>
         <p class="blog-detail-author">Author: {{ post.author }}</p>
-        
+
         <div class="blog-comments-section">
             <h2 class="blog-comments-title">Comments:</h2>
             <ul class="blog-comments-list">
                 {% for comment in comments %}
                     <li class="blog-comment-item">
-                        <p class="blog-comment-author">{{ comment.author }}:</p>
-                        <p class="blog-comment-text">{{ comment.text }}</p>
+                        <div class="blog-comment-content">
+                            <p class="blog-comment-author">{{ comment.author }}:</p>
+                            <p class="blog-comment-text">{{ comment.text }}</p>
+                        </div>
+                        {% if comment.author == request.user.get_full_name %}
+                            <div class="comment-actions">
+                                <a href="{% url 'edit_comment' pk=comment.pk %}" class="comment-edit-icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <a href="{% url 'delete_comment' pk=comment.pk %}" class="comment-delete-icon">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        {% endif %}
                     </li>
                 {% endfor %}
             </ul>
         </div>
+
 
         <div class="blog-comment-form-section">
             <h3 class="blog-comment-form-title">Add Comment:</h3>

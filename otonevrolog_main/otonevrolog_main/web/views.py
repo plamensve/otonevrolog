@@ -3,7 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from xhtml2pdf import pisa
 from otonevrolog_main.web.forms import ReviewForm
 from otonevrolog_main.web.models import Logo
-from otonevrolog_main.web.utils import get_all_reviews, add_pagination
+from otonevrolog_main.web.utils import get_all_reviews, add_pagination, get_appointment_result
 from django.shortcuts import redirect, render
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm
 from otonevrolog_main.web.utils import get_taken_slots, create_appointment_slot, save_form_with_patient_id
@@ -90,7 +90,7 @@ def download_as_pdf(request, pk):
     from .models import AppointmentResult
 
     try:
-        instance = AppointmentResult.objects.get(pk=pk)
+        instance = get_appointment_result(pk=pk)
     except AppointmentResult.DoesNotExist:
         return HttpResponse('Record not found', status=404)
 

@@ -19,3 +19,5 @@
 @import "blog_css/blog_create.css";
 @import "blog_css/blog_detail.css";
 @import "blog_css/blog_list.css";
+@import "blog_css/comment_edit_comment.css";
+@import "blog_css/comment_delete_comment.css";

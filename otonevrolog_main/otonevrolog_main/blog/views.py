@@ -1,12 +1,10 @@
-from django.http import HttpResponseForbidden, JsonResponse
-from django.shortcuts import render, redirect
+from django.http import HttpResponseForbidden
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.utils.decorators import method_decorator
-from django.views.decorators.cache import never_cache
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from django.template.loader import render_to_string
 from otonevrolog_main.blog.forms import BlogPostForm, CommentForm
-from otonevrolog_main.blog.models import BlogPost
+from otonevrolog_main.blog.models import BlogPost, Comment
 
 
 class BlogCreateView(CreateView):
@@ -46,10 +44,6 @@ class BlogDetailView(DetailView):
     template_name = 'blog/blog_detail.html'
     context_object_name = 'post'
 
-    def __init__(self, **kwargs):
-        super().__init__(kwargs)
-        self.object = None
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = CommentForm()
@@ -59,11 +53,37 @@ class BlogDetailView(DetailView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         form = CommentForm(request.POST)
+
         if form.is_valid():
             comment = form.save(commit=False)
             comment.blog_post = self.object
+            comment.author = request.user.first_name + " " + request.user.last_name
             comment.save()
             return redirect('blog_detail', pk=self.object.pk)
+
         context = self.get_context_data()
         context['form'] = form
         return self.render_to_response(context)
+
+
+class EditCommentView(UpdateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'blog/comment_edit_comment.html'
+
+    def get_success_url(self):
+        return reverse_lazy('blog_detail', kwargs={'pk': self.object.blog_post.pk})
+
+    def get_queryset(self):
+        return Comment.objects.filter(author=self.request.user.get_full_name())
+
+
+class DeleteCommentView(DeleteView):
+    model = Comment
+    template_name = 'blog/comment_delete_comment.html'
+
+    def get_success_url(self):
+        return reverse_lazy('blog_detail', kwargs={'pk': self.object.blog_post.pk})
+
+    def get_queryset(self):
+        return Comment.objects.filter(author=self.request.user.get_full_name())

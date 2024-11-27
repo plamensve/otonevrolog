@@ -1,0 +1,65 @@
+/* Контейнер за редактиране на коментар */
+.comment-edit-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Заглавие на страницата */
+.comment-edit-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Стил за формата */
+.comment-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Полета на формата */
+.comment-edit-fields input,
+.comment-edit-fields textarea,
+.comment-edit-fields select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.comment-edit-fields input:focus,
+.comment-edit-fields textarea:focus,
+.comment-edit-fields select:focus {
+    border-color: #8fdad3;
+    outline: none;
+}
+
+/* Бутон за изпращане */
+.comment-edit-submit-btn {
+    background-color: #8fdad3;
+    color: #3a7a7b;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-edit-submit-btn:hover {
+    background-color: #ffffff;
+    color: #3a7a7b;
+}
