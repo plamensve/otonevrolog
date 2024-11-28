@@ -4,10 +4,12 @@
     <div class="blog-detail-container">
         <h1 class="blog-detail-title">{{ post.title }}</h1>
         <p class="blog-detail-content">{{ post.content }}</p>
-        <p class="blog-detail-author">Author: {{ post.author }}</p>
+        <p class="blog-detail-author">Author: {{ post.author.first_name }} {{ post.author.last_name }}</p>
 
         <div class="blog-comments-section">
-            <h2 class="blog-comments-title">Comments:</h2>
+            {% if comments %}
+                <h2 class="blog-comments-title">Comments:</h2>
+            {% endif %}
             <ul class="blog-comments-list">
                 {% for comment in comments %}
                     <li class="blog-comment-item">

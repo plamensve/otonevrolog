@@ -57,7 +57,7 @@ class BlogDetailView(DetailView):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.blog_post = self.object
-            comment.author = request.user.first_name + " " + request.user.last_name
+            comment.author = request.user.get_full_name()
             comment.save()
             return redirect('blog_detail', pk=self.object.pk)
 
