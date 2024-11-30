@@ -79,7 +79,7 @@ def patient_symptoms(request):
     return render(request, 'patient_profile/patient-symptoms.html')
 
 
-
+#test
 
 
 
