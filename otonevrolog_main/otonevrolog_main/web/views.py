@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, Http404
 from xhtml2pdf import pisa
 from otonevrolog_main.web.forms import ReviewForm
 from otonevrolog_main.web.models import Logo
@@ -116,3 +116,6 @@ def download_as_pdf(request, pk):
 
     return response
 
+
+def raise_404(request):
+    raise Http404
