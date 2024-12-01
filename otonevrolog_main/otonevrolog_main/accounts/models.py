@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
+from otonevrolog_main.accounts.validators import validate_phone_number
+
 
 class CustomUser(AbstractUser, PermissionsMixin):
     MIN_LENGTH_PHONE_NUMBER = 10
@@ -14,6 +16,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
         validators=[
             MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
             MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
+            validate_phone_number
         ],
     )
 
