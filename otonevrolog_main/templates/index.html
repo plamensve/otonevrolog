@@ -87,28 +87,28 @@
                 {% empty %}
                     <p>No comments yet. Be the first to leave one!</p>
                 {% endfor %}
-                <!-- Пагинационна навигация -->
+                <!-- Pagination navigation -->
                 <div class="pagination">
-        <span class="step-links">
-            {% if comments.has_previous %}
-                <a href="?page=1">First</a>
-                <a href="?page={{ comments.previous_page_number }}">Previous</a>
-            {% endif %}
+                    <span class="step-links">
+                        {% if comments.has_previous %}
+                            <a href="?page=1">First</a>
+                            <a href="?page={{ comments.previous_page_number }}">Previous</a>
+                        {% endif %}
 
-            <span class="current">
-                Page {{ comments.number }} of {{ comments.paginator.num_pages }}
-            </span>
+                        <span class="current">
+                            Page {{ comments.number }} of {{ comments.paginator.num_pages }}
+                        </span>
 
-            {% if comments.has_next %}
-                <a href="?page={{ comments.next_page_number }}">Next</a>
-                <a href="?page={{ comments.paginator.num_pages }}">Last</a>
-            {% endif %}
-        </span>
+                        {% if comments.has_next %}
+                            <a href="?page={{ comments.next_page_number }}">Next</a>
+                            <a href="?page={{ comments.paginator.num_pages }}">Last</a>
+                        {% endif %}
+                    </span>
                 </div>
             </div>
         </section>
-
     {% endif %}
+
     <!-- Appointment form modal -->
     <div id="appointmentModal" class="modal"
          style="{% if show_modal %}display: flex;{% else %}display: none;{% endif %}">
@@ -119,8 +119,8 @@
                     <span class="close-button" onclick="closeForm()">X</span>
                     <h1 class="appointment-form-topic">Book Your Appointment</h1>
                     {% csrf_token %}
-                    <input type="hidden" id="day" name="day">
-                    <input type="hidden" id="hour" name="hour">
+                    <input type="hidden" id="day" name="day" value="{{ selected_day }}">
+                    <input type="hidden" id="hour" name="hour" value="{{ selected_hour }}">
                     {{ form.as_p }}
 
                     {% if request.user.is_authenticated %}
@@ -138,14 +138,14 @@
 
     <div id="surveyModal" class="survey-modal">
         <div class="survey-modal-content">
-                <input type="hidden" id="profile-pk" value="{{ user.pk }}">
-                <p>Would you like to fill out our survey about your symptoms?<br> 
-                    After clicking the "Yes" button, your appointment will be saved,<br> 
-                    and you will be redirected to the page for completing the survey about your symptoms.<br></p>
-                <div class="survey-modal-buttons">
-                    <button id="survey-yes" class="yes-btn">Yes</button>
-                    <button id="survey-no" class="no-btn">No</button>
-                </div>
+            <input type="hidden" id="profile-pk" value="{{ user.pk }}">
+            <p>Would you like to fill out our survey about your symptoms?<br> 
+                After clicking the "Yes" button, your appointment will be saved,<br> 
+                and you will be redirected to the page for completing the survey about your symptoms.<br></p>
+            <div class="survey-modal-buttons">
+                <button id="survey-yes" class="yes-btn">Yes</button>
+                <button id="survey-no" class="no-btn">No</button>
+            </div>
         </div>
     </div>
 

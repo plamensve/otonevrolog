@@ -26,14 +26,16 @@ def index(request):
         if form.is_valid():
             booking = save_form_with_patient_id(form, request.user.id)
             create_appointment_slot(day, hour, booking)
-            return redirect('index')
+            return redirect('dashboard')
         else:
             return render(request, 'index.html', {
                 'form': form,
                 'days_of_week': days_of_week,
                 'hours': hours,
                 'unavailable_slot': unavailable_slot,
-                'show_modal': True
+                'show_modal': True,
+                'selected_day': day,
+                'selected_hour': hour
             })
 
     else:
@@ -49,10 +51,13 @@ def index(request):
         'unavailable_slot': unavailable_slot,
         'show_modal': False,
         'comments': comments,
-        'total_comments': all_comments.count()
+        'total_comments': all_comments.count(),
+        'selected_day': '',
+        'selected_hour': ''
     }
 
     return render(request, 'index.html', context)
+
 
 
 @login_required
