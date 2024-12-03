@@ -59,7 +59,6 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-
 @login_required
 def submit_review(request):
     if request.method == 'POST':
@@ -89,6 +88,18 @@ def paginate_comments(request):
 
 def about(request):
     return render(request, 'doctor_profile/about.html')
+
+
+def contact(request):
+    return render(request, 'doctor_profile/contact.html')
+
+
+def privacy_policy(request):
+    return render(request, 'doctor_profile/privacy-policy.html')
+
+
+def terms(request):
+    return render(request, 'doctor_profile/terms.html')
 
 
 def download_as_pdf(request, pk):
