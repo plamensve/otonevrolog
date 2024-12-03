@@ -4,6 +4,7 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.web.validators import validate_name_only_letters, validate_email, validate_phone_number
 
 
 class AppointmentBooking(models.Model):
@@ -11,29 +12,44 @@ class AppointmentBooking(models.Model):
 
     first_name = models.CharField(
         null=False,
-        blank=False
+        blank=False,
+        validators=[
+            validate_name_only_letters
+        ]
     )
 
     second_name = models.CharField(
         null=False,
-        blank=False
+        blank=False,
+        validators=[
+            validate_name_only_letters
+        ]
     )
 
     last_name = models.CharField(
         null=False,
-        blank=False
+        blank=False,
+        validators=[
+            validate_name_only_letters
+        ]
     )
 
     email = models.EmailField(
         null=False,
         blank=False,
-        unique=True  # Toва поле е уникално, защото правим проверка с него
+        unique=True,  # Toва поле е уникално, защото правим проверка с него
+        validators=[
+            validate_email
+        ]
     )
 
     phone_number = models.CharField(
         max_length=PHONE_NUMBER_MAX_LENGTH,
         null=False,
-        blank=False
+        blank=False,
+        validators=[
+            validate_phone_number
+        ]
     )
 
     patient = models.ForeignKey(
@@ -82,18 +98,27 @@ class AppointmentResult(models.Model):
         max_length=FIRST_NAME_MAX_LENGTH,
         null=False,
         blank=False,
+        validators=[
+            validate_name_only_letters
+        ]
     )
 
     last_name = models.CharField(
         max_length=LAST_NAME_MAX_LENGTH,
         null=False,
         blank=False,
+        validators=[
+            validate_name_only_letters
+        ]
     )
 
     email = models.EmailField(
         max_length=EMAIL_MAX_LENGTH,
         null=False,
         blank=False,
+        validators=[
+            validate_email
+        ]
     )
 
     phone_number = models.CharField(
@@ -102,6 +127,7 @@ class AppointmentResult(models.Model):
         validators=[
             MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
             MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
+            validate_phone_number,
         ],
     )
 
@@ -156,7 +182,10 @@ class Review(models.Model):
     )
 
     name = models.CharField(
-        max_length=NAME_MAX_LENGTH
+        max_length=NAME_MAX_LENGTH,
+        validators=[
+            validate_name_only_letters,
+        ]
     )
 
     comment = models.TextField(

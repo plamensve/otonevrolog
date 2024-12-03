@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
-from otonevrolog_main.accounts.validators import validate_phone_number
+from otonevrolog_main.accounts.validators import validate_phone_number, validate_image_size, validate_email
 
 
 class CustomUser(AbstractUser, PermissionsMixin):
@@ -23,6 +23,9 @@ class CustomUser(AbstractUser, PermissionsMixin):
     profile_picture = models.ImageField(
         null=True,
         blank=True,
+        validators=[
+            validate_image_size
+        ]
     )
 
     def __str__(self):
@@ -30,21 +33,46 @@ class CustomUser(AbstractUser, PermissionsMixin):
 
 
 class ClinicSurvey(models.Model):
+    MIN_LENGTH_PHONE_NUMBER = 10
+    MAX_LENGTH_PHONE_NUMBER = 13
+    MAX_LENGTH_EMAIL = 50
+    MAX_LENGTH_PROBLEM_DESCRIPTION = 300
+
     YES_NO_CHOICES = [
         ('YES', 'Yes'),
         ('NO', 'No'),
     ]
 
-    name = models.CharField(max_length=255, verbose_name="Full Name")
-    age = models.PositiveIntegerField(verbose_name="Age")
-    email = models.CharField(max_length=255)
-    phone_number = models.CharField(
+    name = models.CharField(
+        max_length=255,
+        verbose_name="Full Name"
+    )
+
+    age = models.PositiveIntegerField(
+        verbose_name="Age"
+    )
+
+    email = models.CharField(
+        max_length=MAX_LENGTH_EMAIL,
         validators=[
-            MinLengthValidator(10),
-            MaxLengthValidator(13),
+            validate_email
         ]
     )
-    problem_description = models.TextField(verbose_name="Describe your problem", blank=True, null=True)
+
+    phone_number = models.CharField(
+        validators=[
+            MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
+            MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
+            validate_phone_number
+        ]
+    )
+
+    problem_description = models.TextField(
+        max_length=MAX_LENGTH_PROBLEM_DESCRIPTION,
+        verbose_name="Describe your problem",
+        blank=True,
+        null=True
+    )
 
     # Section 1
     sensation_spinning_objects = models.CharField(max_length=3, choices=YES_NO_CHOICES,
