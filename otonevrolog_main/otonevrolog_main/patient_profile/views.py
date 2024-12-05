@@ -7,7 +7,7 @@ from otonevrolog_main.accounts.utils import get_current_user
 from otonevrolog_main.web.forms import AppointmentResultForm
 from otonevrolog_main.web.models import AppointmentBooking, AppointmentSlot
 
-
+# ------------------------------- CBVs --------------------------------#
 class DashboardView(ListView):
     model = AppointmentBooking
     template_name = 'patient_profile/dashboard.html'
@@ -28,6 +28,8 @@ class DashboardView(ListView):
         context['can_send_result'] = self.request.user.groups.filter(name="Doctor Administrator").exists()
         return context
 
+
+# ------------------------------- FBVs --------------------------------#
 
 def delete_appointment(request, appointment_id):
     if request.method == "POST":

@@ -1,0 +1,66 @@
+.contact h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 15px;
+    font-size: 1em;
+    text-align: justify;
+}
+
+.contact h2 {
+    font-size: 1.5em;
+    color: #3498db;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contact ul {
+    list-style-type: disc;
+    margin: 10px 0 20px 20px;
+    padding-left: 20px;
+}
+
+.contact ul li {
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.contact strong {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.contact-container {
+    max-width: 800px; /* Оптимална ширина за четимост */
+    margin: 0 auto; /* Центрира контейнера хоризонтално */
+    padding: 20px;
+    background-color: #f9f9f9; /* Светъл фон за по-добър контраст с текста */
+    border-radius: 8px; /* Заоблени ръбове */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка за дълбочина */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

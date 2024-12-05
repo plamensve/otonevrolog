@@ -12,6 +12,7 @@ from otonevrolog_main.accounts.utils import get_current_user, get_doctor_adminis
 from otonevrolog_main.web.models import AppointmentResult
 
 
+# ------------------------------- CBVs --------------------------------#
 class RegisterView(CreateView):
     form_class = CustomCreateUserForm
     template_name = 'registration/register.html'
@@ -25,6 +26,30 @@ class CustomLogoutView(LogoutView):
 class CustomLoginView(LoginView):
     form_class = CustomAuthenticationForm
 
+
+class MedicalExaminationResultsView(ListView):
+    model = AppointmentResult
+    template_name = 'patient_profile/medical_examination_result.html'
+    context_object_name = 'appointment_results'
+
+    def get_queryset(self):
+        patient_id = self.kwargs.get('pk')
+        self.patient = get_object_or_404(CustomUser, pk=patient_id)
+        return AppointmentResult.objects.filter(custom_user=self.patient)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['patient'] = self.patient
+        return context
+
+
+class CurrentPatientResultsView(DetailView):
+    model = AppointmentResult
+    template_name = 'patient_profile/current_patient_results.html'
+    context_object_name = 'current_patient'
+
+
+# ------------------------------- FBVs --------------------------------#
 
 def profile(request, pk):
     context = {
@@ -51,28 +76,6 @@ def edit_profile(request, pk):
         'current_user': current_user,
     }
     return render(request, 'patient_profile/edit_profile.html', context)
-
-
-class MedicalExaminationResultsView(ListView):
-    model = AppointmentResult
-    template_name = 'patient_profile/medical_examination_result.html'
-    context_object_name = 'appointment_results'
-
-    def get_queryset(self):
-        patient_id = self.kwargs.get('pk')
-        self.patient = get_object_or_404(CustomUser, pk=patient_id)
-        return AppointmentResult.objects.filter(custom_user=self.patient)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['patient'] = self.patient
-        return context
-
-
-class CurrentPatientResultsView(DetailView):
-    model = AppointmentResult
-    template_name = 'patient_profile/current_patient_results.html'
-    context_object_name = 'current_patient'
 
 
 def patient_history(request, pk):
@@ -134,4 +137,3 @@ def patient_symptoms(request, pk=None):
     }
 
     return render(request, 'patient_profile/patient-symptoms.html', context)
-
