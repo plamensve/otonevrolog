@@ -159,6 +159,23 @@
     margin-top: 50px;
 }
 
+/* Настройки за изображението */
+.ad-box img {
+    max-width: 100%; /* Изображението ще заема максимум 50% от ширината на бокса */
+    max-height: 100%; /* Изображението ще заема максимум 50% от височината на бокса */
+    object-fit: contain; /* Поддържа пропорциите на изображението */
+}
+
+.ad-link {
+    text-decoration: none; /* Премахва подчертаването на линка */
+    color: inherit; /* Унаследява цвета от родителя */
+    display: block; /* Позволява линкът да обхваща целия елемент */
+}
+
+.ad-link:hover .ad-box {
+    transform: scale(1.05); /* Примерен ефект при hover */
+}
+
 .ad-box:hover {
     background: #ffffff;
     transform: translateY(-5px);
