@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.views import LoginView, LogoutView
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -112,6 +114,7 @@ def ask_the_doctor(request, pk=None):
         if form.is_valid():
             survey = form.save(commit=False)
             survey.user_profile = current_user
+
             survey.save()
             return redirect('profile', pk=current_user.pk)
     else:
@@ -127,13 +130,10 @@ def ask_the_doctor(request, pk=None):
 def patient_symptoms(request, pk=None):
     current_user = get_current_user(pk)
 
-    symptoms = []
-
-    if request.method == 'GET':
-        symptoms = ClinicSurvey.objects.filter(user_profile_id=current_user.pk)
+    symptoms = ClinicSurvey.objects.filter(user_profile_id=current_user.pk).first()
 
     context = {
-        'symptoms': symptoms[0] if symptoms else None,  # TODO: тази логика трябва да се коригира
+        'symptoms': symptoms,
     }
 
     return render(request, 'patient_profile/patient-symptoms.html', context)

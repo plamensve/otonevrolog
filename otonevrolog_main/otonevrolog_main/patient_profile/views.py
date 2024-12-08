@@ -7,6 +7,7 @@ from otonevrolog_main.accounts.utils import get_current_user
 from otonevrolog_main.web.forms import AppointmentResultForm
 from otonevrolog_main.web.models import AppointmentBooking, AppointmentSlot
 
+
 # ------------------------------- CBVs --------------------------------#
 class DashboardView(ListView):
     model = AppointmentBooking
@@ -79,33 +80,3 @@ def patient_result(request, pk, unique_id):
 
 def patient_symptoms(request):
     return render(request, 'patient_profile/patient-symptoms.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

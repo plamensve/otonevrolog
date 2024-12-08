@@ -68,7 +68,8 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    <input type="text" id="name" name="name" required placeholder="Enter your name" 
+                           oninput="removeInvalidCharacters(this)" >
                 </div>
                 <div class="form-group">
                     <label for="comment">Your Comment:</label>
@@ -154,4 +155,5 @@
     <script src="{% static 'js/calendar.js' %}"></script>
     <script src="{% static 'js/surveyModal.js' %}"></script>
     <script src="{% static 'js/paginationComments.js' %}"></script>
+    <script src="{% static 'js/removeInvalidCharacters.js' %}"></script>
 {% endblock %}

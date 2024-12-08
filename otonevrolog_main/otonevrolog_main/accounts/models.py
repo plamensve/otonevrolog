@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
@@ -45,18 +47,24 @@ class ClinicSurvey(models.Model):
 
     name = models.CharField(
         max_length=255,
-        verbose_name="Full Name"
+        verbose_name="Full Name",
+        null=True,
+        blank=True,
     )
 
     age = models.PositiveIntegerField(
-        verbose_name="Age"
+        verbose_name="Age",
+        null=True,
+        blank=True,
     )
 
     email = models.CharField(
         max_length=MAX_LENGTH_EMAIL,
         validators=[
             validate_email
-        ]
+        ],
+        null=True,
+        blank=True
     )
 
     phone_number = models.CharField(
@@ -64,7 +72,9 @@ class ClinicSurvey(models.Model):
             MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
             MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
             validate_phone_number
-        ]
+        ],
+        null=True,
+        blank=True,
     )
 
     problem_description = models.TextField(

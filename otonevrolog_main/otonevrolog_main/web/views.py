@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse, Http404
 from xhtml2pdf import pisa
 from otonevrolog_main.web.forms import ReviewForm
-from otonevrolog_main.web.models import Logo
+from otonevrolog_main.web.models import Logo, Review
 from otonevrolog_main.web.utils import get_all_reviews, add_pagination, get_appointment_result
 from django.shortcuts import redirect, render
 from otonevrolog_main.web.forms import AppointmentBookingCreateForm
@@ -70,7 +70,13 @@ def submit_review(request):
             review.save()
             return redirect('index')
         else:
-            return render(request, 'index.html', {'form': form})
+            comments = Review.objects.all()
+            total_comments = comments.count()
+            return render(request, 'index.html', {
+                'form': form,
+                'comments': comments,
+                'total_comments': total_comments,
+            })
 
     return redirect('index')
 

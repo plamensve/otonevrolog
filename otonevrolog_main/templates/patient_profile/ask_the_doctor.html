@@ -13,7 +13,6 @@
         <h1>Clinic Survey</h1>
         <form action="{% url 'ask-the-doctor' current_user.pk %}" method="POST">
             {% csrf_token %}
-
             <!-- Personal Information -->
             <div class="form-section">
                 <h2>Personal Information</h2>

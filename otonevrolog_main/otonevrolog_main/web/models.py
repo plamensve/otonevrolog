@@ -3,7 +3,7 @@ import uuid
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
-from otonevrolog_main.accounts.models import CustomUser
+from otonevrolog_main.accounts.models import CustomUser, ClinicSurvey
 from otonevrolog_main.web.validators import validate_name_only_letters, validate_email, validate_phone_number
 
 
@@ -62,6 +62,7 @@ class AppointmentBooking(models.Model):
     unique_id = models.UUIDField(
         default=uuid.uuid4,
     )
+
 
 
 class AppointmentSlot(models.Model):
@@ -177,7 +178,7 @@ class Review(models.Model):
 
     user = models.ForeignKey(
         CustomUser,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="reviews"
     )
 

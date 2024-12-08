@@ -6,11 +6,11 @@ from django.utils.translation import gettext_lazy as _
 
 def validate_name_only_letters(value):
     """
-    Validates that the name contains only alphabetic characters.
+    Validates that the name contains only alphabetic characters and spaces.
     """
-    if not value.isalpha():
+    if not all(part.isalpha() for part in value.split()):
         raise ValidationError(
-            _('The name must contain only letters.'),
+            _('The name must contain only letters and spaces.'),
         )
 
 
