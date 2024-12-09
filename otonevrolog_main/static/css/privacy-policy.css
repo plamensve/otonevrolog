@@ -1,0 +1,71 @@
+.privacy-policy-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.privacy-policy-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.privacy-policy-title {
+    font-size: 2.5em;
+    color: #3a7a7b;
+    margin-bottom: 10px;
+}
+
+.privacy-policy-update {
+    font-size: 1.1em;
+    color: #4d4d4d;
+}
+
+.privacy-policy-section {
+    margin-bottom: 30px;
+}
+
+.privacy-policy-heading {
+    font-size: 1.8em;
+    color: #3a7a7b; /* Променен от зелен на син */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3a7a7b; /* Променен от зелен на син */
+    padding-bottom: 5px;
+}
+
+.privacy-policy-text {
+    font-size: 1.1em;
+    color: #4d4d4d;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.privacy-policy-list {
+    list-style-type: disc;
+    margin: 10px 0 20px 40px;
+    padding-left: 20px;
+}
+
+.privacy-policy-item {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.privacy-policy-address {
+    font-style: normal;
+    line-height: 1.5;
+    color: #555;
+}
+
+.privacy-policy-link {
+    color: #3498db; /* Променен от зелен на син */
+    text-decoration: none;
+}
+
+.privacy-policy-link:hover {
+    text-decoration: underline;
+}

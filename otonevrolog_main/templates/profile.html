@@ -3,7 +3,8 @@
 {% block content %}
     <body class="body-profile-page">
     <div class="front-picture">
-        <img src="{% static 'images/schedule.png' %}" alt="Front picture">
+        {% include 'page-picture.html' %}
+        {% include 'welcome-section.html' %}
     </div>
     <div class="user-profile-container">
         {% if current_user.profile_picture %}

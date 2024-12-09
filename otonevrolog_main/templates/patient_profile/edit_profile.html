@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
     {% include 'page-picture.html' %}
+    {% include 'welcome-section.html' %}
     <form method="post" class="edit-profile-form" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}

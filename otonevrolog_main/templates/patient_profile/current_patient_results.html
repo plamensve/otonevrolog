@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% include 'page-picture.html' %}
-<body>
+    {% include 'page-picture.html' %}
+    {% include 'welcome-section.html' %}
+    <body>
     <div class="patient-result-details">
         <h1>Patient Examination Results</h1>
-        
+
         <!-- Patient Information -->
         <div class="patient-info">
             <h2>Patient Information</h2>
@@ -25,7 +26,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Examination Results -->
         <div class="examination-results">
             <h2>Examination Results</h2>
@@ -61,5 +62,5 @@
             </table>
         </div>
     </div>
-</body>
+    </body>
 {% endblock %}

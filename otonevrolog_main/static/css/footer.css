@@ -64,3 +64,22 @@ footer {
         gap: 25px;
     }
 }
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Разстояние между иконите */
+    margin-top: 20px;
+}
+
+.footer-social a {
+    font-size: 1.5em; /* Размер на иконите */
+    color: #ffffff; /* Цвят на иконите */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #0675e8; /* Цвят при задържане */
+}
+

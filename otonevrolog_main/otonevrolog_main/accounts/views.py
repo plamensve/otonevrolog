@@ -109,7 +109,6 @@ def patient_history(request, pk):
 def ask_the_doctor(request, pk=None):
     current_user = get_current_user(pk)
 
-
     if request.method == 'POST':
         form = ClinicSurveyForm(request.POST)
         if form.is_valid():
@@ -137,7 +136,7 @@ def patient_symptoms_list(request, pk=None):
 
     if not symptoms.exists():
         context = {
-            'error': 'No symptoms found matching your search.' if query else 'No symptoms found for the selected user.',
+            'error': 'No symptoms found matching your search.' if query else 'No patients symptoms found.',
             'query': query,
         }
     else:
@@ -147,7 +146,6 @@ def patient_symptoms_list(request, pk=None):
         }
 
     return render(request, 'patient_profile/patients-symptoms-list.html', context)
-
 
 
 def patient_symptoms(request, pk=None):
