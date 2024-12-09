@@ -98,10 +98,10 @@ class ClinicSurveyForm(forms.ModelForm):
         model = ClinicSurvey
 
         fields = [
+            'ssn',
             'name',
             'age',
             'email',
-            'phone_number',
             'problem_description',
             'sensation_spinning_objects',
             'staggering_to_one_side',
@@ -120,6 +120,7 @@ class ClinicSurveyForm(forms.ModelForm):
         ]
 
         widgets = {
+            'ssn': forms.TextInput(attrs={'placeholder': 'Enter SSN'}),
             'problem_description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Describe your problem'}),
             'sensation_spinning_objects': forms.RadioSelect(),
             'staggering_to_one_side': forms.RadioSelect(),
@@ -137,6 +138,7 @@ class ClinicSurveyForm(forms.ModelForm):
             'sensitivity_to_light_noise': forms.RadioSelect(),
         }
         labels = {
+            'ssn': 'SSN',
             'problem_description': 'Describe your problem in a few words',
             'sensation_spinning_objects': 'Sensation of spinning objects around you',
             'staggering_to_one_side': 'Staggering to one side',

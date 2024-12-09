@@ -22,8 +22,6 @@
                         <th>Phone Number</th>
                         {% if not can_send_result %}
                             <th>Add Symptoms</th>
-                        {% else %}
-                            <th>Check Patient Symptoms</th>
                         {% endif %}
                         {% if can_send_result %}
                             <th>Results</th>
@@ -43,28 +41,17 @@
                             {% endfor %}
                             <td>{{ appointment.email }}</td>
                             <td>{{ appointment.phone_number }}</td>
-                            
-                        {% if not can_send_result %}
-                            <td>
-                                <button type="button"
-                                        class="submit-btn-delete"
-                                        onclick="redirectToAskTheDoctor({{ appointment.patient.id }}, {{ appointment.id }})">
-                                    Add Symptoms
-                                </button>
-                            </td>
-                        {% endif %} 
-                        
-                        {% if can_send_result %}
-                        	<td>
-                                <button type="button"
-                                        class="submit-btn-delete"
-                                        onclick="redirectToCheckSymptoms({{ appointment.patient.id }}, 
-                                                {{ appointment.id }})">
-                                    Check Patient Symptoms
-                                </button>
-                            </td>
-                        {% endif %} 
-                        
+
+                            {% if not can_send_result %}
+                                <td>
+                                    <button type="button"
+                                            class="submit-btn-delete"
+                                            onclick="redirectToAskTheDoctor({{ appointment.patient.id }}, {{ appointment.id }})">
+                                        Add Symptoms
+                                    </button>
+                                </td>
+                            {% endif %}
+
                             {% if can_send_result %}
                                 <td>
                                     <a href="{% url 'patient-result' appointment.patient_id appointment.unique_id %}">

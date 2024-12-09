@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% include 'page-picture.html' %}
-<body>
+    {% include 'page-picture.html' %}
+    <body>
     <div class="clinic-survey-results">
         <h1 class="survey-header">Clinic Symptoms</h1>
 
@@ -25,8 +25,12 @@
                 <div class="survey-patient-info-item">
                     <strong>Description of Problem:</strong> {{ symptoms.problem_description }}
                 </div>
+                <div class="survey-patient-info-item">
+                    <strong>SSN:</strong> {{ symptoms.ssn }}
+                </div>
             </div>
         </div>
+
 
         <!-- Section 1 Results -->
         <div class="survey-examination-results">
@@ -106,5 +110,5 @@
             </table>
         </div>
     </div>
-</body>
+    </body>
 {% endblock %}

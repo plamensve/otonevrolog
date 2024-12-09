@@ -9,6 +9,14 @@ from otonevrolog_main.web.validators import validate_name_only_letters, validate
 
 class AppointmentBooking(models.Model):
     PHONE_NUMBER_MAX_LENGTH = 15
+    SSN_MAX_LENGTH = 9
+
+    ssn = models.CharField(
+        max_length=SSN_MAX_LENGTH,
+        null=True,
+        blank=True,
+        unique=True,
+    )
 
     first_name = models.CharField(
         null=False,
@@ -62,7 +70,6 @@ class AppointmentBooking(models.Model):
     unique_id = models.UUIDField(
         default=uuid.uuid4,
     )
-
 
 
 class AppointmentSlot(models.Model):

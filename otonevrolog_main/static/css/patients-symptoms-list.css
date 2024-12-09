@@ -1,0 +1,152 @@
+/* Основен контейнер */
+.patient-dashboard-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
+    border-radius: 15px;
+}
+
+/* Заглавие */
+.patient-dashboard-title {
+    text-align: center;
+    color: #8fdad3;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Текст за грешка */
+.patient-dashboard-error {
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Таблица */
+.patient-dashboard-list {
+    width: 100%;
+    max-width: 1500px;
+    overflow-x: auto;
+}
+
+.patient-dashboard-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.patient-dashboard-list th,
+.patient-dashboard-list td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.patient-dashboard-list th {
+    background-color: #3a7a7b;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.patient-dashboard-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Ховър ефект за редовете и текста */
+.patient-dashboard-list tr:hover {
+    background-color: #3a7a7b;
+}
+
+.patient-dashboard-list tr:hover td {
+    color: #ffffff; /* Променя текста в клетките на бял при ховър */
+}
+
+.patient-dashboard-list td {
+    color: #555;
+}
+
+/* Респонсив дизайн */
+
+/* Средни екрани (таблети) */
+@media (max-width: 768px) {
+    .patient-dashboard-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .patient-dashboard-title {
+        font-size: 24px;
+    }
+
+    .patient-dashboard-list th,
+    .patient-dashboard-list td {
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+}
+
+/* Малки екрани (телефони) */
+@media (max-width: 480px) {
+    .patient-dashboard-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .patient-dashboard-title {
+        font-size: 20px;
+    }
+
+    .patient-dashboard-list th,
+    .patient-dashboard-list td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Много малки екрани (под 360px ширина) */
+@media (max-width: 360px) {
+    .patient-dashboard-title {
+        font-size: 18px;
+    }
+
+    .patient-dashboard-list th,
+    .patient-dashboard-list td {
+        font-size: 10px;
+        padding: 6px;
+    }
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 300px;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    border: 1px solid #ffffff;
+    background-color: #3a7a7b;
+    color: #ffffff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-form button:hover {
+    background-color: #8fdad3;
+}

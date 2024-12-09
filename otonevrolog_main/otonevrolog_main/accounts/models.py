@@ -39,12 +39,19 @@ class ClinicSurvey(models.Model):
     MAX_LENGTH_PHONE_NUMBER = 13
     MAX_LENGTH_EMAIL = 50
     MAX_LENGTH_PROBLEM_DESCRIPTION = 300
+    SSN_MAX_LENGTH = 9
 
     YES_NO_CHOICES = [
         ('YES', 'Yes'),
         ('NO', 'No'),
     ]
 
+    ssn = models.CharField(
+        max_length=SSN_MAX_LENGTH,
+        null=True,
+        blank=True,
+        unique=True
+    )
     name = models.CharField(
         max_length=255,
         verbose_name="Full Name",
@@ -67,15 +74,6 @@ class ClinicSurvey(models.Model):
         blank=True
     )
 
-    phone_number = models.CharField(
-        validators=[
-            MinLengthValidator(MIN_LENGTH_PHONE_NUMBER),
-            MaxLengthValidator(MAX_LENGTH_PHONE_NUMBER),
-            validate_phone_number
-        ],
-        null=True,
-        blank=True,
-    )
 
     problem_description = models.TextField(
         max_length=MAX_LENGTH_PROBLEM_DESCRIPTION,

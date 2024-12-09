@@ -11,6 +11,7 @@ class AppointmentBookingCreateForm(forms.ModelForm):
         exclude = ('patient', 'unique_id')
 
         labels = {
+            'ssn': 'SSN',
             'first_name': 'First Name',
             'second_name': 'Second Name',
             'last_name': 'Last Name',
@@ -19,6 +20,7 @@ class AppointmentBookingCreateForm(forms.ModelForm):
         }
 
         widgets = {
+            'ssn': forms.TextInput(attrs={'placeholder': 'Please, type your SSN...'}),
             'first_name': forms.TextInput(attrs={'placeholder': 'Please, type your first name...'}),
             'second_name': forms.TextInput(attrs={'placeholder': 'Please, type your second name...'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Please, type your last name...'}),

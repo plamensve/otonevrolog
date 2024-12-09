@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'page-picture.html' %}
+    <body>
+        <div class="patient-dashboard-container">
+            <h1 class="patient-dashboard-title">Patient Symptoms List</h1>
+            <form method="get" action="" class="search-form">
+                <input type="text" name="q" value="{{ query }}" placeholder="Search by SSN...">
+                <button type="submit">Search</button>
+            </form>
+            {% if error %}
+                <p class="patient-dashboard-error">{{ error }}</p>
+            {% else %}
+                <div class="patient-dashboard-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Email</th>
+                                <th>SSN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for patient in symptoms %}
+                                <tr onclick="window.location.href='{% url 'patient_symptoms' patient.id %}'" style="cursor: pointer;">
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ patient.name }}</td>
+                                    <td>{{ patient.age }}</td>
+                                    <td>{{ patient.email }}</td>
+                                    <td>{{ patient.ssn }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        </div>
+    </body>
+{% endblock %}

@@ -109,6 +109,7 @@ def patient_history(request, pk):
 def ask_the_doctor(request, pk=None):
     current_user = get_current_user(pk)
 
+
     if request.method == 'POST':
         form = ClinicSurveyForm(request.POST)
         if form.is_valid():
@@ -127,13 +128,34 @@ def ask_the_doctor(request, pk=None):
     return render(request, 'patient_profile/ask_the_doctor.html', context)
 
 
+def patient_symptoms_list(request, pk=None):
+    if pk is None:
+        return render(request, '404.html', status=404)
+
+    query = request.GET.get('q', '')
+    symptoms = ClinicSurvey.objects.filter(ssn__icontains=query) if query else ClinicSurvey.objects.all()
+
+    if not symptoms.exists():
+        context = {
+            'error': 'No symptoms found matching your search.' if query else 'No symptoms found for the selected user.',
+            'query': query,
+        }
+    else:
+        context = {
+            'symptoms': symptoms,
+            'query': query,
+        }
+
+    return render(request, 'patient_profile/patients-symptoms-list.html', context)
+
+
+
 def patient_symptoms(request, pk=None):
-    current_user = get_current_user(pk)
+    if pk is None:
+        return render(request, '404.html', status=404)
 
-    symptoms = ClinicSurvey.objects.filter(user_profile_id=current_user.pk).first()
-
+    current_user = get_object_or_404(ClinicSurvey, pk=pk)
     context = {
-        'symptoms': symptoms,
+        'symptoms': current_user,
     }
-
     return render(request, 'patient_profile/patient-symptoms.html', context)

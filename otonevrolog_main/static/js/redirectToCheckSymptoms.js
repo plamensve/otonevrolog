@@ -1,4 +1,4 @@
-function redirectToCheckSymptoms(pk, appointment_pk) {
+function redirectToCheckSymptoms(pk, appointment_first_name, appointment_last_name) {
     if (!pk) {
         console.error("PK is undefined or null");
         return;
