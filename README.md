@@ -44,22 +44,33 @@ venv\Scripts\activate     # For Windows
 ## Install the required dependencies:
 pip install -r requirements.txt
 
+---
 
 ## Configure the environment variables:
 Copy the .env.example to .env and update the database credentials and other configurations.
 
+---
+
 ## Run the migrations:
 python manage.py migrate
 
+---
+
 ## Start the development server:
 python manage.py runserver
+
+---
 
 ## Usage
 Access the application via http://127.0.0.1:8000/.
 Log in with the default admin credentials or create a new user.
 
+---
+
 ## Testing
 python manage.py test
+
+---
 
 ## Directory Structure
 otonevrolog/
@@ -73,6 +84,7 @@ otonevrolog/
 ├── requirements.txt         # Dependencies
 └── README.md                # Project Documentation
 
+---
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any suggestions or improvements.
