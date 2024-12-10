@@ -80,8 +80,21 @@ otonevrolog/<br>
 1.4 patient_profile <br>
 1.5 web <br>
 2. static/             ->  # Static files (CSS, JS, Images)<br>
+2.1 css <br>
+2.2 images <br>
+2.3 js <br>
 3. templates/          ->  # HTML Templates<br>
+3.1 blog <br>
+3.2 doctor_profile <br>
+3.3 partials <br>
+3.4 patient_profile <br>
+3.5 pdf_template <br>
+3.6 registration <br>
 4. tests/              ->  # Unit Tests<br>
+4.1 accounts <br>
+4.2 blog <br>
+4.3 patient_profile <br>
+4.4 web <br>
 5. settings.py         ->  # Project Settings<br>
 6. media/                  ->  # Uploaded Files<br>
 7. manage.py               ->  # Project Management Script<br>
