@@ -74,19 +74,19 @@ python manage.py test
 
 ## Directory Structure
 otonevrolog/<br>
-├── otonevrolog_main/<br>
-&nbsp; accounts <br>
-&nbsp; blog <br>
-&nbsp; patient_profile <br>
-&nbsp; web <br>
-├── static/             ->  # Static files (CSS, JS, Images)<br>
-├── templates/          ->  # HTML Templates<br>
-├── tests/              ->  # Unit Tests<br>
-├── settings.py         ->  # Project Settings<br>
-├── media/                  ->  # Uploaded Files<br>
-├── manage.py               ->  # Project Management Script<br>
-├── requirements.txt        ->  # Dependencies<br>
-└── README.md               ->  # Project Documentation<br>
+1. otonevrolog_main/<br>
+1.2 accounts <br>
+1.3 blog <br>
+1.4 patient_profile <br>
+1.5 web <br>
+2. static/             ->  # Static files (CSS, JS, Images)<br>
+3. templates/          ->  # HTML Templates<br>
+4. tests/              ->  # Unit Tests<br>
+5. settings.py         ->  # Project Settings<br>
+6. media/                  ->  # Uploaded Files<br>
+7. manage.py               ->  # Project Management Script<br>
+8. requirements.txt        ->  # Dependencies<br>
+9. README.md               ->  # Project Documentation<br>
 
 ---
 
