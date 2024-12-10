@@ -75,7 +75,7 @@ python manage.py test
 ## Directory Structure
 otonevrolog/<br>
 ├── otonevrolog_main/<br>
-&nbsp;── accounts <br>
+&nbsp; <pre> ── accounts <br>
 &nbsp;── blog <br>
 &nbsp;── patient_profile <br>
 &nbsp;── web <br>
