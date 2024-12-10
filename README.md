@@ -75,10 +75,10 @@ python manage.py test
 ## Directory Structure
 otonevrolog/<br>
 ├── otonevrolog_main/<br>
-   ── accounts <br>
-   ── blog <br>
-   ── patient_profile <br>
-   ── web <br>
+&nbsp;── accounts <br>
+&nbsp;── blog <br>
+&nbsp;── patient_profile <br>
+&nbsp;── web <br>
 ├── static/             ->  # Static files (CSS, JS, Images)<br>
 ├── templates/          ->  # HTML Templates<br>
 ├── tests/              ->  # Unit Tests<br>
