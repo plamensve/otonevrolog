@@ -36,9 +36,46 @@ Make sure you have the following installed on your machine:
    git clone https://github.com/plamensve/otonevrolog.git
    cd otonevrolog
 
-<h1>Create and activate a virtual environment:</h1>h1>
+## Create and activate a virtual environment:
 python -m venv venv
 source venv/bin/activate  # For Linux/macOS
 venv\Scripts\activate     # For Windows
+
+## Install the required dependencies:
+pip install -r requirements.txt
+
+
+## Configure the environment variables:
+Copy the .env.example to .env and update the database credentials and other configurations.
+
+## Run the migrations:
+python manage.py migrate
+
+## Start the development server:
+python manage.py runserver
+
+## Usage
+Access the application via http://127.0.0.1:8000/.
+Log in with the default admin credentials or create a new user.
+
+## Testing
+python manage.py test
+
+## Directory Structure
+otonevrolog/
+├── otonevrolog_main/
+│   ├── static/              # Static files (CSS, JS, Images)
+│   ├── templates/           # HTML Templates
+│   ├── tests/               # Unit Tests
+│   └── settings.py          # Project Settings
+├── media/                   # Uploaded Files
+├── manage.py                # Project Management Script
+├── requirements.txt         # Dependencies
+└── README.md                # Project Documentation
+
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any suggestions or improvements.
+
 
 
