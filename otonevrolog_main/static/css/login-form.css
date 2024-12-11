@@ -5,8 +5,8 @@
 
 .login-form {
     position: relative;
-    margin: -160px auto 0 705px; /* Центрира формата хоризонтално и я измества нагоре */
-    width: 100%;
+    margin: -160px auto 0 auto; /* Центрира формата хоризонтално */
+    width: 90%;
     max-width: 500px;
     padding: 25px;
     background: linear-gradient(145deg, #3a7a7b, #3a7a7b) center;
@@ -14,7 +14,6 @@
     border-radius: 15px;
     box-sizing: border-box;
 }
-
 
 /* Стил за заглавието на формата */
 .login-form h2 {
@@ -79,7 +78,40 @@
     margin-bottom: 15px;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3a7a7b;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+}
+
 /* Медия заявки за по-малки екрани */
+@media (max-width: 1024px) {
+    .login-form {
+        padding: 20px;
+        max-width: 80%;
+    }
+
+    .login-form h2 {
+        font-size: 22px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 9px;
+        font-size: 15px;
+    }
+
+    .login-form button {
+        padding: 9px;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .login-form {
         padding: 20px;
@@ -99,6 +131,28 @@
     .login-form button {
         padding: 8px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-form {
+        padding: 18px;
+        max-width: 95%;
+    }
+
+    .login-form h2 {
+        font-size: 19px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .login-form button {
+        padding: 7px;
+        font-size: 13px;
     }
 }
 
@@ -122,5 +176,48 @@
         padding: 6px;
         font-size: 12px;
     }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #3a7a7b;
+        color: #fff;
+        text-align: center;
+    }
 }
 
+@media (max-width: 320px) {
+    .login-form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .login-form h2 {
+        font-size: 16px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .login-form button {
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 8px 0;
+        background-color: #3a7a7b;
+        color: #fff;
+        text-align: center;
+    }
+}
