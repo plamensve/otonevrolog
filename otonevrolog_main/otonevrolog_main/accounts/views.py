@@ -157,3 +157,5 @@ def patient_symptoms(request, pk=None):
         'symptoms': current_user,
     }
     return render(request, 'patient_profile/patient-symptoms.html', context)
+
+#test
