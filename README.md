@@ -1,49 +1,110 @@
-<h1>Otonevrolog.bg</h1>
-Otonevrolog Main is a Django-based medical application designed to manage patient profiles, appointment scheduling, and user accounts. The application aims to streamline the process of booking and managing medical appointments for both patients and healthcare providers.<br>
+# Otonevrolog.bg
 
+## Overview
 
-<h1>Features</h1>
-User Authentication: Secure registration, login, and logout functionality for patients and administrators.
-Patient Profiles: Each patient has a personalized dashboard with the ability to view and edit their profile.
-Appointment Scheduling: Patients can book appointments, view available slots, and manage their bookings.
-Responsive Design: The application includes a user-friendly interface with CSS and JavaScript enhancements for mobile and desktop users.
+The **Otonevrolog** project is a web application designed for managing patient data and appointments for otoneurology specialists. It is built using the Django framework and provides robust features for scheduling, managing records, and generating reports.
 
+---
 
-<h1>Installation</h1>
-Clone the repository:
+## Features
 
+- Patient profile management
+- Appointment scheduling and notifications
+- PDF generation for reports
+- QR code integration for quick access
+- Secure storage of sensitive data
+- Multi-language support (if applicable)
+- Admin dashboard for managing all activities
 
-git clone https://github.com/yourusername/otonevrolog_main.git
-cd otonevrolog_main
-Create a virtual environment:
+---
 
+## Requirements
 
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
-Install dependencies:
+Make sure you have the following installed on your machine:
 
+- Python 3.8 or higher
+- Django 5.1.2
+- PostgreSQL (or any other supported database)
+- Other dependencies listed in `requirements.txt`
 
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/plamensve/otonevrolog.git
+   cd otonevrolog
+
+## Create and activate a virtual environment:
+python -m venv venv
+source venv/bin/activate  # For Linux/macOS
+venv\Scripts\activate     # For Windows
+
+## Install the required dependencies:
 pip install -r requirements.txt
-Apply migrations:
 
+---
 
+## Configure the environment variables:
+Copy the .env.example to .env and update the database credentials and other configurations.
+
+---
+
+## Run the migrations:
 python manage.py migrate
-Run the server:
 
+---
 
+## Start the development server:
 python manage.py runserver
-Access the application: Open your browser and navigate to http://127.0.0.1:8000.
 
-<h1>Directory Structure</h1>
-accounts/: Manages user registration, authentication, and profile details.
-patient_profile/: Manages patient-specific data and functionalities like dashboard and profile updates.
-web/: Core application functionalities, including appointment booking and slot management.
-static/: Contains CSS, JavaScript, and image assets for front-end styling and interaction.
-templates/: HTML templates organized by feature (e.g., registration, profiles, dashboard).
+---
 
-<h1>Configuration</h1>
-To configure this project, edit the settings in settings.py, including database configuration, static files, and other Django settings.
+## Usage
+Access the application via http://127.0.0.1:8000/.
+Log in with the default admin credentials or create a new user.
+
+---
+
+## Testing
+python manage.py test
+
+---
+
+## Directory Structure
+otonevrolog/<br>
+1. otonevrolog_main/<br>
+1.2 accounts <br>
+1.3 blog <br>
+1.4 patient_profile <br>
+1.5 web <br>
+2. static/             ->  # Static files (CSS, JS, Images)<br>
+2.1 css <br>
+2.2 images <br>
+2.3 js <br>
+3. templates/          ->  # HTML Templates<br>
+3.1 blog <br>
+3.2 doctor_profile <br>
+3.3 partials <br>
+3.4 patient_profile <br>
+3.5 pdf_template <br>
+3.6 registration <br>
+4. tests/              ->  # Unit Tests<br>
+4.1 accounts <br>
+4.2 blog <br>
+4.3 patient_profile <br>
+4.4 web <br>
+5. settings.py         ->  # Project Settings<br>
+6. media/                  ->  # Uploaded Files<br>
+7. manage.py               ->  # Project Management Script<br>
+8. requirements.txt        ->  # Dependencies<br>
+9. README.md               ->  # Project Documentation<br>
+
+---
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any suggestions or improvements.
 
 
-<h1>Contribution</h1>
-Feel free to submit pull requests or report issues to help improve the application. All contributions are welcome!
+
