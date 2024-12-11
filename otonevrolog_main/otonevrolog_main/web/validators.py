@@ -31,3 +31,11 @@ def validate_phone_number(value):
     if not re.match(phone_regex, value):
         raise ValidationError(f'{value} is not a valid phone number. The number should contain only numbers 0-9. The '
                               f'number can start with the national code +359')
+
+
+def validate_ssn(value):
+    if not re.match(r'^\d{9}$', value):
+        raise ValidationError(
+            _('The SSN must contain exactly 9 digits.'),
+            params={'value': value},
+        )

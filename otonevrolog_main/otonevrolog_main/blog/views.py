@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -7,7 +8,7 @@ from otonevrolog_main.blog.forms import BlogPostForm, CommentForm
 from otonevrolog_main.blog.models import BlogPost, Comment
 
 
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     model = BlogPost
     form_class = BlogPostForm
     template_name = 'blog/blog_create.html'
@@ -23,7 +24,7 @@ class BlogCreateView(CreateView):
         return super().form_valid(form)
 
 
-class BlogListView(ListView):
+class BlogListView(LoginRequiredMixin, ListView):
     model = BlogPost
     template_name = 'blog/blog_list.html'
     context_object_name = 'posts'
@@ -66,7 +67,7 @@ class BlogDetailView(DetailView):
         return self.render_to_response(context)
 
 
-class EditCommentView(UpdateView):
+class EditCommentView(LoginRequiredMixin, UpdateView):
     model = Comment
     form_class = CommentForm
     template_name = 'blog/comment_edit_comment.html'
@@ -78,7 +79,7 @@ class EditCommentView(UpdateView):
         return Comment.objects.filter(author=self.request.user.get_full_name())
 
 
-class DeleteCommentView(DeleteView):
+class DeleteCommentView(LoginRequiredMixin, DeleteView):
     model = Comment
     template_name = 'blog/comment_delete_comment.html'
 

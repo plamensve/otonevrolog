@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.urls import reverse
-
 from otonevrolog_main.accounts.models import CustomUser
 from otonevrolog_main.web.models import Review
 

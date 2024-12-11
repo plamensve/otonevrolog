@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import ListView
@@ -9,7 +11,8 @@ from otonevrolog_main.web.models import AppointmentBooking, AppointmentSlot
 
 
 # ------------------------------- CBVs --------------------------------#
-class DashboardView(ListView):
+
+class DashboardView(LoginRequiredMixin, ListView):
     model = AppointmentBooking
     template_name = 'patient_profile/dashboard.html'
     context_object_name = 'patient_appointment'
@@ -32,6 +35,7 @@ class DashboardView(ListView):
 
 # ------------------------------- FBVs --------------------------------#
 
+@login_required(login_url='/accounts/login/')
 def delete_appointment(request, appointment_id):
     if request.method == "POST":
         if request.user.groups.filter(name="Doctor Staff").exists():
@@ -46,6 +50,7 @@ def delete_appointment(request, appointment_id):
     return JsonResponse({"success": False}, status=400)
 
 
+@login_required(login_url='/accounts/login/')
 def patient_result(request, pk, unique_id):
     patient = get_current_user(pk)
     form = AppointmentResultForm()
@@ -78,5 +83,6 @@ def patient_result(request, pk, unique_id):
     return render(request, 'patient_profile/patient_result.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def patient_symptoms(request):
     return render(request, 'patient_profile/patient-symptoms.html')

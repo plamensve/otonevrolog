@@ -133,23 +133,22 @@
         </div>
     </div>
 
-    <div id="surveyModal" class="survey-modal">
-        <div class="survey-modal-content">
-            <input type="hidden" id="profile-pk" value="{{ user.pk }}">
-            <p>Would you like to fill out our survey about your symptoms?<br> 
-                After clicking the "Yes" button, your appointment will be saved,<br> 
-                and you will be redirected to the page for completing the survey about your symptoms.<br></p>
-            <div class="survey-modal-buttons">
-                <button id="survey-yes" class="yes-btn">Yes</button>
-                <button id="survey-no" class="no-btn">No</button>
-            </div>
-        </div>
-    </div>
+{#    <div id="surveyModal" class="survey-modal" style="display: none;">#}
+{#        <div class="survey-modal-content">#}
+{#            <input type="hidden" id="profile-pk" value="{{ user.pk }}">#}
+{#            <p>Would you like to fill out our survey about your symptoms?<br> #}
+{#                After clicking the "Yes" button, your appointment will be saved,<br> #}
+{#                and you will be redirected to the page for completing the survey about your symptoms.<br></p>#}
+{#            <div class="survey-modal-buttons">#}
+{#                <button id="survey-yes" class="yes-btn">Yes</button>#}
+{#                <button id="survey-no" class="no-btn">No</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
     <!-- JavaScript files -->
     <script src="{% static 'js/appointmentModal.js' %}"></script>
     <script src="{% static 'js/calendar.js' %}"></script>
-    <script src="{% static 'js/surveyModal.js' %}"></script>
     <script src="{% static 'js/paginationComments.js' %}"></script>
     <script src="{% static 'js/removeInvalidCharacters.js' %}"></script>
 {% endblock %}

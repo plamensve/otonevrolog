@@ -4,7 +4,8 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 from otonevrolog_main.accounts.models import CustomUser, ClinicSurvey
-from otonevrolog_main.web.validators import validate_name_only_letters, validate_email, validate_phone_number
+from otonevrolog_main.web.validators import validate_name_only_letters, validate_email, validate_phone_number, \
+    validate_ssn
 
 
 class AppointmentBooking(models.Model):
@@ -16,6 +17,9 @@ class AppointmentBooking(models.Model):
         null=True,
         blank=True,
         unique=True,
+        validators=[
+            validate_ssn
+        ]
     )
 
     first_name = models.CharField(

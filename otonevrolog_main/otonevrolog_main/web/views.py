@@ -35,7 +35,7 @@ def index(request):
                 'unavailable_slot': unavailable_slot,
                 'show_modal': True,
                 'selected_day': day,
-                'selected_hour': hour
+                'selected_hour': hour,
             })
 
     else:

@@ -1,5 +1,7 @@
 import uuid
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -29,7 +31,7 @@ class CustomLoginView(LoginView):
     form_class = CustomAuthenticationForm
 
 
-class MedicalExaminationResultsView(ListView):
+class MedicalExaminationResultsView(LoginRequiredMixin, ListView):
     model = AppointmentResult
     template_name = 'patient_profile/medical_examination_result.html'
     context_object_name = 'appointment_results'
@@ -45,7 +47,7 @@ class MedicalExaminationResultsView(ListView):
         return context
 
 
-class CurrentPatientResultsView(DetailView):
+class CurrentPatientResultsView(LoginRequiredMixin, DetailView):
     model = AppointmentResult
     template_name = 'patient_profile/current_patient_results.html'
     context_object_name = 'current_patient'
@@ -53,6 +55,7 @@ class CurrentPatientResultsView(DetailView):
 
 # ------------------------------- FBVs --------------------------------#
 
+@login_required(login_url='/accounts/login/')
 def profile(request, pk):
     context = {
         'current_user': get_current_user(pk),
@@ -61,6 +64,7 @@ def profile(request, pk):
     return render(request, 'profile.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def edit_profile(request, pk):
     current_user = get_current_user(pk)
 
@@ -80,6 +84,7 @@ def edit_profile(request, pk):
     return render(request, 'patient_profile/edit_profile.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def patient_history(request, pk):
     query = request.GET.get('q')
     if query:
@@ -106,6 +111,7 @@ def patient_history(request, pk):
     return render(request, 'doctor_profile/patient_history.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def ask_the_doctor(request, pk=None):
     current_user = get_current_user(pk)
 
@@ -127,6 +133,7 @@ def ask_the_doctor(request, pk=None):
     return render(request, 'patient_profile/ask_the_doctor.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def patient_symptoms_list(request, pk=None):
     if pk is None:
         return render(request, '404.html', status=404)
@@ -148,6 +155,7 @@ def patient_symptoms_list(request, pk=None):
     return render(request, 'patient_profile/patients-symptoms-list.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def patient_symptoms(request, pk=None):
     if pk is None:
         return render(request, '404.html', status=404)
@@ -157,5 +165,3 @@ def patient_symptoms(request, pk=None):
         'symptoms': current_user,
     }
     return render(request, 'patient_profile/patient-symptoms.html', context)
-
-#test
