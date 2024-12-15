@@ -107,31 +107,32 @@
     {% endif %}
 
     <!-- Appointment form modal -->
-    <div id="appointmentModal" class="modal"
-         style="{% if show_modal %}display: flex;{% else %}display: none;{% endif %}">
-        <div class="modal-content">
-            <div class="form-container">
-                <form id="appointmentForm" method="POST" action="{% url 'index' %}" class="appointment-form"
-                      onsubmit="validateAndSubmitForm(event)">
-                    <span class="close-button" onclick="closeForm()">X</span>
-                    <h1 class="appointment-form-topic">Book Your Appointment</h1>
-                    {% csrf_token %}
-                    <input type="hidden" id="day" name="day" value="{{ selected_day }}">
-                    <input type="hidden" id="hour" name="hour" value="{{ selected_hour }}">
-                    {{ form.as_p }}
+<div id="appointmentModal" class="modal" style="display: none;">
+    <div class="modal-content" role="dialog" aria-labelledby="appointment-form-topic" aria-hidden="true">
+        <div class="form-container">
+            <form id="appointmentForm" method="POST" action="{% url 'index' %}" class="appointment-form">
+                <span id="closeForm" class="close-button">X</span>
+                <h1 id="appointment-form-topic" class="appointment-form-topic">Book Your Appointment</h1>
+                {% csrf_token %}
+                <input type="hidden" id="day" name="day" value="{{ selected_day }}">
+                <input type="hidden" id="hour" name="hour" value="{{ selected_hour }}">
+                {{ form.as_p }}
 
-                    {% if request.user.is_authenticated %}
-                        <button type="submit" class="submit-btn">Submit</button>
-                    {% else %}
-                        <p class="appointment-form-under-button">
-                            You don't have an account? <a href="{% url 'register' %}" class="register-link">Register
-                            here</a>
-                        </p>
-                    {% endif %}
-                </form>
-            </div>
+                {% if request.user.is_authenticated %}
+                    <button type="submit" class="submit-btn">Submit</button>
+                {% else %}
+                    <p class="appointment-form-under-button">
+                        You don't have an account? <a href="{% url 'register' %}" class="register-link">Register here</a>
+                    </p>
+                    <button type="button" class="submit-btn" disabled>Submit</button>
+                {% endif %}
+            </form>
         </div>
     </div>
+</div>
+
+
+
 
 {#    <div id="surveyModal" class="survey-modal" style="display: none;">#}
 {#        <div class="survey-modal-content">#}

@@ -74,7 +74,6 @@ class ClinicSurvey(models.Model):
         blank=True
     )
 
-
     problem_description = models.TextField(
         max_length=MAX_LENGTH_PROBLEM_DESCRIPTION,
         verbose_name="Describe your problem",
